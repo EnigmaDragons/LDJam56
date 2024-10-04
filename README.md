@@ -41,6 +41,7 @@ Software Requirements:
 - Git
 - Unity 2023 (Version 2023.2.20f1)
 - Any C# IDE
+- FMOD Studio 2.02.24
 
 Setup:
 1. Clone this repository using git
