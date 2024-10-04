@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{3cf02b1f-7a10-480c-81de-58c259ee68fc}">
+		<property name="color">
+			<value>Blue</value>
+		</property>
 		<property name="name">
 			<value>AMB_MST</value>
 		</property>
@@ -11,7 +14,7 @@
 			<destination>{723e1ecf-eaa5-4c5d-999e-17d5599d08b1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{82512513-f834-4e14-b909-ab79cae11246}</destination>
+			<destination>{fafc3c07-1fc5-4ab4-885b-3f083e387f21}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d6f54084-e6c0-4003-82a6-9ae9ffc4c128}">
