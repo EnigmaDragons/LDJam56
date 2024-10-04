@@ -72,3 +72,8 @@ src/LDJam56/.vscode/extensions.json
 src/LDJam56/.vscode/launch.json
 src/LDJam56/.vscode/settings.json
 src/LDJam56/fmod_editor.log
+
+# Exclude FMOD cache folder
+src/FMOD_LD56/.cache/
+src/LDJam56/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+src/LDJam56/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset
