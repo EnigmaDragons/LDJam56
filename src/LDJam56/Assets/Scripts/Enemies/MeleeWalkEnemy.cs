@@ -69,7 +69,7 @@ public class MeleeWalkEnemy : MonoBehaviour
         if (contactObject.CompareTag("Player"))
         {
             Debug.Log($"{contactType} with player!");
-            this.ExecuteAfterDelay(1f, () => Message.Publish(new PlayerIsDead()));
+            this.ExecuteAfterDelay(0.5f, () => Message.Publish(new PlayerIsDead()));
             // Add damage or other effects here
         }
     }
