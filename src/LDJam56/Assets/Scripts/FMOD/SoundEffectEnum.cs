@@ -1,6 +1,3 @@
-﻿namespace FMOD
+﻿public enum SoundEffectEnum
 {
-    public enum SoundEffectEnum
-    {
-    }
 }

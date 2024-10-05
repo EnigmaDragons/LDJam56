@@ -1,7 +1,4 @@
-﻿namespace FMOD
+﻿public class StopSoundEffect
 {
-    public class StopSoundEffect
-    {
-        public SoundEffectEnum SoundEffect { get; set; }
-    }
+    public SoundEffectEnum SoundEffect { get; set; }
 }
