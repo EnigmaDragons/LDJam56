@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8734069748356726649}
   - component: {fileID: -6890342840284571845}
   - component: {fileID: 6274684197478324546}
-  - component: {fileID: 5257230260967535078}
+  - component: {fileID: 3274681929088569225}
+  - component: {fileID: 6212430541016328428}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Untagged
@@ -124,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   detectionRange: 12
+  deathVFXPrefab: {fileID: 1879769179923522, guid: 65932b7368590234d8163da03c2055d8,
+    type: 3}
 --- !u!54 &6274684197478324546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,8 +154,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &5257230260967535078
-SphereCollider:
+--- !u!136 &3274681929088569225
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,6 +172,31 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.8
+  m_Height: 8
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &6212430541016328428
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627011638521609303}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
