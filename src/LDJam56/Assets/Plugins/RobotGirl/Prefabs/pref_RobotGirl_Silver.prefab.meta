@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 53ea94c9243fd3e438f91055ef657da0
+timeCreated: 1503092373
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8998
+  packageName: Robot Girl
+  packageVersion: 2.1
+  assetPath: Assets/[MiDaEm Assets]/RobotGirl/Prefabs/pref_RobotGirl_Silver.prefab
+  uploadId: 196579

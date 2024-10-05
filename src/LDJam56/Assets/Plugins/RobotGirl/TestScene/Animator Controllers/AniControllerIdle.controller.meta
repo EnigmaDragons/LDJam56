@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2c154fe178848af4b9e16de934200fa3
+timeCreated: 1460145417
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8998
+  packageName: Robot Girl
+  packageVersion: 2.1
+  assetPath: Assets/[MiDaEm Assets]/RobotGirl/TestScene/Animator Controllers/AniControllerIdle.controller
+  uploadId: 196579

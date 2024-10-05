@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c1c26a5f104836b4db326c16ffcd42c7
+timeCreated: 1460145745
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8998
+  packageName: Robot Girl
+  packageVersion: 2.1
+  assetPath: Assets/[MiDaEm Assets]/RobotGirl/TestScene/Animator Controllers/AniController_Run.controller
+  uploadId: 196579
