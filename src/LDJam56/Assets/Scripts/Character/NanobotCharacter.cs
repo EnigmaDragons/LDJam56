@@ -1,6 +1,5 @@
 ﻿using System;
 using KinematicCharacterController;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Character
@@ -15,9 +14,9 @@ namespace Character
         [SerializeField] private float drag = 0.3f;
 
         [SerializeField] private Animator animator;
-        [SerializeField] private AnimatorController idle;
-        [SerializeField] private AnimatorController walk;
-        [SerializeField] private AnimatorController run;
+        [SerializeField] private RuntimeAnimatorController idle;
+        [SerializeField] private RuntimeAnimatorController walk;
+        [SerializeField] private RuntimeAnimatorController run;
         private enum AnimationState
         {
             Idle,
