@@ -51,7 +51,7 @@ MonoBehaviour:
       Data2: 1173852044
       Data3: 1781832841
       Data4: -229558421
-    Path: event:/PlaceHolderMusic
+    Path: event:/Music/PlaceHolderMusic
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
