@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{94e1fbc0-a3b8-4c74-ba30-4ed129303f4c}">
+		<property name="name">
+			<value>BOT_MST</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{d2e10d25-b89b-4d8c-9704-62b7a6a7ba06}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b4661618-fbb0-46b0-a4d0-163ad88bfab5}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{fafc3c07-1fc5-4ab4-885b-3f083e387f21}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{d2e10d25-b89b-4d8c-9704-62b7a6a7ba06}">
+		<relationship name="effects">
+			<destination>{883258d0-26fb-4775-9378-1c425845615f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b4661618-fbb0-46b0-a4d0-163ad88bfab5}" />
+	<object class="MixerBusFader" id="{883258d0-26fb-4775-9378-1c425845615f}" />
+</objects>
