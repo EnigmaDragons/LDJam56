@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class IdleScript : StateMachineBehaviour
 {
-    public EnemyHandeler stats;
+    EnemyHandeler stats;
     Transform player;
     NavMeshAgent agent;
     RaycastHit hit;
@@ -37,7 +37,7 @@ public class IdleScript : StateMachineBehaviour
             }
 
         }
-        if (Vector2.Distance(animator.transform.position, player.position) <= (stats.Range + stats.AttackRange))
+        if (Vector2.Distance(animator.transform.position, player.position) <= stats.Attack2Range)
         { 
             animator.SetBool("attack2", true); 
         }
