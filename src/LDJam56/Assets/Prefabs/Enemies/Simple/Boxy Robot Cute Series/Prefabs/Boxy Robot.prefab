@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2264015228594040293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,8 +31,62 @@ Transform:
   m_Children:
   - {fileID: 3466307084733966556}
   - {fileID: 2152905372147716580}
+  - {fileID: 4297860523607311738}
   m_Father: {fileID: 4766518735470399009}
-  m_LocalEulerAnglesHint: {x: -89.91606, y: -0.15716133, z: 0}
+  m_LocalEulerAnglesHint: {x: -85.64097, y: 90.00005, z: -90.074554}
+--- !u!1 &916675357108164062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5966192445067861720}
+  - component: {fileID: 7812055001667088724}
+  m_Layer: 8
+  m_Name: AttackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5966192445067861720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916675357108164062}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.99999917, y: -0.0013000787, z: -0.00000000768341, w: -0.00000019283326}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6425556667303740046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7812055001667088724
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916675357108164062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4560665, y: 0.30673724, z: 0.39108482}
+  m_Center: {x: -0.048033178, y: 0.06742666, z: 0.019613434}
 --- !u!1 &1207164238163360171
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4488208816946800361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArmClawB1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +118,7 @@ Transform:
   m_Children:
   - {fileID: 5172082149564608542}
   m_Father: {fileID: 6425556667303740046}
-  m_LocalEulerAnglesHint: {x: 0.54865944, y: 38.9425, z: 0.100102514}
+  m_LocalEulerAnglesHint: {x: -0.011778975, y: 39.99434, z: 0.032296892}
 --- !u!1 &1215363389984924877
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4841599086415343157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +149,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2491533600601922274}
-  m_LocalEulerAnglesHint: {x: -0.0000068627155, y: -0.000014575076, z: -90}
+  m_LocalEulerAnglesHint: {x: -0.00000004741408, y: 0.0000033149106, z: 33.997974}
 --- !u!1 &1342373585780985386
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7085005450638412917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigGun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +181,38 @@ Transform:
   m_Children:
   - {fileID: 6602276879013308026}
   m_Father: {fileID: 1430564004842529505}
-  m_LocalEulerAnglesHint: {x: -0.012040007, y: 0.01215463, z: 176.35481}
+  m_LocalEulerAnglesHint: {x: -0.005778935, y: 0.0015935367, z: 9.396354}
+--- !u!1 &2764078567352529511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2858304193093693962}
+  m_Layer: 8
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2858304193093693962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764078567352529511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.126, y: -0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3273484200452985329}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4706927218991375762
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4838266230800004134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +244,7 @@ Transform:
   m_Children:
   - {fileID: 1907383506305915046}
   m_Father: {fileID: 2491533600601922274}
-  m_LocalEulerAnglesHint: {x: -0.07903362, y: 44.578278, z: 6.212352}
+  m_LocalEulerAnglesHint: {x: -0.03158195, y: 179.99065, z: -9.1648245}
 --- !u!1 &4776957626798607706
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8671749187168910244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArmClawF1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +276,7 @@ Transform:
   m_Children:
   - {fileID: 4032251374194274437}
   m_Father: {fileID: 6425556667303740046}
-  m_LocalEulerAnglesHint: {x: -0.5482292, y: -49.318676, z: 0.093450755}
+  m_LocalEulerAnglesHint: {x: 0.012075239, y: -50.370575, z: 0.025633901}
 --- !u!1 &4858836766024782152
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6808787827668531246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5172082149564608542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArmClawB2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4488208816946800361}
-  m_LocalEulerAnglesHint: {x: -0.018774107, y: -30.151066, z: -0.029777646}
+  m_LocalEulerAnglesHint: {x: -0.018778872, y: -30.151066, z: -0.034942284}
 --- !u!1 &5492633004798511513
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3273484200452985329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigGun4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,9 +367,10 @@ Transform:
   m_LocalPosition: {x: -0.19392456, y: 0, z: 9.0949465e-14}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2858304193093693962}
   m_Father: {fileID: 6602276879013308026}
-  m_LocalEulerAnglesHint: {x: -0.000021922062, y: 0.0000019688505, z: -135.8917}
+  m_LocalEulerAnglesHint: {x: 0.0007699795, y: 0.0016276223, z: -111.89823}
 --- !u!1 &5969862020234829357
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8858196693166974468}
   - component: {fileID: 8608403907443818129}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Boxy Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1907383506305915046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +510,7 @@ Transform:
   m_Children:
   - {fileID: 6425556667303740046}
   m_Father: {fileID: 4838266230800004134}
-  m_LocalEulerAnglesHint: {x: 0.000003908556, y: -0.000009634926, z: -99.19215}
+  m_LocalEulerAnglesHint: {x: -0.028882394, y: -0.015856717, z: -10.155789}
 --- !u!1 &6399931358806519415
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3466307084733966556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArmClawB1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +542,60 @@ Transform:
   m_Children:
   - {fileID: 4407101624269555034}
   m_Father: {fileID: 2264015228594040293}
-  m_LocalEulerAnglesHint: {x: -0.5410614, y: -38.953983, z: 0.09881569}
+  m_LocalEulerAnglesHint: {x: 0.011763638, y: -39.99433, z: 0.03228702}
+--- !u!1 &6409208949899479834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4297860523607311738}
+  - component: {fileID: 4406976905420489462}
+  m_Layer: 8
+  m_Name: AttackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4297860523607311738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409208949899479834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2264015228594040293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4406976905420489462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409208949899479834}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4560665, y: 0.30673724, z: 0.39108482}
+  m_Center: {x: -0.048033178, y: 0.06742666, z: 0.019613434}
 --- !u!1 &6541185437720570238
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242244586807522479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +627,7 @@ Transform:
   m_Children:
   - {fileID: 4766518735470399009}
   m_Father: {fileID: 2491533600601922274}
-  m_LocalEulerAnglesHint: {x: 0.08247944, y: -44.57794, z: 6.202113}
+  m_LocalEulerAnglesHint: {x: 7.19971e-15, y: 180, z: 1.5145098}
 --- !u!1 &6867323001135905322
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4407101624269555034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArmClawB2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +658,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3466307084733966556}
-  m_LocalEulerAnglesHint: {x: 0.018775886, y: 30.151062, z: -0.027281802}
+  m_LocalEulerAnglesHint: {x: 0.018757505, y: 30.151075, z: -0.03492882}
 --- !u!1 &6901004076982035526
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6602276879013308026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigGun3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +690,7 @@ Transform:
   m_Children:
   - {fileID: 3273484200452985329}
   m_Father: {fileID: 7085005450638412917}
-  m_LocalEulerAnglesHint: {x: -0.0126045495, y: 0.011383697, z: -114.39776}
+  m_LocalEulerAnglesHint: {x: 0.0013403612, y: -0.0013323318, z: 46.48463}
 --- !u!1 &7685301724639964351
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +704,7 @@ GameObject:
   - component: {fileID: 7350718546381177695}
   - component: {fileID: 1479715257284421142}
   - component: {fileID: 7245206318016374037}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Boxy Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,11 +786,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a6d7b675f98fb4eb2ae7b77a5273be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
   HP: 5
-  Speed: 3
+  Speed: 3.5
   Range: 7
   AttackRange: 3
   Damage: 1
+  AttackDelay: 20
+  firePoint: {fileID: 2858304193093693962}
+  projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
+  projectileSpeed: 15
+  shoot: 0
+  Collider1: {fileID: 4406976905420489462}
+  Collider2: {fileID: 7812055001667088724}
 --- !u!195 &7245206318016374037
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -683,7 +830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2491533600601922274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +855,7 @@ Transform:
   - {fileID: 4838266230800004134}
   - {fileID: 242244586807522479}
   m_Father: {fileID: 7056152840761046533}
-  m_LocalEulerAnglesHint: {x: -0.000028123655, y: -89.99985, z: -82.60782}
+  m_LocalEulerAnglesHint: {x: 0.85304016, y: -89.9999, z: -89.99314}
 --- !u!1 &8286309021551855281
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4766518735470399009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +888,7 @@ Transform:
   m_Children:
   - {fileID: 2264015228594040293}
   m_Father: {fileID: 242244586807522479}
-  m_LocalEulerAnglesHint: {x: -0.0000039163847, y: 0.00000963803, z: -99.213524}
+  m_LocalEulerAnglesHint: {x: -0.00000025481523, y: 0.000001726532, z: -27.644974}
 --- !u!1 &8331941834924336430
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 874159244758328326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArmClawF2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +919,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2152905372147716580}
-  m_LocalEulerAnglesHint: {x: -0.019935496, y: -40.867077, z: -0.020665325}
+  m_LocalEulerAnglesHint: {x: -0.019928737, y: -40.867092, z: -0.028315993}
 --- !u!1 &8559529559081409165
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430564004842529505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigGun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +951,7 @@ Transform:
   m_Children:
   - {fileID: 7085005450638412917}
   m_Father: {fileID: 2491533600601922274}
-  m_LocalEulerAnglesHint: {x: -0.000008446757, y: -0.000012476235, z: -86.09642}
+  m_LocalEulerAnglesHint: {x: -0.006667031, y: -0.0036557072, z: -31.864614}
 --- !u!1 &8783792658472972876
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4032251374194274437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArmClawF2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +982,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8671749187168910244}
-  m_LocalEulerAnglesHint: {x: 0.019935738, y: 40.867092, z: -0.023156615}
+  m_LocalEulerAnglesHint: {x: 0.01994193, y: 40.867092, z: -0.028322777}
 --- !u!1 &8858029807061297009
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +992,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6425556667303740046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigLArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,8 +1014,9 @@ Transform:
   m_Children:
   - {fileID: 4488208816946800361}
   - {fileID: 8671749187168910244}
+  - {fileID: 5966192445067861720}
   m_Father: {fileID: 1907383506305915046}
-  m_LocalEulerAnglesHint: {x: 89.91606, y: 0.15716237, z: 0}
+  m_LocalEulerAnglesHint: {x: 83.12226, y: -90.00009, z: -90.07457}
 --- !u!1 &8931852370677616364
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2152905372147716580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RigRArmClawF1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,4 +1048,4 @@ Transform:
   m_Children:
   - {fileID: 874159244758328326}
   m_Father: {fileID: 2264015228594040293}
-  m_LocalEulerAnglesHint: {x: 0.54063386, y: 49.33015, z: 0.092160955}
+  m_LocalEulerAnglesHint: {x: -0.012068218, y: 50.37057, z: 0.02563054}

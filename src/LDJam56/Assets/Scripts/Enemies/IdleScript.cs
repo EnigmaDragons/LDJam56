@@ -16,9 +16,11 @@ public class IdleScript : StateMachineBehaviour
         stats = animator.GetComponent<EnemyHandeler>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
         agent.ResetPath();
         agent.isStopped = true;
         animator.SetTrigger("idle");
+        animator.SetBool("attack2", false);
     }
 
 
@@ -26,14 +28,18 @@ public class IdleScript : StateMachineBehaviour
     {
         if (Vector2.Distance(animator.transform.position, player.position) <= stats.Range)
         {
-            
+
             Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
-            if (hit.collider != null &&  hit.collider.CompareTag("Player"))
+            if (hit.collider != null && hit.collider.CompareTag("Player"))
             {
                 animator.SetTrigger("run");
                 animator.ResetTrigger("idle");
             }
-            
+
+        }
+        if (Vector2.Distance(animator.transform.position, player.position) <= (stats.Range + stats.AttackRange))
+        { 
+            animator.SetBool("attack2", true); 
         }
     }
 
