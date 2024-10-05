@@ -4,9 +4,6 @@
 		<property name="name">
 			<value>MUSIC_MST</value>
 		</property>
-		<relationship name="modulators">
-			<destination>{06048c10-8b69-4656-b049-d0a122f4e445}</destination>
-		</relationship>
 		<relationship name="effectChain">
 			<destination>{08a1ee22-489e-4c6f-ac2f-b0a8601de234}</destination>
 		</relationship>
@@ -17,19 +14,40 @@
 			<destination>{82512513-f834-4e14-b909-ab79cae11246}</destination>
 		</relationship>
 	</object>
-	<object class="SidechainModulator" id="{06048c10-8b69-4656-b049-d0a122f4e445}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<relationship name="sidechains">
-			<destination>{2e3ec4e0-2f68-4af8-a5aa-81df82547487}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{08a1ee22-489e-4c6f-ac2f-b0a8601de234}">
 		<relationship name="effects">
+			<destination>{a9a0bf0b-7f78-4f58-8dde-d0c3a21cc7ed}</destination>
 			<destination>{227d301c-7648-47ab-9bd6-f3372523854c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5ea2ff66-28f3-4ece-be8f-04dc9c2cb161}" />
+	<object class="MultibandEqEffect" id="{a9a0bf0b-7f78-4f58-8dde-d0c3a21cc7ed}">
+		<property name="frequencyA">
+			<value>22000</value>
+		</property>
+		<property name="qualityA">
+			<value>0.686068952</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{3c161141-391a-43ff-8583-08b9b5a1ebee}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{227d301c-7648-47ab-9bd6-f3372523854c}" />
+	<object class="SidechainModulator" id="{3c161141-391a-43ff-8583-08b9b5a1ebee}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>frequencyA</value>
+		</property>
+		<property name="amount">
+			<value>-48</value>
+		</property>
+		<property name="attackTime">
+			<value>23</value>
+		</property>
+		<property name="releaseTime">
+			<value>360</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{bc08995c-517b-47d5-b936-fa38a9e9a3e7}</destination>
+		</relationship>
+	</object>
 </objects>
