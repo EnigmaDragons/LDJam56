@@ -58,3 +58,10 @@ MonoBehaviour:
       Data3: 931477683
       Data4: -957068167
     Path: event:/HeroGirl/GunFire
+  botExplodeSound:
+    Guid:
+      Data1: -1743465237
+      Data2: 1201462178
+      Data3: 160387500
+      Data4: -155651962
+    Path: event:/EnemyBot/BotDestroyed
