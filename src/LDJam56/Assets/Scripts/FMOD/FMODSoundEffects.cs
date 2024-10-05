@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     
     private EventReference GetEventReference(SoundEffectEnum soundEffect)
     {
+        Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }
     
