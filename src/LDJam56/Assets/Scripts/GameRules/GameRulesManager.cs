@@ -6,6 +6,7 @@ public class GameRulesManager : MonoBehaviour
     private void OnEnable()
     {
         Message.Subscribe<PlayerIsDead>(OnPlayerIsDead, this);
+        Message.Subscribe<PlayerReachedEndOfDungeon>(OnPlayerReachedEndOfDungeon, this);
     }
 
     private void OnDisable()
@@ -36,5 +37,11 @@ public class GameRulesManager : MonoBehaviour
         {
             Debug.LogWarning("Player not found!");
         }
+    }
+
+    private void OnPlayerReachedEndOfDungeon(PlayerReachedEndOfDungeon message)
+    {
+        Debug.Log("Player reached the end of the dungeon!");
+        Navigator.NavigateToCredits();
     }
 }
