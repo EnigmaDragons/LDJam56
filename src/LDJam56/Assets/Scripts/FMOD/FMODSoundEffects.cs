@@ -8,6 +8,7 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffect, StopSoundEffect>
 {
     [SerializeField] private EventReference missingSoundEffect;
+    [SerializeField] private EventReference shootOneSound;
 
     //Message.Publish(new PlayOneShotSoundEffect { SoundEffect = SoundEffectEnum., Source =  });
     //Message.Publish(new StartSoundEffect { SoundEffect = SoundEffectEnum., Transform = , Moving = false, Parameters = n });
@@ -15,6 +16,9 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     
     private EventReference GetEventReference(SoundEffectEnum soundEffect)
     {
+        if (soundEffect == SoundEffectEnum.ShootOne)
+            return shootOneSound;
+        
         Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }

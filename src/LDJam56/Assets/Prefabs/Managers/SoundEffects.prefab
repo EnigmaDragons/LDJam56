@@ -51,3 +51,10 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  shootOneSound:
+    Guid:
+      Data1: -2100790184
+      Data2: 1130572706
+      Data3: 931477683
+      Data4: -957068167
+    Path: event:/HeroGirl/GunFire
