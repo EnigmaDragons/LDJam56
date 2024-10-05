@@ -24,14 +24,11 @@ namespace Character
         {
             var verticalMovement = Input.GetAxis("Vertical");
             var horizontalMovement = Input.GetAxis("Horizontal");
-            Log.Info($"Current Vertical Input: {verticalMovement}");
-            Log.Info($"Current Horizontal Input: {horizontalMovement}");
             if (Math.Abs(verticalMovement) < deadZone)
                 verticalMovement = 0;
             if (Math.Abs(horizontalMovement) < deadZone)
                 horizontalMovement = 0;
             _inputDirection = Vector3.Normalize(new Vector3(horizontalMovement, 0, verticalMovement));
-            Log.Info($"Current Direction: {_inputDirection}");
         }
         
         public void UpdateRotation(ref Quaternion currentRotation, float deltaTime)
