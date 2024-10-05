@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d0bbb1108c6135d41913d5c07b65f4eb
+timeCreated: 1503096893
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8998
+  packageName: Robot Girl
+  packageVersion: 2.1
+  assetPath: Assets/[MiDaEm Assets]/RobotGirl/Prefabs/pref_RobotGirl_Wood.prefab
+  uploadId: 196579

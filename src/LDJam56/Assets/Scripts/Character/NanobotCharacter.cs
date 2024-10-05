@@ -1,5 +1,6 @@
 ﻿using System;
 using KinematicCharacterController;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Character
@@ -12,6 +13,19 @@ namespace Character
         [SerializeField] private float deadZone = 0.2f;
         [SerializeField] private float gravity = 50;
         [SerializeField] private float drag = 0.3f;
+
+        [SerializeField] private Animator animator;
+        [SerializeField] private AnimatorController idle;
+        [SerializeField] private AnimatorController walk;
+        [SerializeField] private AnimatorController run;
+        private enum AnimationState
+        {
+            Idle,
+            Walk,
+            Run
+        }
+        private AnimationState _currentAnimation = AnimationState.Idle;
+
 
         private Vector3 _inputDirection;
         
@@ -42,10 +56,17 @@ namespace Character
         {
             if (motor.GroundingStatus.IsStableOnGround)
             {
+                if (_inputDirection == Vector3.zero)
+                    SetAnimation(AnimationState.Idle);
+                else if (CurrentGameState.ReadonlyGameState.PlayerStats.Speed > 1.5f)
+                    SetAnimation(AnimationState.Run);
+                else 
+                    SetAnimation(AnimationState.Walk);
                 currentVelocity = _inputDirection * CurrentGameState.ReadonlyGameState.PlayerStats.Speed * deltaTime * baseSpeed;
             }
             else
             {
+                SetAnimation(AnimationState.Idle);
                 currentVelocity += new Vector3(0, -gravity, 0) * deltaTime;
                 currentVelocity *= (1f / (1f + (drag * deltaTime)));
             }
@@ -84,6 +105,19 @@ namespace Character
 
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
+        }
+
+        private void SetAnimation(AnimationState animation)
+        {
+            if (_currentAnimation == animation)
+                return;
+            _currentAnimation = animation;
+            if (animation == AnimationState.Idle)
+                animator.runtimeAnimatorController = idle;
+            if (animation == AnimationState.Walk)
+                animator.runtimeAnimatorController = walk;
+            if (animation == AnimationState.Run)
+                animator.runtimeAnimatorController = run;
         }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{39cea4c8-b8c5-42ef-ac6b-15772cb0322d}">
+		<property name="assetPath">
+			<value>EnemyBot/BotDestroyed/ExplodeBot/ExplodeBase-002.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.1991458333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b17995ba-1267-4961-bf5c-5da436938e74}</destination>
+		</relationship>
+	</object>
+</objects>
