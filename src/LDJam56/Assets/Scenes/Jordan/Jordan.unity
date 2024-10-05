@@ -182,7 +182,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d960e2bd28eaf3c49bab0038ae5ab809, type: 2}
+      objectReference: {fileID: 2100000, guid: 650fd8670b2a97146aaf602bf023dbc6, type: 2}
     - target: {fileID: 919132149155446097, guid: 8c94c3251d6f86a4fa1e730325c427c6,
         type: 3}
       propertyPath: m_Name
@@ -773,7 +773,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d960e2bd28eaf3c49bab0038ae5ab809, type: 2}
+      objectReference: {fileID: 2100000, guid: 650fd8670b2a97146aaf602bf023dbc6, type: 2}
     - target: {fileID: 919132149155446097, guid: 614af183efe611b4b9fab230ee75aef0,
         type: 3}
       propertyPath: m_Name
@@ -1270,7 +1270,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1296,13 +1296,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265032862}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.002640948, y: 0.7071019, z: -0.7071019, w: -0.002640948}
-  m_LocalPosition: {x: -57.737545, y: 19.9, z: 9.135205}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -62.8, y: 27.5, z: 14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 23.7, z: -156.728}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!114 &265032866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,8 +2597,8 @@ Transform:
   m_GameObject: {fileID: 764662035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.437207, y: -5.3153105, z: -1.5851594}
-  m_LocalScale: {x: 4.8596225, y: 4.8596225, z: 4.8596225}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7529,7 +7529,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d960e2bd28eaf3c49bab0038ae5ab809, type: 2}
+      objectReference: {fileID: 2100000, guid: 650fd8670b2a97146aaf602bf023dbc6, type: 2}
     - target: {fileID: 919132149155446097, guid: 84f8cd37cf8900f449bbd9ab5873203f,
         type: 3}
       propertyPath: m_Name
