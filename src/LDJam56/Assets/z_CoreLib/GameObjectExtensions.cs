@@ -5,6 +5,9 @@ using Object = UnityEngine.Object;
 
 public static class GameObjectExtensions
 {
+    public static void ExecuteAfterDelay(this MonoBehaviour o, float secondsDelay, Action a) 
+        => o.StartCoroutine(ExecuteAfterDelay(a, secondsDelay));
+    
     public static void ExecuteAfterDelay(this MonoBehaviour o, Action a, float secondsDelay) 
         => o.StartCoroutine(ExecuteAfterDelay(a, secondsDelay));
     
