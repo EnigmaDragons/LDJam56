@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Character
 {
-    public class NanobotCharacter : MonoBehaviour, ICharacterController
+    public class NanobotCharacter : OnMessage<TeleportPlayer>, ICharacterController
     {
         [SerializeField] private KinematicCharacterMotor motor;
         [SerializeField] private float baseSpeed = 200;
@@ -28,6 +28,7 @@ namespace Character
 
 
         private Vector3 _inputDirection;
+        private bool _isTeleporting = false;
         
         private void Start()
         {
@@ -54,6 +55,11 @@ namespace Character
 
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
+            if (_isTeleporting)
+            {
+                currentVelocity = Vector3.zero;
+                _isTeleporting = false;
+            }
             if (motor.GroundingStatus.IsStableOnGround)
             {
                 if (_inputDirection == Vector3.zero)
@@ -118,6 +124,12 @@ namespace Character
                 animator.runtimeAnimatorController = walk;
             if (animation == AnimationState.Run)
                 animator.runtimeAnimatorController = run;
+        }
+
+        protected override void Execute(TeleportPlayer msg)
+        {
+            motor.SetTransientPosition(msg.NewPosition);
+            _isTeleporting = true;
         }
     }
 }

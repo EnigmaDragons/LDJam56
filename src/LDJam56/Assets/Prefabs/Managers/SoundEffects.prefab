@@ -46,17 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missingSoundEffect:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 82366256
+      Data2: 1333820537
+      Data3: -1387501942
+      Data4: 260789915
+    Path: event:/HeroGirl/GunFire
   shootOneSound:
     Guid:
-      Data1: -2100790184
-      Data2: 1130572706
-      Data3: 931477683
-      Data4: -957068167
+      Data1: 82366256
+      Data2: 1333820537
+      Data3: -1387501942
+      Data4: 260789915
     Path: event:/HeroGirl/GunFire
   botExplodeSound:
     Guid:
