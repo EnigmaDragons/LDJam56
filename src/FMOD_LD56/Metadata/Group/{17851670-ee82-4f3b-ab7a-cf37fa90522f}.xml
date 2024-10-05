@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>MUSIC_MST</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{06048c10-8b69-4656-b049-d0a122f4e445}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{08a1ee22-489e-4c6f-ac2f-b0a8601de234}</destination>
 		</relationship>
@@ -12,6 +15,14 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{82512513-f834-4e14-b909-ab79cae11246}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{06048c10-8b69-4656-b049-d0a122f4e445}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{2e3ec4e0-2f68-4af8-a5aa-81df82547487}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{08a1ee22-489e-4c6f-ac2f-b0a8601de234}">

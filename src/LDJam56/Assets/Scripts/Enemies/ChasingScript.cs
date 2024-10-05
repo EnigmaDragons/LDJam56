@@ -8,6 +8,7 @@ public class ChasingScript : StateMachineBehaviour
     Transform target;
     NavMeshAgent agent;
     EnemyHandeler stats;
+    float timer;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     { 
         stats = animator.GetComponent<EnemyHandeler>();
@@ -15,10 +16,19 @@ public class ChasingScript : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = stats.Speed;
         agent.isStopped = false;
+        animator.SetBool("attack2", false);
+        animator.SetTrigger("run");
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        timer += Time.deltaTime;
+        if (timer >= stats.AttackDelay)
+        {
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", true); 
+            timer = 0f;
+        }
 
         if (!(Vector3.Distance(animator.transform.position, target.position) <= stats.Range))
         {
