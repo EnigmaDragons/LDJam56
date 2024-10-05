@@ -85,6 +85,7 @@ public class MeleeWalkEnemy : MonoBehaviour
             {
                 Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             }
+            Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotExplode, gameObject));
             gameObject.SetActive(false);
             contactObject.SetActive(false);
         }

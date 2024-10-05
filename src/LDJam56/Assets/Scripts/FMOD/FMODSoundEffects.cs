@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
@@ -8,6 +8,8 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffect, StopSoundEffect>
 {
     [SerializeField] private EventReference missingSoundEffect;
+    [SerializeField] private EventReference shootOneSound;
+    [SerializeField] private EventReference botExplodeSound;
 
     //Message.Publish(new PlayOneShotSoundEffect { SoundEffect = SoundEffectEnum., Source =  });
     //Message.Publish(new StartSoundEffect { SoundEffect = SoundEffectEnum., Transform = , Moving = false, Parameters = n });
@@ -15,6 +17,11 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     
     private EventReference GetEventReference(SoundEffectEnum soundEffect)
     {
+        if (soundEffect == SoundEffectEnum.BotExplode)
+            return botExplodeSound;
+        if (soundEffect == SoundEffectEnum.ShootOne)
+            return shootOneSound;
+        
         Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }
@@ -25,10 +32,10 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
 
     protected override void Execute(PlayOneShotSoundEffect msg)
     {
-        if (msg.Source == null)
-            RuntimeManager.PlayOneShot(GetEventReference(msg.SoundEffect));
-        else
+        if (msg.Source != null)
             RuntimeManager.PlayOneShotAttached(GetEventReference(msg.SoundEffect), msg.Source);
+        else 
+            RuntimeManager.PlayOneShot(GetEventReference(msg.SoundEffect), msg.Position);
     }
 
     protected override void Execute(StartSoundEffect msg)

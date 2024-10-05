@@ -34,6 +34,7 @@ public class BasicShoot : MonoBehaviour
             Vector3 direction = (targetPoint - firePoint.position).normalized;
 
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile));
             Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
 
             if (projectileRb != null)
