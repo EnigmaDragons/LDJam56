@@ -4,6 +4,7 @@ public class MeleeWalkEnemy : MonoBehaviour
 {
     public float moveSpeed = 3f;
     public float detectionRange = 14f;
+    public GameObject deathVFXPrefab; // New field for death VFX prefab
     
     private Transform player;
     private Rigidbody rb;
@@ -57,11 +58,13 @@ public class MeleeWalkEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         HandlePlayerContact(other.gameObject, "Triggered");
+        HandleDamagingContact(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         HandlePlayerContact(collision.gameObject, "Collided");
+        HandleDamagingContact(collision.gameObject);
     }
 
     private void HandlePlayerContact(GameObject contactObject, string contactType)
@@ -71,6 +74,19 @@ public class MeleeWalkEnemy : MonoBehaviour
             Debug.Log($"{contactType} with player!");
             this.ExecuteAfterDelay(0.5f, () => Message.Publish(new PlayerIsDead()));
             // Add damage or other effects here
+        }
+    }
+
+    private void HandleDamagingContact(GameObject contactObject)
+    {
+        if (contactObject.CompareTag("Damaging"))
+        {
+            if (deathVFXPrefab != null)
+            {
+                Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            }
+            gameObject.SetActive(false);
+            contactObject.SetActive(false);
         }
     }
 }
