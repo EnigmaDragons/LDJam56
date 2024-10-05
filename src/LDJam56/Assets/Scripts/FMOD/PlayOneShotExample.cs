@@ -26,7 +26,7 @@ public class PlayOneShotExample : MonoBehaviour
     public void PlayeBulletMoreComplex()
     {
         bulletInstance = RuntimeManager.CreateInstance(bulletSoundRef);
-        bulletInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform)); //
+        bulletInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform)); //
         RuntimeManager.AttachInstanceToGameObject(bulletInstance, transform, rb);
         bulletInstance.start();
        
