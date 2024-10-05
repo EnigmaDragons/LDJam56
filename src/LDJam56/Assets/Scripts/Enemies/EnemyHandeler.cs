@@ -7,19 +7,23 @@ using static Unity.Cinemachine.CinemachineTargetGroup;
 
 public class EnemyHandeler : MonoBehaviour
 {
+
     public Transform Target;
     public float HP;
     public float Speed;
     public float Range;
     public float AttackRange;
+    public float Attack2Range;
     public float Damage;
 
     public float AttackDelay;
+    public float Attack2Delay;
 
     public Transform firePoint;
     public GameObject projectilePrefab;
     public float projectileSpeed;
     public bool shoot = false;
+    public Transform shootTarget;
 
     public Collider Collider1;
     public Collider Collider2;
@@ -33,6 +37,8 @@ public class EnemyHandeler : MonoBehaviour
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
         Target = GameObject.FindWithTag("Player").transform;
+        if (shootTarget == null)
+            shootTarget = Target;
     }
     private void Update()
     {
@@ -67,10 +73,11 @@ public class EnemyHandeler : MonoBehaviour
     }
     public void BasicShoot()
     {
-        Transform target = GameObject.FindWithTag("Player").transform;
-        Vector3 direction = (target.position - firePoint.position).normalized;
+        
+        Vector3 direction = (shootTarget.position - firePoint.position).normalized;
 
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.EnemyShoot, gameObject));//publishing the soundeffect i want to play(need to add to SFX enum) go to fmod soundeffects script add there new stuff
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
 
         if (projectileRb != null)
