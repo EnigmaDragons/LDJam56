@@ -9,6 +9,7 @@ public class ChasingScript : StateMachineBehaviour
     NavMeshAgent agent;
     EnemyHandeler stats;
     float timer;
+    float timer2;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     { 
         stats = animator.GetComponent<EnemyHandeler>();
@@ -23,11 +24,12 @@ public class ChasingScript : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer += Time.deltaTime;
-        if (timer >= stats.AttackDelay)
+        timer2 += Time.deltaTime;
+        if (timer >= stats.Attack2Delay && Vector3.Distance(animator.transform.position, target.position) <= stats.Attack2Range)
         {
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", true); 
-            timer = 0f;
+            timer2 = 0f;
         }
 
         if (!(Vector3.Distance(animator.transform.position, target.position) <= stats.Range))
@@ -37,8 +39,9 @@ public class ChasingScript : StateMachineBehaviour
         }
         agent.SetDestination(target.position);
         agent.updateRotation = true;
-        if (Vector3.Distance(animator.transform.position, target.position) <= stats.AttackRange)
+        if (Vector3.Distance(animator.transform.position, target.position) <= stats.AttackRange && timer >= stats.AttackDelay)
         {
+            timer = 0f;
             RaycastHit hit;
             Physics.SphereCast(animator.transform.position, 0.2f, target.position - animator.transform.position, out hit, stats.AttackRange, ~(1 << animator.gameObject.layer));
             

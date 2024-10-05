@@ -365,8 +365,8 @@ MonoBehaviour:
     UpDirection: 2
     OverrideRepeatMode: 0
     RepeatMode: 0
-    OverrideAllowTileRotation: 0
-    AllowTileRotation: 0
+    OverrideAllowTileRotation: 1
+    AllowTileRotation: 1
     DebugRender: 0
     LengthMultiplier: 1
     PlaceTileTriggers: 1
@@ -378,7 +378,7 @@ MonoBehaviour:
     TilePlacementBounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 5, y: 5, z: 5}
-    OverlapThreshold: 0.01
+    OverlapThreshold: 0.0001
     Padding: 4
     DisallowOverhangs: 0
     AvoidCollisionsWithOtherDungeons: 1
