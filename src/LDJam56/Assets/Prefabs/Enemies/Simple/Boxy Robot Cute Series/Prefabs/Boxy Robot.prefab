@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 7350718546381177695}
   - component: {fileID: 1479715257284421142}
   - component: {fileID: 7245206318016374037}
+  - component: {fileID: 4659958523513431744}
   m_Layer: 8
   m_Name: Boxy Robot
   m_TagString: Untagged
@@ -824,6 +825,53 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4659958523513431744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685301724639964351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44594bba8d24b23419cd9e922f596adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMove:
+    Guid:
+      Data1: 742575937
+      Data2: 1205520879
+      Data3: 1857005205
+      Data4: -1825783213
+    Path: event:/EnemyBots/BoxyMove
+  enemyFireAtt:
+    Guid:
+      Data1: 1146384241
+      Data2: 1216157562
+      Data3: 2078932097
+      Data4: 2034646222
+    Path: event:/EnemyBots/BoxyFire
+  enemyHitAtt:
+    Guid:
+      Data1: -532058755
+      Data2: 1189859389
+      Data3: 442690997
+      Data4: 1313042793
+    Path: event:/EnemyBots/BoxyHit
+  enemyDeath:
+    Guid:
+      Data1: 1162538530
+      Data2: 1158323868
+      Data3: 1520653720
+      Data4: -1466849054
+    Path: event:/EnemyBots/BoxyDeath
+  enemyOther:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &7844219691828253295
 GameObject:
   m_ObjectHideFlags: 0
