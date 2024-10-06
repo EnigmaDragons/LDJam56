@@ -100,7 +100,7 @@
 	<object class="MixerBusEffectChain" id="{40f34c55-024c-4760-8410-901ac660d3d6}">
 		<relationship name="effects">
 			<destination>{bcc241f5-0b42-4e6c-924c-6566c2750143}</destination>
-			<destination>{5e8473f6-c052-4370-82ce-95950e80f53a}</destination>
+			<destination>{c3e498af-93db-451e-9144-ee7e0472f51a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{87189e11-6bbf-4c6d-b995-e7a3c86306c6}" />
@@ -120,13 +120,13 @@
 	</object>
 	<object class="MixerBusFader" id="{6226b7c8-d890-45b1-af14-7b85d7dd4e50}" />
 	<object class="MixerBusFader" id="{bcc241f5-0b42-4e6c-924c-6566c2750143}" />
-	<object class="ProxyEffect" id="{5e8473f6-c052-4370-82ce-95950e80f53a}">
-		<property name="inputFormat">
-			<value>0</value>
+	<object class="SpatialiserEffect" id="{c3e498af-93db-451e-9144-ee7e0472f51a}">
+		<property name="maximumDistance">
+			<value>75</value>
 		</property>
-		<relationship name="preset">
-			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
-		</relationship>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
 	</object>
 	<object class="Automator" id="{acbb0ff5-4ccb-4aa7-86d0-a321d04ba89b}">
 		<property name="nameOfPropertyBeingAutomated">

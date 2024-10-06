@@ -101,7 +101,7 @@
 		<relationship name="effects">
 			<destination>{4b5621f6-71b2-44a7-a04c-7a78137ec2a5}</destination>
 			<destination>{9c4fa5da-e1b2-44cf-85c5-fdf9eb649f72}</destination>
-			<destination>{2ed5cc75-d663-4440-b2b1-2e9b1a80e897}</destination>
+			<destination>{9d38bdac-55c1-41b0-a8cd-dc858bd44a4d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{37272d50-80df-4a74-99ae-6e84a5bb7fd4}" />
@@ -127,13 +127,16 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9c4fa5da-e1b2-44cf-85c5-fdf9eb649f72}" />
-	<object class="ProxyEffect" id="{2ed5cc75-d663-4440-b2b1-2e9b1a80e897}">
-		<property name="inputFormat">
-			<value>0</value>
+	<object class="SpatialiserEffect" id="{9d38bdac-55c1-41b0-a8cd-dc858bd44a4d}">
+		<property name="minimumDistance">
+			<value>4</value>
 		</property>
-		<relationship name="preset">
-			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
-		</relationship>
+		<property name="maximumDistance">
+			<value>150</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
 	</object>
 	<object class="RandomizerModulator" id="{08614ac9-b822-4bc1-9549-4a2ab5163db5}">
 		<property name="nameOfPropertyBeingModulated">
