@@ -59,6 +59,7 @@ public class EnemyHandeler : MonoBehaviour
         {
             animator.SetTrigger("death");
             Destroy(this.gameObject, animator.GetCurrentAnimatorClipInfo(0).Length);
+            Message.Publish(new EnemyKilled());
         }
         if(shoot && agent.updateRotation == false)
         {
@@ -114,8 +115,11 @@ public class EnemyHandeler : MonoBehaviour
     public void Damaged(int damage)
     {
         HP -= damage;
-        if(HP > 0)
+        if (HP > 0)
+        {
             animator.SetTrigger("hit");
+            Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotDamaged, transform.position));
+        }
     }
     
 }

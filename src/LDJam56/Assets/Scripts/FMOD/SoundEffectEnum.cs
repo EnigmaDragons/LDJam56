@@ -7,4 +7,5 @@
     Explode = 4,
     PlayerHappyOneLiner = 5,
     PlayerSadOneLiner = 6,
+    BotDamaged = 7,
 }
