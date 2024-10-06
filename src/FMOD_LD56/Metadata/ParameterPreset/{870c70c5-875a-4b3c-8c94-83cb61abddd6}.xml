@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{870c70c5-875a-4b3c-8c94-83cb61abddd6}">
+		<property name="name">
+			<value>FootStepLength</value>
+		</property>
+		<relationship name="folder">
+			<destination>{97bb1c89-42e8-4839-b18c-d6458ae7d891}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6f9d2caf-5db7-45a7-b8cf-2b68568f706e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6f9d2caf-5db7-45a7-b8cf-2b68568f706e}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
