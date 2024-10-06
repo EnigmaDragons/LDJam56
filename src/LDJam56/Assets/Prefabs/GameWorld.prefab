@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2691573494460180428}
   - component: {fileID: 5910923799442560130}
   - component: {fileID: 6225202913553288047}
+  - component: {fileID: 979250031970479635}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: Untagged
@@ -111,6 +112,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e01139f5a44cc7bb10e50cd32e1c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &979250031970479635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863196054124762702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b38bcfb93e4086bee6629cfdb85126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
+  allAbilities:
+  - {fileID: 11400000, guid: 3b698a913fcc1a4498441a3a2d50fbe8, type: 2}
+  - {fileID: 11400000, guid: 2b01d271dcdbaaa40b65e1f6e4df9cb8, type: 2}
+  - {fileID: 11400000, guid: 0e752c3f607427445ba63279a77990fc, type: 2}
+  - {fileID: 11400000, guid: eb57df7dc03f6734594319ffe4247abf, type: 2}
+  projectilePrefab: {fileID: 1724623990564704997, guid: fef4abaf180332442a4b64159bcbc033,
+    type: 3}
+  explodePrefab: {fileID: 5691785167026928846, guid: 1d9867b8e6047df46aa191f2c5214a85,
+    type: 3}
+  shieldPrefab: {fileID: 9149643475986250495, guid: dd93b772f2e6b0a41838f3614235bc24,
+    type: 3}
+  speedPrefab: {fileID: 8766018907316677252, guid: f60f953750ffb124e99fe00b463cdd3a,
+    type: 3}
+  player: {fileID: 842666017096827005}
 --- !u!1 &7508825379974776712
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,14 +9,13 @@ public class AbilityEngine : OnMessage<ActivateAbility>
     [SerializeField] private Explode explodePrefab;
     [SerializeField] private Shield shieldPrefab;
     [SerializeField] private Speed speedPrefab;
+    [SerializeField] private GameObject player;
 
     private Camera _mainCamera;
-    private GameObject _player;
 
     private void Start()
     {
         _mainCamera = Camera.main;
-        _player = GameObject.FindWithTag("Player");
     }
 
     protected override void Execute(ActivateAbility msg)
@@ -31,7 +30,7 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         var first = abilityData[0];
         if (first.Type == AbilityComponentType.Speed)
         {
-            var speed = Instantiate(speedPrefab, _player.transform);
+            var speed = Instantiate(speedPrefab, player.transform);
             speed.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Projectile)
@@ -41,11 +40,11 @@ public class AbilityEngine : OnMessage<ActivateAbility>
             if (groundPlane.Raycast(ray, out float rayDistance))
             {
                 Vector3 targetPoint = ray.GetPoint(rayDistance);
-                targetPoint.y = _player.transform.position.y; // Set Y to player's height
-                Vector3 direction = (targetPoint - _player.transform.position).normalized;
-                var projectile = Instantiate(projectilePrefab, _player.transform.position, Quaternion.identity,
-                    _player.transform.parent);
-                projectile.Init(_player.transform.position, direction, first, msg.Ability,
+                targetPoint.y = player.transform.position.y; // Set Y to player's height
+                Vector3 direction = (targetPoint - player.transform.position).normalized;
+                var projectile = Instantiate(projectilePrefab, player.transform.position, Quaternion.identity,
+                    player.transform.parent);
+                projectile.Init(player.transform.position, direction, first, msg.Ability,
                     abilityData.Skip(1).ToArray());
             }
             else
@@ -55,13 +54,13 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         }
         if (first.Type == AbilityComponentType.Shield)
         {
-            var shield = Instantiate(shieldPrefab, _player.transform);
+            var shield = Instantiate(shieldPrefab, player.transform);
             shield.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Explode)
         {
-            var explode = Instantiate(explodePrefab, _player.transform.position, _player.transform.rotation, _player.transform.parent);
-            explode.Init(_player.transform.position, first, msg.Ability, abilityData.Skip(1).ToArray());
+            var explode = Instantiate(explodePrefab, player.transform.position, player.transform.rotation, player.transform.parent);
+            explode.Init(player.transform.position, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
     }
 
