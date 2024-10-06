@@ -5,7 +5,7 @@
 			<value>BotMoving</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -80,9 +80,18 @@
 	<object class="MixerBusEffectChain" id="{17b704d7-a0c2-47fa-9ddb-6c3708a801ab}">
 		<relationship name="effects">
 			<destination>{a8ada0ae-89f7-460a-b3c8-d32849781e42}</destination>
+			<destination>{410774e2-caa1-47ed-b657-43c20d69e833}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ba92438e-1d3e-4dd3-a094-7b0ca8dd00ec}" />
 	<object class="MixerBusFader" id="{8a42364b-e37a-4d62-be80-125346e25e3b}" />
 	<object class="MixerBusFader" id="{a8ada0ae-89f7-460a-b3c8-d32849781e42}" />
+	<object class="ProxyEffect" id="{410774e2-caa1-47ed-b657-43c20d69e833}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
+		</relationship>
+	</object>
 </objects>

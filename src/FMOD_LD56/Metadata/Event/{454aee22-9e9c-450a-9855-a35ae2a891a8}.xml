@@ -5,7 +5,7 @@
 			<value>BoxyDeath</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -59,7 +59,11 @@
 			<destination>{e258d1a4-5c3a-4ce4-b699-6003ba1c4cc3}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{7f71412f-5ebb-4036-823d-d80eccc800ee}" />
+	<object class="EventAutomatableProperties" id="{7f71412f-5ebb-4036-823d-d80eccc800ee}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{668d92c7-37fe-4b17-9bf8-2b552760c872}" />
 	<object class="Timeline" id="{af4edcbd-e287-46a4-b49f-eb6059d7b3bd}">
 		<property name="isProxyEnabled">
@@ -96,6 +100,7 @@
 	<object class="MixerBusEffectChain" id="{72f40f87-e8ad-4409-be6d-1171beb62689}">
 		<relationship name="effects">
 			<destination>{5968d77b-86ed-4cf7-8034-8605c07b7b18}</destination>
+			<destination>{84ad4fa3-5f56-45ed-984d-ed6d6ffb3700}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f6dd6dd5-ced8-4ca7-868c-87facc9029ed}" />
@@ -115,6 +120,14 @@
 	</object>
 	<object class="MixerBusFader" id="{18ec8d11-da61-409f-b590-9e86dbc14a45}" />
 	<object class="MixerBusFader" id="{5968d77b-86ed-4cf7-8034-8605c07b7b18}" />
+	<object class="ProxyEffect" id="{84ad4fa3-5f56-45ed-984d-ed6d6ffb3700}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
+		</relationship>
+	</object>
 	<object class="Automator" id="{170fe9b0-498c-4587-b07b-a6cc5b69945c}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>volume</value>
