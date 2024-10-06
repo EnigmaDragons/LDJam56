@@ -10,6 +10,7 @@ public class BossSpawner : MonoBehaviour
     [SerializeField] private int minEnemies = 6;
     [SerializeField] private int maxEnemies = 20;
     [SerializeField] private List<GameObject> enemyPrefabs;
+    [SerializeField] BossHandeler handler;
 
     private Tile currentTile;
     private NavMeshSurface navMeshSurface;
@@ -29,9 +30,10 @@ public class BossSpawner : MonoBehaviour
             Debug.LogError("NavMeshSurface not found in the scene.");
             return;
         }
+        handler.setSpawner(this);
     }
 
-    private void SpawnEnemies()
+    public void SpawnEnemies()
     {
         int enemyCount = Random.Range(minEnemies, maxEnemies + 1);
 
