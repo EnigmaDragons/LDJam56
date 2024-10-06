@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 1479715257284421142}
   - component: {fileID: 7245206318016374037}
   - component: {fileID: 4659958523513431744}
+  - component: {fileID: 4326041008989153757}
   m_Layer: 8
   m_Name: Boxy Robot
   m_TagString: Untagged
@@ -794,7 +795,7 @@ MonoBehaviour:
   AttackRange: 3
   Attack2Range: 10
   Damage: 1
-  AttackDelay: 20
+  AttackDelay: 0.5
   Attack2Delay: 20
   firePoint: {fileID: 2858304193093693962}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
@@ -872,6 +873,19 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+--- !u!114 &4326041008989153757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685301724639964351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2866b6a17cb148819de10d125e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 0
 --- !u!1 &7844219691828253295
 GameObject:
   m_ObjectHideFlags: 0

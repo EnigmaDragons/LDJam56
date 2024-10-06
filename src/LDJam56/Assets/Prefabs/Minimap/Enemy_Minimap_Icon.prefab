@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3469792049255125588}
   - component: {fileID: 2782441186360698010}
+  - component: {fileID: 6846006792768188462}
   m_Layer: 9
   m_Name: Enemy_Minimap_Icon
   m_TagString: Untagged
@@ -86,3 +87,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6846006792768188462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610827635347115546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2866b6a17cb148819de10d125e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 0
