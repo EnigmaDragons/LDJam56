@@ -105,15 +105,10 @@ public class EnemyHandeler : MonoBehaviour
         agent.updateRotation = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Damaged(int damage)
     {
-        if (collision.gameObject.CompareTag("Damaging"))
-        {
-            HP--;//later we can change to custom
-            if(HP > 0)
+        HP -= damage;
+        if(HP > 0)
             animator.SetTrigger("hit");
-            
-        }
     }
-
 }

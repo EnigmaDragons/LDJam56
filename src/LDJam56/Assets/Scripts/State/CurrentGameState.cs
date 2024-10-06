@@ -25,4 +25,12 @@ public static class CurrentGameState
         gameState = apply(gameState);
         Message.Publish(new GameStateChanged(gameState));
     }
+
+    public static void DamagePlayer(bool unpreventable)
+    {
+        if (!unpreventable && ReadonlyGameState.PlayerStats.IsInvincible.AnyNonAlloc())
+            return;
+        UpdateState(s => s.PlayerStats.CurrentLife = Math.Max(0, s.PlayerStats.CurrentLife - 1));
+        Message.Publish(new PlayerDamaged());
+    }
 }

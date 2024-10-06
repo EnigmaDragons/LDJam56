@@ -2,5 +2,7 @@ using UnityEngine;
 
 public sealed class InitCurrentGameState : MonoBehaviour
 {
-    void Awake() => CurrentGameState.Init();
+    [SerializeField] private GameplayRules rules;
+    
+    void Awake() => CurrentGameState.Init(new GameState { PlayerStats = new PlayerStats { MaxLife = rules.PlayerHealth, CurrentLife = rules.PlayerHealth }});
 }
