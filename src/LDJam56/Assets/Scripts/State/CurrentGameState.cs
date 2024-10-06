@@ -31,7 +31,10 @@ public static class CurrentGameState
         if (!unpreventable && ReadonlyGameState.PlayerStats.IsInvincible.AnyNonAlloc())
             return;
         UpdateState(s => s.PlayerStats.CurrentLife = Math.Max(0, s.PlayerStats.CurrentLife - 1));
-        Message.Publish(new PlayerDamaged());
+        if (gameState.PlayerStats.CurrentLife == 0)
+            Message.Publish(new PlayerIsDead());
+        else 
+            Message.Publish(new PlayerDamaged());
     }
 
     public static void LowerCooldowns(float time)
