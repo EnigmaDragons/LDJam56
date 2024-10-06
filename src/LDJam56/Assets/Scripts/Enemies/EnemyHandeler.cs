@@ -111,4 +111,5 @@ public class EnemyHandeler : MonoBehaviour
         if(HP > 0)
             animator.SetTrigger("hit");
     }
+    
 }
