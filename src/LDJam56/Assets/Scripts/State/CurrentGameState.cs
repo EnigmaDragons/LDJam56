@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class CurrentGameState
 {
-    [SerializeField] private static GameState gameState;
+    [SerializeField] private static GameState gameState = new GameState();
 
     public static GameState ReadonlyGameState => gameState;
     public static void Init() => gameState = new GameState();

@@ -4,6 +4,6 @@
 public class PlayerStats
 {
     public float Speed = 1;
-    public float MaxLife = 5;
-    public float CurrentLife = 5;
+    public int MaxLife = 5;
+    public int CurrentLife = 5;
 }
