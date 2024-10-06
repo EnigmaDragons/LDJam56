@@ -75,15 +75,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8ccc7fe270601748874b9a0d6ce6f8c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6143241599823314196}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8ccc7fe270601748874b9a0d6ce6f8c,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 630988060617331525}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8ccc7fe270601748874b9a0d6ce6f8c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7119005542775281677}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8ccc7fe270601748874b9a0d6ce6f8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6609458415578452806}
   m_SourcePrefab: {fileID: 100100000, guid: a8ccc7fe270601748874b9a0d6ce6f8c, type: 3}
 --- !u!1 &6894279463226448931 stripped
 GameObject:
@@ -91,28 +91,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6011196598219907442}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &6143241599823314196
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6894279463226448931}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4043430156431230403, guid: a8ccc7fe270601748874b9a0d6ce6f8c, type: 3}
 --- !u!208 &630988060617331525
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -156,3 +134,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6609458415578452806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894279463226448931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 42.657665, y: 50, z: 42.65767}
+  m_Center: {x: 0, y: 6.595104, z: 0}

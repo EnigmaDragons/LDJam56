@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f518c879-2e68-495a-944c-bbac2277d7ab}">
+		<property name="name">
+			<value>music fadeout</value>
+		</property>
+		<relationship name="folder">
+			<destination>{97bb1c89-42e8-4839-b18c-d6458ae7d891}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{beb98419-99d5-4ab0-87dc-b4deccdfca93}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{beb98419-99d5-4ab0-87dc-b4deccdfca93}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.38999998569488525</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
