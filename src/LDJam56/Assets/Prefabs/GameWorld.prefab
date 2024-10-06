@@ -139,7 +139,7 @@ MonoBehaviour:
   speedPrefab: {fileID: 8766018907316677252, guid: f60f953750ffb124e99fe00b463cdd3a,
     type: 3}
   player: {fileID: 842666017096827005}
-  forwardOffset: 0.5
+  forwardOffset: 0.3
 --- !u!1 &7508825379974776712
 GameObject:
   m_ObjectHideFlags: 0

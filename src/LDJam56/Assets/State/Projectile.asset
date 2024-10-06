@@ -17,6 +17,6 @@ MonoBehaviour:
   Description: 
   Duration: 0
   Amount: 1
-  Speed: 10
+  Speed: 20
   Size: 0
-  Range: 7
+  Range: 9

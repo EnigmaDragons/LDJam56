@@ -4,11 +4,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private GameObject hitPrefab;
+    [SerializeField] private Collider collider;
+    [SerializeField] private ParticleSystem particleSystem;
 
     private Vector3 _target;
     private Action _onHit;
     private Action<EnemyHandeler> _onEnemyHit;
     private float _speed;
+    private float _timeTilDeath = 0;
     
     public void Init(Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
@@ -20,12 +23,16 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position == _target)
+        if (_timeTilDeath > 0)
         {
-            Destroy(gameObject);
-            return;
+            _timeTilDeath -= Time.deltaTime;
+            if (_timeTilDeath <= 0)
+                Destroy(gameObject);
         }
-        transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+        else if (transform.position == _target)
+            BeginCleanup();
+        else
+            transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,8 +41,15 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
             _onEnemyHit(enemy);
         _onHit();
+        BeginCleanup();
         Instantiate(hitPrefab, transform.position, transform.rotation, transform.parent);
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ProjectileHit, other.gameObject));
-        Destroy(gameObject);
+    }
+
+    private void BeginCleanup()
+    {
+        _timeTilDeath = 1;
+        collider.enabled = false;
+        particleSystem.Stop();
     }
 }

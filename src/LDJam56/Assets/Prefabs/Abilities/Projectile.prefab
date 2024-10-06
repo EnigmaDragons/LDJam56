@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8086019328522092856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPrefab: {fileID: 153006, guid: 04821ded1c24c054c8484440cf8d1e3d, type: 3}
+  collider: {fileID: 7937802559226125424}
+  particleSystem: {fileID: 5330094985445758583}
 --- !u!65 &7937802559226125424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -422,6 +424,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d72f143084ecac49af7233a90bbd6c5, type: 3}
+--- !u!198 &5330094985445758583 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19882786, guid: 3d72f143084ecac49af7233a90bbd6c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5330094985464952149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5330094985465069163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445246, guid: 3d72f143084ecac49af7233a90bbd6c5,
