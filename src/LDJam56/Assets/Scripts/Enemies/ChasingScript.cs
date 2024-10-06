@@ -25,7 +25,7 @@ public class ChasingScript : StateMachineBehaviour
     {
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
-        if (timer >= stats.Attack2Delay && Mathf.Abs(Vector3.Distance(animator.transform.position, target.position)) < stats.Attack2Range)
+        if (timer >= stats.Attack2Delay && Vector3.Distance(animator.transform.position, target.position) < stats.Attack2Range)
         {
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", true); 
@@ -39,7 +39,7 @@ public class ChasingScript : StateMachineBehaviour
         }
         agent.SetDestination(target.position);
         agent.updateRotation = true;
-        if (Mathf.Abs(Vector3.Distance(animator.transform.position, target.position)) < stats.AttackRange && timer >= stats.AttackDelay)
+        if (Vector3.Distance(animator.transform.position, target.position) < stats.AttackRange && timer >= stats.AttackDelay)
         {
             timer = 0f;
             RaycastHit hit;

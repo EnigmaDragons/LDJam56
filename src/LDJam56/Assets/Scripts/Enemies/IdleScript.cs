@@ -26,7 +26,7 @@ public class IdleScript : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Mathf.Abs(Vector2.Distance(animator.transform.position, player.position)) < stats.Range)
+        if (Vector3.Distance(animator.transform.position, player.position) < stats.Range)
         {
 
             Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
@@ -37,7 +37,7 @@ public class IdleScript : StateMachineBehaviour
             }
 
         }
-        if (Mathf.Abs(Vector2.Distance(animator.transform.position, player.position)) < stats.Attack2Range)
+        if (Vector3.Distance(animator.transform.position, player.position) < stats.Attack2Range)
         { 
             animator.SetBool("attack2", true); 
         }
