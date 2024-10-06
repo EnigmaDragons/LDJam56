@@ -36,7 +36,7 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         if (first.Type == AbilityComponentType.Projectile)
         {
             var mousePosition = Input.mousePosition;
-            mousePosition.y = 0;
+            mousePosition.z = 0;
             mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
             mousePosition.y = 0;
             var direction = (mousePosition - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
