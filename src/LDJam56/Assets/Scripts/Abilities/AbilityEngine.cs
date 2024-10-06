@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public class AbilityEngine : OnMessage<ActivateAbility>
+public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
 {
     [SerializeField] private GameplayRules rules;
     [SerializeField] private AbilityData[] allAbilities;
@@ -11,14 +11,9 @@ public class AbilityEngine : OnMessage<ActivateAbility>
     [SerializeField] private Speed speedPrefab;
     [SerializeField] private GameObject player;
     [SerializeField] private float forwardOffset;
-
-    private Camera _mainCamera;
-
-    private void Start()
-    {
-        _mainCamera = Camera.main;
-    }
-
+    
+    private Vector3 _direction;
+    
     protected override void Execute(ActivateAbility msg)
     {
         var ability = GetAbilityInst(msg.Ability);
@@ -36,17 +31,9 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         }
         if (first.Type == AbilityComponentType.Projectile)
         {
-            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity))
-            {
-                var position = hitPoint.point;
-                position.y = 0;
-                var direction = (position - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
-                var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + direction * forwardOffset;
-                var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(direction), player.transform.parent);
-                projectile.Init(startingPosition, direction, first, msg.Ability,
-                    abilityData.Skip(1).ToArray());   
-            }
+            var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + _direction * forwardOffset;
+            var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
+            projectile.Init(startingPosition, _direction, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Shield)
         {
@@ -59,6 +46,11 @@ public class AbilityEngine : OnMessage<ActivateAbility>
             var explode = Instantiate(explodePrefab, startingPosition, player.transform.rotation, player.transform.parent);
             explode.Init(true, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
+    }
+
+    protected override void Execute(TargetingUpdated msg)
+    {
+        _direction = msg.Direction;
     }
 
     private Ability GetAbilityInst(AbilityType type)

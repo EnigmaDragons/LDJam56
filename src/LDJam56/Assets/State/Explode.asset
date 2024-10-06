@@ -16,6 +16,6 @@ MonoBehaviour:
   Primary: 2
   DisplayName: Explode()
   Duration: 0
-  Amount: 5
+  Amount: 10
   Speed: 0
   Range: 0

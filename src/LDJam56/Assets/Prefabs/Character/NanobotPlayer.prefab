@@ -130,6 +130,9 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: 2c154fe178848af4b9e16de934200fa3, type: 2}
   walk: {fileID: 9100000, guid: 789950d5cc72f1349b7dbfbba5b34a74, type: 2}
   run: {fileID: 9100000, guid: c1c26a5f104836b4db326c16ffcd42c7, type: 2}
+  Spine1: {fileID: 8689154870780305984}
+  Spine2: {fileID: 8689154870780140344}
+  Spine3: {fileID: 8689154870780164934}
 --- !u!54 &1778309621109886054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -676,6 +679,24 @@ PrefabInstance:
 --- !u!4 &8689154870780080288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429254, guid: 4b977009acec6374e83d199113a4035e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8689154870780181606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8689154870780140344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108382, guid: 4b977009acec6374e83d199113a4035e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8689154870780181606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8689154870780164934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 116512, guid: 4b977009acec6374e83d199113a4035e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8689154870780181606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8689154870780305984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138790, guid: 4b977009acec6374e83d199113a4035e,
     type: 3}
   m_PrefabInstance: {fileID: 8689154870780181606}
   m_PrefabAsset: {fileID: 0}

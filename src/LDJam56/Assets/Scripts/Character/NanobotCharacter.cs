@@ -18,6 +18,7 @@ public class NanobotCharacter : OnMessage<TeleportPlayer, PlayerDamaged>, IChara
     [SerializeField] private RuntimeAnimatorController idle;
     [SerializeField] private RuntimeAnimatorController walk;
     [SerializeField] private RuntimeAnimatorController run;
+    
     private enum AnimationState
     {
         Idle,
@@ -25,8 +26,7 @@ public class NanobotCharacter : OnMessage<TeleportPlayer, PlayerDamaged>, IChara
         Run
     }
     private AnimationState _currentAnimation = AnimationState.Idle;
-
-
+    
     private Vector3 _inputDirection;
     private bool _isTeleporting = false;
     
