@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{812d816b-62be-4a7d-8d25-8e539642df8a}">
+	<object class="AudioFile" id="{8fd53683-5f52-4712-9652-7bb6d6dab0bd}">
 		<property name="assetPath">
-			<value>HeroGirl/DX/HeroGirl_DX_09_New.wav</value>
+			<value>HeroGirl/HeroShield.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>2.8706874999999998</value>
+			<value>1.5902499999999999</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{b17995ba-1267-4961-bf5c-5da436938e74}</destination>
