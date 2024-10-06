@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5f5c1be3-ba42-4f0c-ad48-c23431d0e3ab}">
+		<property name="name">
+			<value>boss fade to credits</value>
+		</property>
+		<relationship name="folder">
+			<destination>{97bb1c89-42e8-4839-b18c-d6458ae7d891}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4f41481d-803f-43e5-964b-36fb78a8feed}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4f41481d-803f-43e5-964b-36fb78a8feed}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
