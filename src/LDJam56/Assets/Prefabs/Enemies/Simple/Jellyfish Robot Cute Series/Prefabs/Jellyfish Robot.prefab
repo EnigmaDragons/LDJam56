@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5815960171381405895}
   - component: {fileID: 7656457835378106980}
   - component: {fileID: 6739179931065256677}
+  - component: {fileID: -4925913076214545121}
   m_Layer: 0
   m_Name: Jellyfish Robot
   m_TagString: Untagged
@@ -165,6 +166,53 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-4925913076214545121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871558523169533350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44594bba8d24b23419cd9e922f596adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMove:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  enemyFireAtt:
+    Guid:
+      Data1: -447639641
+      Data2: 1099934331
+      Data3: 2103023792
+      Data4: -578196529
+    Path: event:/EnemyBots/JellySpinnerAttack
+  enemyHitAtt:
+    Guid:
+      Data1: -1009944314
+      Data2: 1217986723
+      Data3: -1902592884
+      Data4: -95780178
+    Path: event:/EnemyBots/JellyLoopAttack
+  enemyDeath:
+    Guid:
+      Data1: 1162538530
+      Data2: 1158323868
+      Data3: 1520653720
+      Data4: -1466849054
+    Path: event:/EnemyBots/BoxyDeath
+  enemyOther:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1459531630289425545
 GameObject:
   m_ObjectHideFlags: 0
