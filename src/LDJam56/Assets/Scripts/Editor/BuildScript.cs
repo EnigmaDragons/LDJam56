@@ -1,5 +1,6 @@
 using System.Diagnostics; // For running external processes
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -188,22 +189,10 @@ public class BuildScript
         UnityEngine.Debug.Log($"Windows build path {buildPathWindows}");
     }
 
-    // Dynamically get all scene files from the Assets/Scenes folder
+    // Dynamically get all scene files from the Build Settings
     private static string[] GetScenes()
-    {
-        // Path to the Scenes folder
-        string scenesFolder = Path.Combine(Application.dataPath, "Scenes", "Final-DontTOUCH");
-
-        // Get all files ending with .unity in the Scenes folder
-        string[] sceneFiles = Directory.GetFiles(scenesFolder, "*.unity", SearchOption.TopDirectoryOnly);
-
-        // Convert the absolute file paths to relative Unity paths (from Assets folder)
-        for (int i = 0; i < sceneFiles.Length; i++)
-        {
-            // Convert file path from full path to a relative Unity path
-            sceneFiles[i] = "Assets" + sceneFiles[i].Replace(Application.dataPath, "").Replace("\\", "/");
-        }
-
-        return sceneFiles;
-    }
+        => EditorBuildSettings.scenes
+            .Where(scene => scene.enabled) // Only include enabled scenes
+            .Select(scene => scene.path)   // Get the path for each scene
+            .ToArray();                    // Convert to an array
 }
