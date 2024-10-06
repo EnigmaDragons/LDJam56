@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics; // For running external processes
 using System.IO;
 using System.Linq;
@@ -49,12 +50,12 @@ public class BuildScript
     private static bool ValidateBuild()
         => !EditorApplication.isPlaying; // Disable during play mode
 
-    [MenuItem("File/Set FMOD Install Path")]
+    [MenuItem("File/Set FMOD Tool Path")]
     public static void SetFmodExecutablePath()
     {
         // Prompt the user to select the FMOD install directory
         string path = EditorUtility.OpenFolderPanel(
-            "Select FMOD Install Directory",
+            "Select FMOD Tool Directory",
             Directory.GetParent(FmodExecutablePath).FullName,
             Path.GetFileName(FmodExecutablePath));
 
@@ -98,6 +99,9 @@ public class BuildScript
         // Path to your FMOD project (relative to project root)
         string fullFmodProjectPath = Path.Combine(solutionPath, FmodProjectPath);
 
+        UnityEngine.Debug.Log($"fullFmodExecutable: {fullFmodExecutable}");
+        UnityEngine.Debug.Log($"fullFmodProjectPath: {fullFmodProjectPath}");
+
         // Ensure FMOD Studio executable exists
         if (!File.Exists(fullFmodExecutable))
         {
@@ -119,6 +123,8 @@ public class BuildScript
             {
                 FileName = fullFmodExecutable,
                 Arguments = $"-build {fullFmodProjectPath}", // FMOD command-line build argument
+                // https://fmod.com/docs/2.02/unreal/user-guide.html#commandlet
+                // Arguments = $"{fullFmodProjectPath} -run=FMODGenerateAssets -rebuild",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
@@ -134,8 +140,8 @@ public class BuildScript
         string output = fmodProcess.StandardOutput.ReadToEnd();
         string error = fmodProcess.StandardError.ReadToEnd();
 
-        // Wait for FMOD process to exit, with a 60-second timeout
-        bool exited = fmodProcess.WaitForExit(60000); // Wait for 60 seconds
+        // Wait for FMOD process to exit
+        bool exited = fmodProcess.WaitForExit(120000); // Wait for 2 minutes
         if (!exited)
         {
             UnityEngine.Debug.LogError("FMOD build timed out.");
@@ -143,6 +149,17 @@ public class BuildScript
         }
         var statusfmod = fmodProcess.ExitCode == 0 ? "successfully" : $"with errors: {error}";
         UnityEngine.Debug.Log($"FMOD build completed {statusfmod}");
+
+        try
+        {
+            UnityEngine.Debug.Log("Refreshing FMOD banks...");
+            FMODUnity.EventManager.RefreshBanks();
+            UnityEngine.Debug.Log("FMOD banks refreshed successfully.");
+        }
+        catch (Exception ex)
+        {
+            UnityEngine.Debug.LogError($"Failed to refresh FMOD banks: {ex.Message}");
+        }
 
         // Always log FMOD build output
         UnityEngine.Debug.Log($"FMOD build output: {output}");
@@ -172,6 +189,7 @@ public class BuildScript
     private static void BuildWindows(string buildPathWindows)
     {
         if (!Directory.Exists(buildPathWindows)) Directory.CreateDirectory(buildPathWindows);
+
         // Windows Build
         BuildPlayerOptions buildPlayerOptionsWindows = new BuildPlayerOptions
         {
