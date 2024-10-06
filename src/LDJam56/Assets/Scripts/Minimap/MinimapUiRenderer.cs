@@ -29,7 +29,7 @@ public class MinimapUiRenderer : MonoBehaviour
     private void Start()
     {
         minimapRect = GetComponent<RectTransform>();
-        minimapRadius = minimapRect.rect.width / minimapRect.localScale.x * 0.5f;
+        minimapRadius = minimapRect.rect.width / minimapRect.localScale.x * 0.48f;
     }
 
     private Image CreateImage(Sprite sprite, bool isMedium = false)
@@ -171,16 +171,9 @@ public class MinimapUiRenderer : MonoBehaviour
             }
 
             Vector2 objectivePos = GetScaledPosition(objective.position);
-            if (IsWithinRadius(objectivePos))
-            {
-                objectiveIcon.rectTransform.anchoredPosition = objectivePos;
-                objectiveIcon.gameObject.SetActive(true);
-            }
-            else
-            {
-                objectiveIcon.rectTransform.anchoredPosition = ClampToCircle(objectivePos);
-                objectiveIcon.gameObject.SetActive(true);
-            }
+            Vector2 clampedPos = ClampToCircle(objectivePos);
+            objectiveIcon.rectTransform.anchoredPosition = clampedPos;
+            objectiveIcon.gameObject.SetActive(true);
         }
 
         foreach (var objective in objectivesToRemove)
@@ -194,9 +187,10 @@ public class MinimapUiRenderer : MonoBehaviour
         {
             if (!activeObjectiveIcons.ContainsKey(objective))
             {
-                Image objectiveIcon = CreateImage(objectiveSprite);
+                Image objectiveIcon = CreateImage(objectiveSprite, true);
                 Vector2 objectivePos = GetScaledPosition(objective.position);
-                objectiveIcon.rectTransform.anchoredPosition = IsWithinRadius(objectivePos) ? objectivePos : ClampToCircle(objectivePos);
+                Vector2 clampedPos = ClampToCircle(objectivePos);
+                objectiveIcon.rectTransform.anchoredPosition = clampedPos;
                 objectiveIcon.gameObject.SetActive(true);
                 activeObjectiveIcons.Add(objective, objectiveIcon);
             }
