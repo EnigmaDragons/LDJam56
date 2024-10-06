@@ -10,7 +10,8 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     [SerializeField] private EventReference missingSoundEffect;
     [SerializeField] private EventReference shootOneSound;
     [SerializeField] private EventReference botExplodeSound;
-    [SerializeField] private EventReference enemyShootSoundEffet;
+    [SerializeField] private EventReference enemyShootSoundEffect;
+    [SerializeField] private EventReference projectileHit;
 
     //Message.Publish(new PlayOneShotSoundEffect { SoundEffect = SoundEffectEnum., Source =  });
     //Message.Publish(new StartSoundEffect { SoundEffect = SoundEffectEnum., Transform = , Moving = false, Parameters = n });
@@ -23,7 +24,9 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
         if (soundEffect == SoundEffectEnum.ShootOne)
             return shootOneSound;
         if (soundEffect == SoundEffectEnum.EnemyShoot)
-            return enemyShootSoundEffet;
+            return enemyShootSoundEffect;
+        if (soundEffect == SoundEffectEnum.ProjectileHit)
+            return projectileHit;
         Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }

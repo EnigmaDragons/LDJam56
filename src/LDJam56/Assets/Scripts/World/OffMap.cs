@@ -32,8 +32,7 @@ public class OffMap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        CurrentGameState.UpdateState(s => s.PlayerStats.CurrentLife = Math.Max(0, s.PlayerStats.CurrentLife - 1));
-        Message.Publish(new PlayerDamaged());
+        CurrentGameState.DamagePlayer(true);
         var location = _previousPlayerLocations.Dequeue();
         _previousPlayerLocations = new Queue<Vector3>();
         _previousPlayerLocations.Enqueue(location);

@@ -188,6 +188,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppManagers
       objectReference: {fileID: 0}
+    - target: {fileID: 7433138369843093298, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: rules
+      value: 
+      objectReference: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

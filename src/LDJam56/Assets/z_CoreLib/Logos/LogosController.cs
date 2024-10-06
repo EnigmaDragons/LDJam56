@@ -26,9 +26,8 @@ public class LogosController : MonoBehaviour
         BeginAnim();
     }
 
-    private bool AnyRelevantButtonPress() => Input.GetButton("Fire1") || Input.GetButton("Cancel") ||
-                                             Input.GetButton("Submit") || Input.GetButton("Jump") ||
-                                             Input.GetButton("Fire2");
+    private bool AnyRelevantButtonPress() => Input.GetButton("Attack") || Input.GetButton("Mobility") ||
+                                             Input.GetButton("Special") || Input.GetButton("Defense");
     private bool AnyMouseButtonDown() => Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1);
     
     private void FixedUpdate()
