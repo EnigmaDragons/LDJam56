@@ -8,6 +8,6 @@ public class DamagePlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        CurrentGameState.DamagePlayer(true);
+        CurrentGameState.DamagePlayer(false);
     }
 }
