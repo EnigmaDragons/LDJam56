@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5966192445067861720}
   - component: {fileID: 7812055001667088724}
+  - component: {fileID: 2747875208767121907}
   m_Layer: 8
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -87,6 +88,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4560665, y: 0.30673724, z: 0.39108482}
   m_Center: {x: -0.048033178, y: 0.06742666, z: 0.019613434}
+--- !u!114 &2747875208767121907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916675357108164062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9f4603c11342c49b8136d5820a105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1207164238163360171
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4297860523607311738}
   - component: {fileID: 4406976905420489462}
+  - component: {fileID: 950274559641666290}
   m_Layer: 8
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -596,6 +610,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4560665, y: 0.30673724, z: 0.39108482}
   m_Center: {x: -0.048033178, y: 0.06742666, z: 0.019613434}
+--- !u!114 &950274559641666290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409208949899479834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9f4603c11342c49b8136d5820a105a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6541185437720570238
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +938,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &7844219691828253295
 GameObject:

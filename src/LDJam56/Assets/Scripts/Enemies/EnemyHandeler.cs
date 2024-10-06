@@ -32,12 +32,14 @@ public class EnemyHandeler : MonoBehaviour
 
     NavMeshAgent agent;
     Animator animator;
+    Rigidbody rb;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
+         rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -60,9 +62,13 @@ public class EnemyHandeler : MonoBehaviour
         }
         if(shoot && agent.updateRotation == false)
         {
+            
+
             Vector3 direction = Target.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
+            Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, 5 * Time.deltaTime);
+
+            rb.MoveRotation(smoothedRotation);
         }
 
     }
