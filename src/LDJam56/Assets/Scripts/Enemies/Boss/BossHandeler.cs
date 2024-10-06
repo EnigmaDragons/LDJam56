@@ -29,6 +29,7 @@ public class BossHandeler : MonoBehaviour
 
     NavMeshAgent agent;
     Animator animator;
+    BossSpawner spawner;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -75,7 +76,12 @@ public class BossHandeler : MonoBehaviour
     }
     public void Spawning()
     {
-        //use the pinned script and some help from silas create a new script from hes and modifiy it
+        if (spawner != null)
+            spawner.SpawnEnemies();//use the pinned script and some help from silas create a new script from hes and modifiy it
+    }
+    public void setSpawner(BossSpawner bossSpwaner)
+    {
+        spawner = bossSpwaner;
     }
 
     public void Damaged(int damage)
