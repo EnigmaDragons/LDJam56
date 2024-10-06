@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits:
   - {fileID: 11400000, guid: 120e5b277ce9dd244b785a2f16009e7a, type: 2}
+  - {fileID: 11400000, guid: 643750d473822074caa8dda4129a39d2, type: 2}
+  - {fileID: 11400000, guid: 36e6ccb15b8d8104c96bcf2e2dac4afd, type: 2}
+  - {fileID: 11400000, guid: fa1519593d8fdce4f8d4301205c0126b, type: 2}
+  - {fileID: 11400000, guid: e2d3593a31b326c4eb053f4815e029a5, type: 2}
+  - {fileID: 11400000, guid: 1bc33b75e3655f9479b0ddb985d22212, type: 2}
+  - {fileID: 11400000, guid: 42ee665fb3c97184d9480ae995a24362, type: 2}
+  - {fileID: 11400000, guid: 2166e45a3619f7649a9552e43f71f085, type: 2}
+  - {fileID: 11400000, guid: 1867e808de6d8b940968bd4f3536e4c1, type: 2}
