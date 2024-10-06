@@ -135,7 +135,7 @@ MonoBehaviour:
   Attack2Range: 2
   Damage: 1
   AttackDelay: 3
-  Attack2Delay: 0.5
+  Attack2Delay: 1
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
   projectileSpeed: 8

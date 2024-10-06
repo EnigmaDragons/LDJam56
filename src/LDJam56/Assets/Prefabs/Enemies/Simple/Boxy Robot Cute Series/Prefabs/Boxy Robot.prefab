@@ -794,10 +794,12 @@ MonoBehaviour:
   Attack2Range: 10
   Damage: 1
   AttackDelay: 20
+  Attack2Delay: 20
   firePoint: {fileID: 2858304193093693962}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
   projectileSpeed: 15
   shoot: 0
+  shootTarget: {fileID: 0}
   Collider1: {fileID: 4406976905420489462}
   Collider2: {fileID: 7812055001667088724}
 --- !u!195 &7245206318016374037
