@@ -2,51 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static Unity.Cinemachine.CinemachineTargetGroup;
-using static UnityEngine.GraphicsBuffer;
 
-public class IdleScript : StateMachineBehaviour
+public class BossIdle : StateMachineBehaviour
 {
-    EnemyHandeler stats;
-    Transform player;
+    BossHandeler handeler;
     NavMeshAgent agent;
-    RaycastHit hit;
+    float timer;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        stats = animator.GetComponent<EnemyHandeler>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        timer = 0f;
+        handeler = animator.GetComponent<BossHandeler>();
         agent = animator.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.ResetPath();
         agent.isStopped = true;
         animator.SetTrigger("idle");
         animator.SetBool("attack2", false);
+        handeler.EndAttackBasic1();
     }
 
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Mathf.Abs(Vector2.Distance(animator.transform.position, player.position)) < stats.Range)
+        timer += Time.deltaTime;
+        if (timer >=  handeler.SpawningDelay)
         {
-
-            Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
-            {
+            timer = 0f;
+            animator.ResetTrigger("idle");
+            if (Random.Range(1, 6) < 4 )
                 animator.SetTrigger("run");
-                animator.ResetTrigger("idle");
-            }
-
-        }
-        if (Mathf.Abs(Vector2.Distance(animator.transform.position, player.position)) < stats.Attack2Range)
-        { 
-            animator.SetBool("attack2", true); 
+            else
+                animator.SetTrigger("spawn");
+            
+            
         }
     }
 
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        animator.ResetTrigger("idle");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
