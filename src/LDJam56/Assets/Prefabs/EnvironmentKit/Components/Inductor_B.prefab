@@ -80,6 +80,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 289023065089954807}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f17bf3e4394765a4fa1e7410ea5e83c5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 206077498025397212}
   m_SourcePrefab: {fileID: 100100000, guid: f17bf3e4394765a4fa1e7410ea5e83c5, type: 3}
 --- !u!1 &6401377504699741213 stripped
 GameObject:
@@ -125,3 +129,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 19.27, z: -0.11000001}
   m_TimeToStationary: 0.5
+--- !u!54 &206077498025397212
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401377504699741213}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
