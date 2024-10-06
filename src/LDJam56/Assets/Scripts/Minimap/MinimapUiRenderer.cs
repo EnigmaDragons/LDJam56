@@ -11,7 +11,11 @@ public class MinimapUiRenderer : MonoBehaviour
     [SerializeField] private Sprite waypointSprite;
     [SerializeField] private Sprite objectiveSprite;
     [SerializeField] private float scaleFactor = 1f;
-    [SerializeField] private float minimapRadius = 100f;
+    [SerializeField] private float waypointFadeStartDistance = 100f;
+    [SerializeField] private float waypointFadeEndDistance = 200f;
+    [SerializeField] private float waypointMinAlpha = 0.25f;
+    
+    private float minimapRadius;
    
     private Dictionary<Transform, Image> activeEnemyIcons = new Dictionary<Transform, Image>();
     private Dictionary<Transform, Image> activeWaypointIcons = new Dictionary<Transform, Image>();
@@ -25,6 +29,7 @@ public class MinimapUiRenderer : MonoBehaviour
     private void Start()
     {
         minimapRect = GetComponent<RectTransform>();
+        minimapRadius = minimapRect.rect.width / minimapRect.localScale.x * 0.5f;
     }
 
     private Image CreateImage(Sprite sprite, bool isMedium = false)
@@ -98,7 +103,6 @@ public class MinimapUiRenderer : MonoBehaviour
             }
         }
     }
-
     private void UpdateWaypoints()
     {
         List<Transform> waypointsToRemove = new List<Transform>();
@@ -119,11 +123,7 @@ public class MinimapUiRenderer : MonoBehaviour
             waypointIcon.rectTransform.anchoredPosition = clampedPos;
             waypointIcon.gameObject.SetActive(true);
 
-            float distance = waypointPos.magnitude;
-            float alpha = Mathf.Clamp01(2f - distance / minimapRadius);
-            Color iconColor = waypointIcon.color;
-            iconColor.a = alpha;
-            waypointIcon.color = iconColor;
+            SetWaypointAlpha(waypointIcon, waypointPos.magnitude);
         }
 
         foreach (var waypoint in waypointsToRemove)
@@ -143,15 +143,20 @@ public class MinimapUiRenderer : MonoBehaviour
                 waypointIcon.rectTransform.anchoredPosition = clampedPos;
                 waypointIcon.gameObject.SetActive(true);
 
-                float distance = waypointPos.magnitude;
-                float alpha = Mathf.Clamp01(2f - distance / minimapRadius);
-                Color iconColor = waypointIcon.color;
-                iconColor.a = alpha;
-                waypointIcon.color = iconColor;
+                SetWaypointAlpha(waypointIcon, waypointPos.magnitude);
 
                 activeWaypointIcons.Add(waypoint, waypointIcon);
             }
         }
+    }
+
+    private void SetWaypointAlpha(Image waypointIcon, float distance)
+    {
+        float t = Mathf.InverseLerp(waypointFadeStartDistance, waypointFadeEndDistance, distance);
+        float alpha = distance <= waypointFadeStartDistance ? 1f : Mathf.Lerp(1f, waypointMinAlpha, t);
+        Color iconColor = waypointIcon.color;
+        iconColor.a = alpha;
+        waypointIcon.color = iconColor;
     }
 
     private void UpdateObjectives()

@@ -222,7 +222,9 @@ MonoBehaviour:
   waypointSprite: {fileID: 21300000, guid: cd2213f2ef4af5a4c838d7651404e60c, type: 3}
   objectiveSprite: {fileID: 21300000, guid: 6ae3940739199d74298a7c1ed204666e, type: 3}
   scaleFactor: 10
-  minimapRadius: 262
+  waypointFadeStartDistance: 500
+  waypointFadeEndDistance: 2800
+  waypointMinAlpha: 0.18
 --- !u!1 &6663425983741791808
 GameObject:
   m_ObjectHideFlags: 0
