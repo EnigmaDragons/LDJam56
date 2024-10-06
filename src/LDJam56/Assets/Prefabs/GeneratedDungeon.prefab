@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority: 0
-  BakeMode: 1
+  BakeMode: 2
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
