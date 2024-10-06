@@ -20,6 +20,7 @@ public class Explode : MonoBehaviour
     public void Init(Vector3 startingPosition, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
         _onIndividualHit = e => e.Damaged((int)data.Amount);
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.Explode, gameObject));
     }
 
     private void Update()

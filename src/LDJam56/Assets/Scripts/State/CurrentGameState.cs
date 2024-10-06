@@ -33,4 +33,18 @@ public static class CurrentGameState
         UpdateState(s => s.PlayerStats.CurrentLife = Math.Max(0, s.PlayerStats.CurrentLife - 1));
         Message.Publish(new PlayerDamaged());
     }
+
+    public static void LowerCooldowns(float time)
+    {
+        if (gameState.Attack.CooldownRemaining <= 0 && gameState.Defense.CooldownRemaining <= 0 &&
+            gameState.Special.CooldownRemaining <= 0 && gameState.Mobility.CooldownRemaining <= 0)
+            return;
+        UpdateState(s =>
+        {
+            s.Attack.CooldownRemaining = Math.Max(0, s.Attack.CooldownRemaining - time);
+            s.Special.CooldownRemaining = Math.Max(0, s.Special.CooldownRemaining - time);
+            s.Mobility.CooldownRemaining = Math.Max(0, s.Mobility.CooldownRemaining - time);
+            s.Defense.CooldownRemaining = Math.Max(0, s.Defense.CooldownRemaining - time);
+        });
+    }
 }

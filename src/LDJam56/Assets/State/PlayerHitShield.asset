@@ -15,7 +15,7 @@ MonoBehaviour:
   Type: 4
   DisplayName: Player Hit Shield
   Description: 
-  Duration: 1
+  Duration: 2
   Amount: 0
   Speed: 0
   Size: 0

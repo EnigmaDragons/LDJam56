@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private GameObject hitPrefab;
+
     private Vector3 _target;
     private Action _onHit;
     private Action<EnemyHandeler> _onEnemyHit;
@@ -32,6 +34,7 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
             _onEnemyHit(enemy);
         _onHit();
+        Instantiate(hitPrefab, transform.position, transform.rotation, transform.parent);
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ProjectileHit, other.gameObject));
         Destroy(gameObject);
     }

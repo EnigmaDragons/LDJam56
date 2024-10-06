@@ -4,4 +4,5 @@
     BotExplode = 1,
     EnemyShoot = 2,
     ProjectileHit = 3,
+    Explode = 4,
 }

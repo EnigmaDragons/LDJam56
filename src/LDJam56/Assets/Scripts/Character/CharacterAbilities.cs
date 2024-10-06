@@ -12,6 +12,7 @@ public class CharacterAbilities : MonoBehaviour
     private void Update()
     {
         _t -= Time.deltaTime;
+        CurrentGameState.LowerCooldowns(Time.deltaTime);
         if (_t > 0 || !motor.GroundingStatus.IsStableOnGround)
             return;
         if (CurrentGameState.ReadonlyGameState.Defense.CooldownRemaining <= 0 && Input.GetButton("Defense"))
