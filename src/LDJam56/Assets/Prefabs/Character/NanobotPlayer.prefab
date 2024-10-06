@@ -663,7 +663,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 163926, guid: 4b977009acec6374e83d199113a4035e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 787130928208394835}
+    - targetCorrespondingSourceObject: {fileID: 163926, guid: 4b977009acec6374e83d199113a4035e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815138068506099664}
   m_SourcePrefab: {fileID: 100100000, guid: 4b977009acec6374e83d199113a4035e, type: 3}
 --- !u!4 &8689154870780080288 stripped
 Transform:
@@ -671,6 +679,45 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8689154870780181606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8689154870780345392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163926, guid: 4b977009acec6374e83d199113a4035e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8689154870780181606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &787130928208394835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689154870780345392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335442fb0de617248bda4ae71bf37289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pM_MatDetector: {fileID: 1815138068506099664}
+  footstepRef:
+    Guid:
+      Data1: -1140240086
+      Data2: 1107707225
+      Data3: -1430607185
+      Data4: 200750824
+    Path: event:/HeroGirl/HeroFootSteps
+--- !u!114 &1815138068506099664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689154870780345392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab274d867ee56f74ebc3607fb3a63cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  physicsMatCreator: []
 --- !u!95 &8689154870787447724 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9512906, guid: 4b977009acec6374e83d199113a4035e,
