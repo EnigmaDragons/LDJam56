@@ -55,12 +55,13 @@ public class NanobotCharacter : OnMessage<TeleportPlayer, PlayerDamaged>, IChara
 
     public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
     {
-        if (_isTeleporting)
+        if (_isTeleporting || CurrentGameState.ReadonlyGameState.PlayerStats.IsRooted.AnyNonAlloc())
         {
             currentVelocity = Vector3.zero;
             _isTeleporting = false;
+            SetAnimation(AnimationState.Idle);
         }
-        if (motor.GroundingStatus.IsStableOnGround)
+        else if (motor.GroundingStatus.IsStableOnGround)
         {
             if (_inputDirection == Vector3.zero)
                 SetAnimation(AnimationState.Idle);

@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motor: {fileID: 4844353861470617664}
   rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
-  globalCooldown: 0.1
+  queuedTime: 0.4
 --- !u!1001 &3968583275010570492
 PrefabInstance:
   m_ObjectHideFlags: 0

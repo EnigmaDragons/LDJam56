@@ -55,8 +55,9 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         }
         if (first.Type == AbilityComponentType.Explode)
         {
-            var explode = Instantiate(explodePrefab, player.transform.position, player.transform.rotation, player.transform.parent);
-            explode.Init(player.transform.position, first, msg.Ability, abilityData.Skip(1).ToArray());
+            var startingPosition = player.transform.position + explodePrefab.transform.localPosition;
+            var explode = Instantiate(explodePrefab, startingPosition, player.transform.rotation, player.transform.parent);
+            explode.Init(true, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
     }
 

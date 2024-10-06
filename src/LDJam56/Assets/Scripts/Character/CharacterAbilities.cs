@@ -5,39 +5,67 @@ public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] private KinematicCharacterMotor motor;
     [SerializeField] private GameplayRules rules;
-    [SerializeField] private float globalCooldown;
+    [SerializeField] private float queuedTime;
 
-    private float _t;
+    private float _timeSinceLastQueuedInput;
+    private AbilityType _queuedInput;
     
     private void Update()
     {
-        _t -= Time.deltaTime;
         CurrentGameState.LowerCooldowns(Time.deltaTime);
-        if (_t > 0 || !motor.GroundingStatus.IsStableOnGround)
+        if (Input.GetButton("Defense"))
+        {
+            _queuedInput = AbilityType.Defense;
+            _timeSinceLastQueuedInput = 0;
+        }
+        else if (Input.GetButton("Mobility"))
+        {
+            _queuedInput = AbilityType.Mobility;
+            _timeSinceLastQueuedInput = 0;
+        }
+        else if (Input.GetButton("Special"))
+        {
+            _queuedInput = AbilityType.Special;
+            _timeSinceLastQueuedInput = 0;
+        }
+        else if (Input.GetButton("Attack"))
+        {
+            _queuedInput = AbilityType.Attack;
+            _timeSinceLastQueuedInput = 0;
+        }
+        else
+        {
+            _timeSinceLastQueuedInput += Time.deltaTime;
+            if (_timeSinceLastQueuedInput >= queuedTime)
+                _queuedInput = AbilityType.Passive;
+        }
+
+        if (!motor.GroundingStatus.IsStableOnGround || CurrentGameState.ReadonlyGameState.PlayerStats.IsSilenced.AnyNonAlloc())
             return;
-        if (CurrentGameState.ReadonlyGameState.Defense.CooldownRemaining <= 0 && Input.GetButton("Defense"))
+            
+        if (CurrentGameState.ReadonlyGameState.Defense.CooldownRemaining <= 0 && _queuedInput == AbilityType.Defense)
         {
             CurrentGameState.UpdateState(s => s.Defense.CooldownRemaining = s.Defense.Cooldown(rules, s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Defense));
-            _t = globalCooldown;
+            _queuedInput = AbilityType.Passive;
         }
-        else if (CurrentGameState.ReadonlyGameState.Mobility.CooldownRemaining <= 0 && Input.GetButton("Mobility"))
+        else if (CurrentGameState.ReadonlyGameState.Mobility.CooldownRemaining <= 0 && _queuedInput == AbilityType.Mobility)
         {
             CurrentGameState.UpdateState(s => s.Mobility.CooldownRemaining = s.Mobility.Cooldown(rules, s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Mobility));
-            _t = globalCooldown;
+            _queuedInput = AbilityType.Passive;
         }
-        else if (CurrentGameState.ReadonlyGameState.Special.CooldownRemaining <= 0 && Input.GetButton("Special"))
+        else if (CurrentGameState.ReadonlyGameState.Special.CooldownRemaining <= 0 && _queuedInput == AbilityType.Special)
         {
             CurrentGameState.UpdateState(s => s.Special.CooldownRemaining = s.Special.Cooldown(rules, s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Special));
-            _t = globalCooldown;
+            _queuedInput = AbilityType.Passive;
         }
-        else if (CurrentGameState.ReadonlyGameState.Attack.CooldownRemaining <= 0 && Input.GetButton("Attack"))
+        else if (CurrentGameState.ReadonlyGameState.Attack.CooldownRemaining <= 0 && _queuedInput == AbilityType.Attack)
         {
             CurrentGameState.UpdateState(s => s.Attack.CooldownRemaining = s.Attack.Cooldown(rules, s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Attack));
-            _t = globalCooldown;
+            _queuedInput = AbilityType.Passive;
         }
     }
 }

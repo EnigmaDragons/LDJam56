@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   Type: 3
+  Primary: 3
   DisplayName: Speed()
-  Description: 
   Duration: 5
   Amount: 0.5
   Speed: 0
-  Size: 0
   Range: 0

@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Explode
   m_EditorClassIdentifier: 
   Type: 2
+  Primary: 2
   DisplayName: Explode()
-  Description: 
   Duration: 0
-  Amount: 0
+  Amount: 5
   Speed: 0
-  Size: 100
   Range: 0

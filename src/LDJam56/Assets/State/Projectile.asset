@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Projectile
   m_EditorClassIdentifier: 
   Type: 1
+  Primary: 1
   DisplayName: Projectile()
-  Description: 
   Duration: 0
   Amount: 1
   Speed: 20
-  Size: 0
   Range: 9

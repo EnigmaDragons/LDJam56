@@ -9,6 +9,5 @@ public class AbilityData : ScriptableObject
     public float Duration;
     public float Amount;
     public float Speed;
-    public float Size;
     public float Range;
 }
