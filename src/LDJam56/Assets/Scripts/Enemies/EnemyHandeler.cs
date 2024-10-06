@@ -27,6 +27,8 @@ public class EnemyHandeler : MonoBehaviour
 
     public Collider Collider1;
     public Collider Collider2;
+    
+    private bool _targetFound;
 
     NavMeshAgent agent;
     Animator animator;
@@ -36,12 +38,21 @@ public class EnemyHandeler : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
-        Target = GameObject.FindWithTag("Player").transform;
-        if (shootTarget == null)
-            shootTarget = Target;
     }
     private void Update()
     {
+        if (!_targetFound)
+        {
+            var obj = GameObject.FindWithTag("Player");
+            if (obj != null)
+            {
+                Target = obj.transform;
+                _targetFound = true;
+                if (shootTarget == null)
+                    shootTarget = Target;
+            }
+        }
+        
         if (HP <= 0)
         {
             animator.SetTrigger("death");
@@ -73,7 +84,9 @@ public class EnemyHandeler : MonoBehaviour
     }
     public void BasicShoot()
     {
-        
+        if (!_targetFound)
+            return;
+
         Vector3 direction = (shootTarget.position - firePoint.position).normalized;
 
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
