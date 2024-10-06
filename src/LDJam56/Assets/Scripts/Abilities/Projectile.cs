@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private Action _onHit;
     private Action<EnemyHandeler> _onEnemyHit;
     private float _speed;
-
+    
     public void Init(Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
         _target = startingPosition + direction * data.Range;

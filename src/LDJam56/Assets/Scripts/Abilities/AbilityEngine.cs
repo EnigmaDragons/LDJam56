@@ -10,6 +10,7 @@ public class AbilityEngine : OnMessage<ActivateAbility>
     [SerializeField] private Shield shieldPrefab;
     [SerializeField] private Speed speedPrefab;
     [SerializeField] private GameObject player;
+    [SerializeField] private float forwardOffset;
 
     private Camera _mainCamera;
 
@@ -35,14 +36,17 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         }
         if (first.Type == AbilityComponentType.Projectile)
         {
-            var mousePosition = Input.mousePosition;
-            mousePosition.z = 0;
-            mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
-            mousePosition.y = 0;
-            var direction = (mousePosition - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
-            var projectile = Instantiate(projectilePrefab, player.transform.position, Quaternion.identity, player.transform.parent);
-            projectile.Init(player.transform.position, direction, first, msg.Ability,
-                abilityData.Skip(1).ToArray());
+            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity))
+            {
+                var position = hitPoint.point;
+                position.y = 0;
+                var direction = (position - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
+                var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + direction * forwardOffset;
+                var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(direction), player.transform.parent);
+                projectile.Init(startingPosition, direction, first, msg.Ability,
+                    abilityData.Skip(1).ToArray());   
+            }
         }
         if (first.Type == AbilityComponentType.Shield)
         {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameplayRules
   m_EditorClassIdentifier: 
   playerHealth: 5
-  attackCooldown: 0
+  attackCooldown: 0.5
   specialCooldown: 5
   mobilityCooldown: 5
   defenseCooldown: 5
