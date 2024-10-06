@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1521ac7c-a5c0-4fb3-96f6-8f188d4f6b9f}">
+		<property name="name">
+			<value>Low Health</value>
+		</property>
+		<relationship name="folder">
+			<destination>{97bb1c89-42e8-4839-b18c-d6458ae7d891}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{96a683b1-93fc-4b07-8746-3cc02fcba000}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{96a683b1-93fc-4b07-8746-3cc02fcba000}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.20999999344348907</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
