@@ -75,6 +75,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5247983898101121566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4961032026379548906}
+  - component: {fileID: 1091254182218875757}
+  m_Layer: 0
+  m_Name: MinimapData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4961032026379548906
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247983898101121566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3183714438487076844}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.0000076293945, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1091254182218875757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247983898101121566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae7bca2472b6e04abb274e7d3098483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimapParent: {fileID: 4961032026379548906}
+  imagePrefab: {fileID: 4207780091633200206, guid: afdcba712cd349441a0886b991704362,
+    type: 3}
+  enemySprite: {fileID: 21300000, guid: fb2cb79771313eb4aaad1c36434842d4, type: 3}
+  waypointSprite: {fileID: 21300000, guid: 02a772f0e25263649a54e8741c2b9e32, type: 3}
+  objectiveSprite: {fileID: 21300000, guid: 6ae3940739199d74298a7c1ed204666e, type: 3}
+  scaleFactor: 10
+  minimapRadius: 262
 --- !u!1 &6663425983741791808
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +160,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.805, y: 0.805, z: 0.805}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4961032026379548906}
   m_Father: {fileID: 3066469905727733637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

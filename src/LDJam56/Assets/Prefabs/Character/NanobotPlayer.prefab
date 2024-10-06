@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1778309621109886054}
   - component: {fileID: 2239806579646612439}
   - component: {fileID: 4019281638381144982}
+  - component: {fileID: 7705457658377970714}
   m_Layer: 6
   m_Name: NanobotPlayer
   m_TagString: Player
@@ -130,9 +131,6 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: 2c154fe178848af4b9e16de934200fa3, type: 2}
   walk: {fileID: 9100000, guid: 789950d5cc72f1349b7dbfbba5b34a74, type: 2}
   run: {fileID: 9100000, guid: c1c26a5f104836b4db326c16ffcd42c7, type: 2}
-  Spine1: {fileID: 8689154870780305984}
-  Spine2: {fileID: 8689154870780140344}
-  Spine3: {fileID: 8689154870780164934}
 --- !u!54 &1778309621109886054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,6 +185,19 @@ MonoBehaviour:
   motor: {fileID: 4844353861470617664}
   rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
   queuedTime: 0.4
+--- !u!114 &7705457658377970714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059306424936041640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2866b6a17cb148819de10d125e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 3
 --- !u!1001 &3968583275010570492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,24 +690,6 @@ PrefabInstance:
 --- !u!4 &8689154870780080288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429254, guid: 4b977009acec6374e83d199113a4035e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8689154870780181606}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8689154870780140344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 108382, guid: 4b977009acec6374e83d199113a4035e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8689154870780181606}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8689154870780164934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 116512, guid: 4b977009acec6374e83d199113a4035e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8689154870780181606}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8689154870780305984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 138790, guid: 4b977009acec6374e83d199113a4035e,
     type: 3}
   m_PrefabInstance: {fileID: 8689154870780181606}
   m_PrefabAsset: {fileID: 0}
