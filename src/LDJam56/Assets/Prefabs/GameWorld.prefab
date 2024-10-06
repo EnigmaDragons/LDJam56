@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1675492867163848546}
   - component: {fileID: 5222645953806584313}
   - component: {fileID: 2691573494460180428}
+  - component: {fileID: 5910923799442560130}
+  - component: {fileID: 6225202913553288047}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: Untagged
@@ -70,6 +72,45 @@ MonoBehaviour:
   player: {fileID: 7910046967580973120}
   particlePrefab: {fileID: 0}
   cameraman: {fileID: 7795953669069677135}
+--- !u!114 &5910923799442560130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863196054124762702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244fb61b57ecaa8409c2711044349bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6225202913553288047}
+        m_TargetAssemblyTypeName: Fmod_MusicState, Assembly-CSharp
+        m_MethodName: SetGameplayState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6225202913553288047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863196054124762702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e01139f5a44cc7bb10e50cd32e1c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7508825379974776712
 GameObject:
   m_ObjectHideFlags: 0

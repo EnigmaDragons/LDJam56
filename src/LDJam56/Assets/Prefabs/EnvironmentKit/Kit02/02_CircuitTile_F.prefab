@@ -195,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8955744870283660122}
   - component: {fileID: 3678739005471999983}
+  - component: {fileID: 6325250545433207629}
   m_Layer: 0
   m_Name: 02_CircuitTile_F
   m_TagString: Untagged
@@ -286,6 +287,23 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   fileVersion: 2
+--- !u!114 &6325250545433207629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211043018736213168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07047d5d00158b94a87ba079792ec5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minEnemies: 6
+  maxEnemies: 18
+  enemyPrefabs:
+  - {fileID: 8880868073103893889, guid: 98e6235ab5a838647812d6b53298b1cf, type: 3}
+  - {fileID: 1584590012761873905, guid: 4973221a3267fec4d86d797171760392, type: 3}
 --- !u!1001 &69427519283682861
 PrefabInstance:
   m_ObjectHideFlags: 0

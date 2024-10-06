@@ -162,7 +162,12 @@ PrefabInstance:
     - target: {fileID: 4211043018736213168, guid: de6f36d447027fb4b8d5f6fb7d73862b,
         type: 3}
       propertyPath: m_Name
-      value: 02_GoalTile_A Variant
+      value: 02_GoalTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325250545433207629, guid: de6f36d447027fb4b8d5f6fb7d73862b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8955744870283660122, guid: de6f36d447027fb4b8d5f6fb7d73862b,
         type: 3}
