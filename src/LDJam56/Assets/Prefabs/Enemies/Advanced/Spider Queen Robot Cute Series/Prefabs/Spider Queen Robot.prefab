@@ -524,13 +524,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   HP: 100
-  Speed: 4
+  Speed: 3
   Range: 0
   AttackRange: 6
-  Attack2Range: 5
+  Attack2Range: 4
   Damage: 1
-  SpawningDelay: 10
-  MeleeDelay: 7
+  SpawningDelay: 6
+  MeleeDelay: 6
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0

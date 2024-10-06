@@ -38,7 +38,7 @@ public class BossRun : StateMachineBehaviour
         }
         agent.SetDestination(target.position);
         agent.updateRotation = true;
-        if(timer2 >= handeler.MeleeDelay * 3.5)
+        if(timer2 >= handeler.MeleeDelay * 2.8)
         {
             timer2 = 0f;
             animator.ResetTrigger("run");
