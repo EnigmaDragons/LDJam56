@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{6ac83e0d-dfc9-43d6-a4e9-1aedabe049d7}">
 		<property name="assetPath">
-			<value>HeroGirl/SparkGunFireSparkHit_6.wav</value>
+			<value>HeroGirl/Bullets/SparkGunFireSparkHit_6.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
