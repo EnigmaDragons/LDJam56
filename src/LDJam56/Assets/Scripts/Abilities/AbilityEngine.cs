@@ -35,22 +35,14 @@ public class AbilityEngine : OnMessage<ActivateAbility>
         }
         if (first.Type == AbilityComponentType.Projectile)
         {
-            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            Plane groundPlane = new Plane(Vector3.up, transform.position);
-            if (groundPlane.Raycast(ray, out float rayDistance))
-            {
-                Vector3 targetPoint = ray.GetPoint(rayDistance);
-                targetPoint.y = player.transform.position.y; // Set Y to player's height
-                Vector3 direction = (targetPoint - player.transform.position).normalized;
-                var projectile = Instantiate(projectilePrefab, player.transform.position, Quaternion.identity,
-                    player.transform.parent);
-                projectile.Init(player.transform.position, direction, first, msg.Ability,
-                    abilityData.Skip(1).ToArray());
-            }
-            else
-            {
-                Debug.LogError("targeting failed for projectile");
-            }
+            var mousePosition = Input.mousePosition;
+            mousePosition.y = 0;
+            mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
+            mousePosition.y = 0;
+            var direction = (mousePosition - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
+            var projectile = Instantiate(projectilePrefab, player.transform.position, Quaternion.identity, player.transform.parent);
+            projectile.Init(player.transform.position, direction, first, msg.Ability,
+                abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Shield)
         {

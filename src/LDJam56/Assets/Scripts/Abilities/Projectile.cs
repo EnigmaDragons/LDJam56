@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     public void Init(Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
-        _target = Vector3.MoveTowards(startingPosition, direction, data.Range);
+        _target = startingPosition + direction * data.Range;
         _onHit = () => { };
         _speed = data.Speed;
         _onEnemyHit = e => e.Damaged((int)data.Amount);
