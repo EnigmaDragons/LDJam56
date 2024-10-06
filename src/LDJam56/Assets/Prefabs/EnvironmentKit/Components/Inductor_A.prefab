@@ -75,15 +75,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 969a7c7edbcf3654289a61ce81e0a291,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4917135267218767895}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 969a7c7edbcf3654289a61ce81e0a291,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4391005788175242618}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 969a7c7edbcf3654289a61ce81e0a291,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3693354922070810385}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 969a7c7edbcf3654289a61ce81e0a291,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6998732461022203446}
   m_SourcePrefab: {fileID: 100100000, guid: 969a7c7edbcf3654289a61ce81e0a291, type: 3}
 --- !u!1 &7191413209536330441 stripped
 GameObject:
@@ -91,28 +91,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8001878285908428696}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &4917135267218767895
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191413209536330441}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1363668007627365144, guid: 969a7c7edbcf3654289a61ce81e0a291, type: 3}
 --- !u!208 &4391005788175242618
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -156,3 +134,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6998732461022203446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191413209536330441}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.5222697, y: 33.987488, z: 16.024567}
+  m_Center: {x: 0, y: 13.350501, z: 0}
