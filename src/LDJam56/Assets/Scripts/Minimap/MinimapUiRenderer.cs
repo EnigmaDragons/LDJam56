@@ -6,6 +6,7 @@ public class MinimapUiRenderer : MonoBehaviour
 {
     [SerializeField] private RectTransform minimapRect;
     [SerializeField] private Image imagePrefab;
+    [SerializeField] private Image mediumImagePrefab;
     [SerializeField] private Sprite enemySprite;
     [SerializeField] private Sprite waypointSprite;
     [SerializeField] private Sprite objectiveSprite;
@@ -26,9 +27,9 @@ public class MinimapUiRenderer : MonoBehaviour
         minimapRect = GetComponent<RectTransform>();
     }
 
-    private Image CreateImage(Sprite sprite)
+    private Image CreateImage(Sprite sprite, bool isMedium = false)
     {
-        Image newObject = Instantiate(imagePrefab, minimapRect);
+        Image newObject = Instantiate(isMedium ? mediumImagePrefab : imagePrefab, minimapRect);
         newObject.sprite = sprite;
         newObject.gameObject.SetActive(false);
         return newObject;
@@ -111,16 +112,15 @@ public class MinimapUiRenderer : MonoBehaviour
             }
 
             Vector2 waypointPos = GetScaledPosition(waypoint.position);
-            if (IsWithinRadius(waypointPos))
-            {
-                waypointIcon.rectTransform.anchoredPosition = waypointPos;
-                waypointIcon.gameObject.SetActive(true);
-            }
-            else
-            {
-                waypointIcon.rectTransform.anchoredPosition = ClampToCircle(waypointPos);
-                waypointIcon.gameObject.SetActive(true);
-            }
+            Vector2 clampedPos = ClampToCircle(waypointPos);
+            waypointIcon.rectTransform.anchoredPosition = clampedPos;
+            waypointIcon.gameObject.SetActive(true);
+
+            float distance = waypointPos.magnitude;
+            float alpha = Mathf.Clamp01(2f - distance / minimapRadius);
+            Color iconColor = waypointIcon.color;
+            iconColor.a = alpha;
+            waypointIcon.color = iconColor;
         }
 
         foreach (var waypoint in waypointsToRemove)
@@ -134,10 +134,18 @@ public class MinimapUiRenderer : MonoBehaviour
         {
             if (!activeWaypointIcons.ContainsKey(waypoint))
             {
-                Image waypointIcon = CreateImage(waypointSprite);
+                Image waypointIcon = CreateImage(waypointSprite, true);
                 Vector2 waypointPos = GetScaledPosition(waypoint.position);
-                waypointIcon.rectTransform.anchoredPosition = IsWithinRadius(waypointPos) ? waypointPos : ClampToCircle(waypointPos);
+                Vector2 clampedPos = ClampToCircle(waypointPos);
+                waypointIcon.rectTransform.anchoredPosition = clampedPos;
                 waypointIcon.gameObject.SetActive(true);
+
+                float distance = waypointPos.magnitude;
+                float alpha = Mathf.Clamp01(2f - distance / minimapRadius);
+                Color iconColor = waypointIcon.color;
+                iconColor.a = alpha;
+                waypointIcon.color = iconColor;
+
                 activeWaypointIcons.Add(waypoint, waypointIcon);
             }
         }
@@ -205,6 +213,6 @@ public class MinimapUiRenderer : MonoBehaviour
 
     private Vector2 ClampToCircle(Vector2 position)
     {
-        return position.normalized * minimapRadius;
+        return Vector2.ClampMagnitude(position, minimapRadius);
     }
 }

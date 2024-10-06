@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4657945506647332252}
   - component: {fileID: 5079663515972273239}
   - component: {fileID: 4830484647263586203}
+  - component: {fileID: 2474987400573339107}
   m_Layer: 0
   m_Name: 02_CircuitTile_C
   m_TagString: Untagged
@@ -119,6 +120,19 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 8880868073103893889, guid: 98e6235ab5a838647812d6b53298b1cf, type: 3}
   - {fileID: 1584590012761873905, guid: 4973221a3267fec4d86d797171760392, type: 3}
+--- !u!114 &2474987400573339107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779075569521029572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2866b6a17cb148819de10d125e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 1
 --- !u!1 &4038693437766845329
 GameObject:
   m_ObjectHideFlags: 0
