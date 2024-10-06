@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1989109265752565446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8176502742962847863}
+  - component: {fileID: 4524674046370363543}
+  m_Layer: 0
+  m_Name: AbilityEngine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8176502742962847863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989109265752565446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4524674046370363543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989109265752565446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b38bcfb93e4086bee6629cfdb85126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
+  allAbilities:
+  - {fileID: 11400000, guid: 3b698a913fcc1a4498441a3a2d50fbe8, type: 2}
+  - {fileID: 11400000, guid: 2b01d271dcdbaaa40b65e1f6e4df9cb8, type: 2}
+  - {fileID: 11400000, guid: 0e752c3f607427445ba63279a77990fc, type: 2}
+  - {fileID: 11400000, guid: eb57df7dc03f6734594319ffe4247abf, type: 2}
+  projectilePrefab: {fileID: 1724623990564704997, guid: fef4abaf180332442a4b64159bcbc033,
+    type: 3}
+  explodePrefab: {fileID: 5691785167026928846, guid: 1d9867b8e6047df46aa191f2c5214a85,
+    type: 3}
+  shieldPrefab: {fileID: 9149643475986250495, guid: dd93b772f2e6b0a41838f3614235bc24,
+    type: 3}
+  speedPrefab: {fileID: 8766018907316677252, guid: f60f953750ffb124e99fe00b463cdd3a,
+    type: 3}
