@@ -132,7 +132,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   HP: 8
   Speed: 4
-  Range: 7
+  Range: 11
   AttackRange: 4
   Attack2Range: 2
   Damage: 1

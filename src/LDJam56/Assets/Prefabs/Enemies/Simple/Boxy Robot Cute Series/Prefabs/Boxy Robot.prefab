@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7812055001667088724}
   - component: {fileID: 2747875208767121907}
   m_Layer: 8
-  m_Name: AttackCollider
+  m_Name: AttackCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,13 +817,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   HP: 10
-  Speed: 3.5
-  Range: 7
+  Speed: 4.5
+  Range: 11
   AttackRange: 3
-  Attack2Range: 10
+  Attack2Range: 14
   Damage: 1
   AttackDelay: 0.5
-  Attack2Delay: 20
+  Attack2Delay: 15
   firePoint: {fileID: 2858304193093693962}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
   projectileSpeed: 15
