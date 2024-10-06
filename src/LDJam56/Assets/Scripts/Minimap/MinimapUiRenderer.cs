@@ -87,19 +87,15 @@ public class MinimapUiRenderer : MonoBehaviour
             activeEnemyIcons.Remove(enemy);
         }
 
-        // Add new enemies
         foreach (var enemy in CurrentMiniMapState.Data.enemyTransforms)
         {
             if (!activeEnemyIcons.ContainsKey(enemy) && enemy != null && enemy.gameObject.activeInHierarchy)
             {
-                Vector2 enemyPos = GetScaledPosition(enemy.position);
-                if (IsWithinRadius(enemyPos))
-                {
-                    Image enemyIcon = CreateImage(enemySprite);
-                    enemyIcon.rectTransform.anchoredPosition = enemyPos;
-                    enemyIcon.gameObject.SetActive(true);
-                    activeEnemyIcons.Add(enemy, enemyIcon);
-                }
+                Vector2 enemyPos = GetScaledPosition(enemy.position);               
+                Image enemyIcon = CreateImage(enemySprite);
+                enemyIcon.rectTransform.anchoredPosition = enemyPos;
+                enemyIcon.gameObject.SetActive(true);
+                activeEnemyIcons.Add(enemy, enemyIcon);
             }
         }
     }
