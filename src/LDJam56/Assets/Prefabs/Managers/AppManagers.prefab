@@ -422,6 +422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoftwareCursor
       objectReference: {fileID: 0}
+    - target: {fileID: 497094963511638805, guid: 62fb01e2938275242aac74f233e6a46b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5083284075144189899, guid: 62fb01e2938275242aac74f233e6a46b,
         type: 3}
       propertyPath: m_LocalPosition.x
