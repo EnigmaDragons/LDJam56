@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{e258d1a4-5c3a-4ce4-b699-6003ba1c4cc3}">
 		<property name="volume">
-			<value>-80</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>BoxyBot</value>
@@ -19,9 +19,21 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{4cefbdad-02ff-4fae-825b-d0b6b996c3e0}">
 		<relationship name="effects">
+			<destination>{ecbb609e-204d-4f09-b092-f3bafea4be49}</destination>
 			<destination>{33c91ae4-aaf1-4b0a-adc6-1a5287c680e8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{684cb873-bd5b-435e-93d7-597b46479514}" />
+	<object class="MixerSend" id="{ecbb609e-204d-4f09-b092-f3bafea4be49}">
+		<property name="level">
+			<value>-27</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{5ff524cc-c063-47c3-bc34-af2c11b9ea72}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{33c91ae4-aaf1-4b0a-adc6-1a5287c680e8}" />
 </objects>

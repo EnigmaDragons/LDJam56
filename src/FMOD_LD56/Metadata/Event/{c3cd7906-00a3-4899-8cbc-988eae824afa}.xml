@@ -5,7 +5,7 @@
 			<value>JellyLoopAttack</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -59,7 +59,11 @@
 			<destination>{a6f3effb-6870-49be-902d-1c4f0763c07e}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{f14488ab-a02c-4692-9c22-a5ced1eb295f}" />
+	<object class="EventAutomatableProperties" id="{f14488ab-a02c-4692-9c22-a5ced1eb295f}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{85809b92-4d28-4153-9c20-3abe5e6b4120}" />
 	<object class="Timeline" id="{d0692d2a-89a8-46ef-9d75-40b261432f8e}">
 		<property name="isProxyEnabled">
@@ -97,6 +101,7 @@
 		<relationship name="effects">
 			<destination>{4b5621f6-71b2-44a7-a04c-7a78137ec2a5}</destination>
 			<destination>{9c4fa5da-e1b2-44cf-85c5-fdf9eb649f72}</destination>
+			<destination>{2ed5cc75-d663-4440-b2b1-2e9b1a80e897}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{37272d50-80df-4a74-99ae-6e84a5bb7fd4}" />
@@ -122,6 +127,14 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9c4fa5da-e1b2-44cf-85c5-fdf9eb649f72}" />
+	<object class="ProxyEffect" id="{2ed5cc75-d663-4440-b2b1-2e9b1a80e897}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{08614ac9-b822-4bc1-9549-4a2ab5163db5}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

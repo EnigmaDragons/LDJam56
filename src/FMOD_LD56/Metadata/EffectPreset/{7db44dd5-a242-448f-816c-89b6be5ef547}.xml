@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{7db44dd5-a242-448f-816c-89b6be5ef547}">
+		<property name="name">
+			<value>EnemySpatializer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{fe5b1d0f-25ac-435c-8664-974bc7d0101d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{0f145469-7621-4a9e-aff9-6320421413d5}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{0f145469-7621-4a9e-aff9-6320421413d5}">
+		<property name="minimumDistance">
+			<value>1.39999998</value>
+		</property>
+		<property name="maximumDistance">
+			<value>7</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

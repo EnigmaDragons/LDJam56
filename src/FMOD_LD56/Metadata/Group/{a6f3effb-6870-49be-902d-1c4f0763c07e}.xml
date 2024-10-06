@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{a6f3effb-6870-49be-902d-1c4f0763c07e}">
 		<property name="volume">
-			<value>-80</value>
+			<value>-9</value>
 		</property>
 		<property name="name">
 			<value>JellyBot</value>
@@ -19,9 +19,21 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{bd22e6dc-53d0-4ab1-87ef-1c9800e1e4f4}">
 		<relationship name="effects">
+			<destination>{408e2c0c-bd9b-4d7d-80d7-d147b2ad4ace}</destination>
 			<destination>{e624772c-1b49-43ac-a32a-979d592d5839}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{303ed055-c93a-4537-82b7-5b22dff3655f}" />
+	<object class="MixerSend" id="{408e2c0c-bd9b-4d7d-80d7-d147b2ad4ace}">
+		<property name="level">
+			<value>-28</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{5ff524cc-c063-47c3-bc34-af2c11b9ea72}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{e624772c-1b49-43ac-a32a-979d592d5839}" />
 </objects>

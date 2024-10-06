@@ -5,7 +5,7 @@
 			<value>BoxyMove</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -62,7 +62,11 @@
 			<destination>{e258d1a4-5c3a-4ce4-b699-6003ba1c4cc3}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{49f17737-6c77-4141-88f0-cb69bf60d62e}" />
+	<object class="EventAutomatableProperties" id="{49f17737-6c77-4141-88f0-cb69bf60d62e}">
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{6ae832f0-dc27-45da-b766-d5e8fbc40688}" />
 	<object class="Timeline" id="{c9f4e9b0-1b47-4490-98d6-11b4becc1f38}">
 		<property name="isProxyEnabled">
@@ -104,6 +108,7 @@
 	<object class="MixerBusEffectChain" id="{4f4931ce-0af1-44fe-b075-dfa33cfe4000}">
 		<relationship name="effects">
 			<destination>{10d9076c-5e49-4ff5-aebb-6f4d612fd69b}</destination>
+			<destination>{14d807fa-4d53-40a2-9edc-9834147787fe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7188149e-9dd5-4147-8ab0-6f0970437ba6}" />
@@ -123,6 +128,7 @@
 	</object>
 	<object class="MixerBusFader" id="{6e1f788b-e27c-464f-9286-c6515ac6b707}" />
 	<object class="MixerBusFader" id="{10d9076c-5e49-4ff5-aebb-6f4d612fd69b}" />
+	<object class="SpatialiserEffect" id="{14d807fa-4d53-40a2-9edc-9834147787fe}" />
 	<object class="Automator" id="{1f23f394-39e0-4c3e-aede-65512da82aca}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>volume</value>
