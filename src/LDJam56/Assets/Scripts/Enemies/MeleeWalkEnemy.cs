@@ -12,7 +12,9 @@ public class MeleeWalkEnemy : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        var pObj = GameObject.FindGameObjectWithTag("Player");
+        if (pObj != null)
+            player = pObj.transform;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -20,8 +22,9 @@ public class MeleeWalkEnemy : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogError("Player not found!");
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            var pObj = GameObject.FindGameObjectWithTag("Player");
+            if (pObj != null)
+                player = pObj.transform;
         }
         if (player != null)
         {

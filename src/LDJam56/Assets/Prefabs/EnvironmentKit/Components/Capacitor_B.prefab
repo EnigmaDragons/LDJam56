@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 88165d6dfa2208c449a1fdce19b39e04,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: da03119ed3eb1de4ca694338cea64a98, type: 2}
     - target: {fileID: 919132149155446097, guid: 88165d6dfa2208c449a1fdce19b39e04,
         type: 3}
       propertyPath: m_Name
@@ -71,6 +76,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 684037104458027973}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 88165d6dfa2208c449a1fdce19b39e04,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2727818454406528423}
   m_SourcePrefab: {fileID: 100100000, guid: 88165d6dfa2208c449a1fdce19b39e04, type: 3}
 --- !u!1 &1383251556418868346 stripped
 GameObject:
@@ -100,3 +109,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -359429889599457714, guid: 88165d6dfa2208c449a1fdce19b39e04, type: 3}
+--- !u!208 &2727818454406528423
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383251556418868346}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 9.0720005, y: 19.274, z: 9.0720005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 16.861, z: 0}
+  m_TimeToStationary: 0.5

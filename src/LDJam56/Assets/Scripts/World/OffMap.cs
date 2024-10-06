@@ -9,24 +9,34 @@ public class OffMap : MonoBehaviour
 
     private GameObject _player;
     private float _t;
-    private Queue<Vector3> _previousPlayerLocations;
+    private Queue<Vector3> _previousPlayerLocations = new Queue<Vector3>();
 
     private void Start()
     {
-        _player = GameObject.FindWithTag("Player");
+        var pObj = GameObject.FindGameObjectWithTag("Player");
+        if (pObj != null)
+            _player = pObj.transform.gameObject;
         _t = secondsPerPlayerPositionSnapshot;
-        _previousPlayerLocations = new Queue<Vector3>();
     }
 
     private void Update()
     {
-        _t -= Time.deltaTime;
-        if (_t <= 0)
+        if (_player != null)
         {
-            _previousPlayerLocations.Enqueue(_player.transform.position);
-            _t += secondsPerPlayerPositionSnapshot;
-            if (_previousPlayerLocations.Count > snapshotsToSave)
-                _previousPlayerLocations.Dequeue();
+            _t -= Time.deltaTime;
+            if (_t <= 0)
+            {
+                _previousPlayerLocations.Enqueue(_player.transform.position);
+                _t += secondsPerPlayerPositionSnapshot;
+                if (_previousPlayerLocations.Count > snapshotsToSave)
+                    _previousPlayerLocations.Dequeue();
+            }
+        }
+        else
+        {
+            var pObj = GameObject.FindGameObjectWithTag("Player");
+            if (pObj != null)
+                _player = pObj.transform.gameObject;
         }
     }
 
