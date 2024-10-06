@@ -37,6 +37,9 @@ public class MinimapUiRenderer : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (CurrentMiniMapState.Data.playerTransform == null)
+            return;
+        
         UpdateEnemies();
         UpdateWaypoints();
         UpdateObjectives();
