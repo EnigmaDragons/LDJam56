@@ -123,11 +123,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae7bca2472b6e04abb274e7d3098483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimapParent: {fileID: 4961032026379548906}
+  minimapRect: {fileID: 4961032026379548906}
   imagePrefab: {fileID: 4207780091633200206, guid: afdcba712cd349441a0886b991704362,
     type: 3}
+  mediumImagePrefab: {fileID: 6271346658495391033, guid: 32d37b17a09176a43a442e91649fcec1,
+    type: 3}
   enemySprite: {fileID: 21300000, guid: fb2cb79771313eb4aaad1c36434842d4, type: 3}
-  waypointSprite: {fileID: 21300000, guid: 02a772f0e25263649a54e8741c2b9e32, type: 3}
+  waypointSprite: {fileID: 21300000, guid: cd2213f2ef4af5a4c838d7651404e60c, type: 3}
   objectiveSprite: {fileID: 21300000, guid: 6ae3940739199d74298a7c1ed204666e, type: 3}
   scaleFactor: 10
   minimapRadius: 262
@@ -142,6 +144,7 @@ GameObject:
   - component: {fileID: 3183714438487076844}
   - component: {fileID: 8742684225727085087}
   - component: {fileID: 6030467058708329155}
+  - component: {fileID: 5587239820830929028}
   m_Layer: 0
   m_Name: Backdrop
   m_TagString: Untagged
@@ -207,6 +210,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5587239820830929028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663425983741791808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &8037787782264645411
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c8c875734b43de4cb39727fca42525a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae0c3d3a6df0cdb4c9bdd10a26cf9c74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
