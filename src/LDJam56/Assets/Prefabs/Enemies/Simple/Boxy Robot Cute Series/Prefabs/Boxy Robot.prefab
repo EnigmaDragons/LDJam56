@@ -812,18 +812,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7685301724639964351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a6d7b675f98fb4eb2ae7b77a5273be, type: 3}
+  m_Script: {fileID: 11500000, guid: 960a707cd58548444afd7272eae52440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 10
+  HP: 11
   Speed: 6
-  Range: 20
+  Range: 22
   AttackRange: 3
-  Attack2Range: 27
+  Attack2Range: 30
   Damage: 1
   AttackDelay: 0.5
-  Attack2Delay: 10
+  Attack2Delay: 15
   firePoint: {fileID: 2858304193093693962}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
   projectileSpeed: 15
