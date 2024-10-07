@@ -7,6 +7,7 @@ public class AbilityData : ScriptableObject
     public AbilityType Primary;
     public string DisplayName;
     public string Description;
+    public Sprite Icon;
     public float Duration;
     public float Amount;
     public float Speed;

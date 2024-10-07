@@ -1,17 +1,26 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityCustomizeUI : MonoBehaviour
 {
     [SerializeField] private CodeButton[] codeButtons;
     [SerializeField] private AllAbilities allAbilities;
+    [SerializeField] private Button confirm;
+    [SerializeField] private Button cancel;
 
     private int _indexSelected;
     private Ability _ability;
     private AbilityData _toAdd;
     private Action _onCancel;
     private Action _onComplete;
-    
+
+    public void Start()
+    {
+        confirm.onClick.AddListener(Confirm);
+        cancel.onClick.AddListener(Cancel);
+    }
+
     public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel, Action onComplete)
     {
         _toAdd = abilityToAdd;
@@ -51,9 +60,9 @@ public class AbilityCustomizeUI : MonoBehaviour
         else if (Input.GetButtonDown("Cancel"))
             Cancel();
         
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (_indexSelected != _ability.Components.Count && Input.GetKeyDown(KeyCode.DownArrow))
             SetIndex(_indexSelected + 1);
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (_indexSelected != 0 && Input.GetKeyDown(KeyCode.UpArrow))
             SetIndex(_indexSelected - 1);
     }
 

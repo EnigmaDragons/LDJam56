@@ -12,7 +12,7 @@ public class ShowCodeGained : MonoBehaviour
     {
         abilityName.text = data.DisplayName;
         abilityDescription.text = data.Description;
-        //abilitySprite.sprite = data.AbilityIcon;
+        abilitySprite.sprite = data.Icon;
         gameObject.SetActive(true);
     }
 
