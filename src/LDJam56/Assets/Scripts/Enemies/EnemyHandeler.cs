@@ -58,8 +58,9 @@ public class EnemyHandeler : MonoBehaviour
         if (HP <= 0)
         {
             animator.SetTrigger("death");
-            Destroy(this.gameObject, animator.GetCurrentAnimatorClipInfo(0).Length);
             Message.Publish(new EnemyKilled());
+            // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
+            this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), animator.GetCurrentAnimatorClipInfo(0).Length);
         }
         if(shoot && agent.updateRotation == false)
         {
