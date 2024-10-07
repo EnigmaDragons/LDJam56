@@ -55,6 +55,7 @@ MonoBehaviour:
   - ValidTypes: 0300000004000000
     AbilitiesBefore:
     - Types: 04000000
-    AbilitiesAfter: []
+    AbilitiesAfter:
+    - Types: feffffff
     CombinationDescription: Everytime you bump into an enemy while shielding explode
       them
