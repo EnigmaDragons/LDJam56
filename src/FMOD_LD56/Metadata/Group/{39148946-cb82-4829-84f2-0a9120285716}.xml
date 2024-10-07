@@ -42,7 +42,7 @@
 			<value>260</value>
 		</property>
 		<property name="level">
-			<value>-28</value>
+			<value>-34</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{db5d062d-b928-433a-91c8-3ba3c0c54789}</destination>
