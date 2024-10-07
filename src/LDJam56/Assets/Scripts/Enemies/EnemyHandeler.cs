@@ -28,7 +28,7 @@ public class EnemyHandeler : MonoBehaviour
     public Collider Collider1;
     public Collider Collider2;
     
-    private bool _targetFound;
+    protected bool _targetFound;
 
     NavMeshAgent agent;
     Animator animator;
@@ -85,12 +85,9 @@ public class EnemyHandeler : MonoBehaviour
         }
         if(shoot && agent.updateRotation == false)
         {
-            
-
             Vector3 direction = Target.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, 5 * Time.deltaTime);
-
             rb.MoveRotation(smoothedRotation);
         }
 
