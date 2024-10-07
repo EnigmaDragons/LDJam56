@@ -117,9 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minEnemies: 20
   maxEnemies: 60
-  enemyPrefabs:
-  - {fileID: 8880868073103893889, guid: 98e6235ab5a838647812d6b53298b1cf, type: 3}
-  - {fileID: 1584590012761873905, guid: 4973221a3267fec4d86d797171760392, type: 3}
+  enemySpawnPool: {fileID: 11400000, guid: 609ddf1dbded6fc4abefd4b435cff6b0, type: 2}
+  safeZone: {fileID: 0}
 --- !u!114 &2474987400573339107
 MonoBehaviour:
   m_ObjectHideFlags: 0
