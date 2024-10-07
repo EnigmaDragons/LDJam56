@@ -7,6 +7,10 @@ public class CharacterCheatCode : MonoBehaviour
         if (Input.GetKey(KeyCode.KeypadPlus) && Input.GetKeyDown(KeyCode.B))
         {
             TeleportToBossRoom();
+        }        
+        if (Input.GetKey(KeyCode.KeypadPlus) && Input.GetKeyDown(KeyCode.T))
+        {
+            TeleportToServerCore();
         }
         if (Input.GetKey(KeyCode.H) && Input.GetKeyDown(KeyCode.P))
         {
@@ -34,6 +38,21 @@ public class CharacterCheatCode : MonoBehaviour
       else
       {
           Debug.LogWarning("Cannot teleport: Player or BossRoomTeleport not found.");
+      }
+    }
+
+    private void TeleportToServerCore()
+    {        
+      var player = GameObject.FindGameObjectWithTag("Player");
+      var tp = GameObject.FindGameObjectWithTag("ServerCoreTeleport");
+      if (player != null && tp != null)
+      {
+          Vector3 destination = tp.transform.position + Vector3.up * 2f; // Teleport 2 units above the teleport point
+          TeleportUtility.TeleportPlayer(player, destination);
+      }
+      else
+      {
+          Debug.LogWarning("Cannot teleport: Player or ServerCoreTeleport not found.");
       }
     }
 }
