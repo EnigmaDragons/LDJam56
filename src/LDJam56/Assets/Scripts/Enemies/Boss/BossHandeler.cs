@@ -7,7 +7,7 @@ public class BossHandeler : EnemyHandeler
 {
     public float SpawningDelay;
     public float MeleeDelay;
-    
+    bool flag = true;
     private BossSpawner spawner;
 
     // Boss-specific method for spawning
@@ -16,6 +16,14 @@ public class BossHandeler : EnemyHandeler
         if (spawner != null)
         {
             spawner.SpawnEnemies();
+        }
+    }
+    private void Update()
+    {
+        if(HP <= 70f && flag)
+        {
+            spawner.towerSpawn();
+            flag = false;
         }
     }
 

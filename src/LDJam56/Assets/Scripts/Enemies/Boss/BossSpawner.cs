@@ -11,6 +11,8 @@ public class BossSpawner : MonoBehaviour
     [SerializeField] private int maxEnemies = 20;
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] BossHandeler handler;
+    public GameObject towerOne;
+    public GameObject towerTwo;
 
     private Tile currentTile;
     private NavMeshSurface navMeshSurface;
@@ -32,7 +34,11 @@ public class BossSpawner : MonoBehaviour
         }
         handler.SetSpawner(this);
     }
-
+    public void towerSpawn()
+    {
+        towerOne.SetActive(true);
+        towerTwo.SetActive(true);
+    }
     public void SpawnEnemies()
     {
         int enemyCount = Random.Range(minEnemies, maxEnemies + 1);
