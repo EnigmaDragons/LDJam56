@@ -62,6 +62,8 @@ public static class CurrentGameState
             ability = gameState.Mobility;
         if (type == AbilityType.Special)
             ability = gameState.Special;
+        if (type == AbilityType.Passive)
+            ability = gameState.Passives;
         return ability;
     }
 }
