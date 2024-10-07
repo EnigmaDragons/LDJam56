@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e83e6eabe06cec41a28dc1f33cb3e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minEnemies: 6
-  maxEnemies: 12
+  minEnemies: 4
+  maxEnemies: 8
   enemyPrefabs:
   - {fileID: 5608986638789766344, guid: eead503f853940b4dbf7b708ba686244, type: 3}
   handler: {fileID: 5939252930125516208}
