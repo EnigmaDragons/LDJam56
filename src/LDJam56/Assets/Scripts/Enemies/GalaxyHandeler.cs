@@ -8,6 +8,7 @@ public class GalaxyHandeler : EnemyHandeler
     public Transform point1;
     public Transform point2;
     public Transform firePoint2;
+    public float spinDuration;
     // Start is called before the first frame update
     void Start()
     {

@@ -127,21 +127,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 871558523169533350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a6d7b675f98fb4eb2ae7b77a5273be, type: 3}
+  m_Script: {fileID: 11500000, guid: 960a707cd58548444afd7272eae52440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   HP: 8
-  Speed: 6
-  Range: 25
+  Speed: 7
+  Range: 21
   AttackRange: 4
   Attack2Range: 2
   Damage: 1
-  AttackDelay: 3
-  Attack2Delay: 1
+  AttackDelay: 1
+  Attack2Delay: 0.5
   firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
-  projectileSpeed: 8
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 0
   shoot: 0
   shootTarget: {fileID: 0}
   Collider1: {fileID: 2185624438051969450}
