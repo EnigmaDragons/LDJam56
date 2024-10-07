@@ -52,7 +52,7 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         {
             var startingPosition = player.transform.position + explodePrefab.transform.localPosition;
             var explode = Instantiate(explodePrefab, startingPosition, player.transform.rotation, player.transform.parent);
-            explode.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, true, first, msg.Ability, abilityData.Skip(1).ToArray());
+            explode.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, true, startingPosition, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
     }
 

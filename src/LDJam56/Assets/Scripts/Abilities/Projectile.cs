@@ -23,10 +23,9 @@ public class Projectile : MonoBehaviour
         if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Explode && (type == AbilityType.Attack || type == AbilityType.Special))
             _onHit = () =>
             {
-                var explode = Instantiate(explodePrefab,
-                    new Vector3(transform.position.x, explodePrefab.transform.position.y, transform.position.z),
-                    Quaternion.identity, transform.parent);
-                explode.Init(potency, false, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
+                var explodePosition = new Vector3(transform.position.x, explodePrefab.transform.position.y, transform.position.z);
+                var explode = Instantiate(explodePrefab, explodePosition, Quaternion.identity, transform.parent);
+                explode.Init(potency, false, explodePosition,  nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
             };
 
         _speed = data.Speed;
