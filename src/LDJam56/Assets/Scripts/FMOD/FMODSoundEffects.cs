@@ -21,6 +21,8 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     [SerializeField] private EventReference playerShieldSound;
     [SerializeField] private EventReference playerBomb;
     [SerializeField] private EventReference playerSpeed;
+    [SerializeField] private EventReference serverDestroyedSound;
+    [SerializeField] private EventReference endCreditSFXSound;
 
     //Message.Publish(new PlayOneShotSoundEffect { SoundEffect = SoundEffectEnum., Source =  });
     //Message.Publish(new StartSoundEffect { SoundEffect = SoundEffectEnum., Transform = , Moving = false, Parameters = n });
@@ -54,6 +56,10 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
             return playerBomb;
         if (soundEffect == SoundEffectEnum.PlayerSpeed)
             return playerSpeed;
+        if (soundEffect == SoundEffectEnum.ServerDestroyed)
+            return serverDestroyedSound;
+        if (soundEffect == SoundEffectEnum.EndCreditSFX)
+            return endCreditSFXSound;
         Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }

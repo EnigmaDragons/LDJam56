@@ -13,4 +13,6 @@
     PlayerShield = 10,
     PlayerBomb = 11,
     PlayerSpeed = 12,
+    ServerDestroyed = 13,
+    EndCreditSFX =14,
 }
