@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5430274}
   - component: {fileID: 13543806}
   - component: {fileID: 3354032}
-  - component: {fileID: 11484986}
-  - component: {fileID: 669377221927321124}
-  m_Layer: 8
-  m_Name: BasicBulletRedOBJ
+  - component: {fileID: 11446332}
+  - component: {fileID: 2350451714780811595}
+  m_Layer: 0
+  m_Name: granade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 191804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ Rigidbody:
   m_GameObject: {fileID: 191804}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 4
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -55,10 +55,10 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -76,9 +76,9 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -92,7 +92,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191804}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11484986
+--- !u!114 &11446332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,12 +104,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8ad01c3dc0c7446ba919e4054fe9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactParticle: {fileID: 138236, guid: b654791c58fa96f48a9a11f5e0c607f6, type: 3}
-  projectileParticle: {fileID: 130776, guid: 7f1841f0f19eb7949a6f17e9b7225a51, type: 3}
-  muzzleParticle: {fileID: 196858, guid: 482f304ba2fc9734791d54b7a71cd136, type: 3}
+  impactParticle: {fileID: 184524, guid: 70dc015f000990e438d52738c3cf4dab, type: 3}
+  projectileParticle: {fileID: 143272, guid: a8765d72ae70d4e4ea1fa1878c567d3a, type: 3}
+  muzzleParticle: {fileID: 188472, guid: 81132ff86247c874892f2556d2ccff92, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
---- !u!114 &669377221927321124
+--- !u!114 &2350451714780811595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 191804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd9f4603c11342c49b8136d5820a105a, type: 3}
+  m_Script: {fileID: 11500000, guid: c27641e11427cc74b89085d7408666b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boom: {fileID: 5314636329191861612, guid: 615571610f1153347a67b5a7957d8241, type: 3}

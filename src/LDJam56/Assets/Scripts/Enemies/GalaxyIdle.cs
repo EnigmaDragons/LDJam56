@@ -30,25 +30,22 @@ public class GalaxyIdle : StateMachineBehaviour
     {
         if (Vector3.Distance(animator.transform.position, player.position) < handeler.Range)
         {
-            Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, handeler.Range, ~(1 << animator.gameObject.layer));
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
-            {
+            
                 animator.SetTrigger("run");
-                animator.ResetTrigger("idle");
-            }
+               animator.ResetTrigger("idle");
+            
         }
-        Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, handeler.AttackRange, ~(1 << animator.gameObject.layer));
-        if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        
+        if(Vector3.Distance(animator.transform.position, player.position) < handeler.AttackRange)
+        if (flag)
         {
-            if (flag)
-            {
-                if (Random.Range(1, 4) == 1)
-                    animator.SetBool("attack1", true);
-                else
-                    animator.SetTrigger("spell");
-                flag = false;
-            }
+            if (Random.Range(1, 4) == 1)
+                animator.SetBool("attack1", true);
+            else
+                animator.SetTrigger("spell");
+            flag = false;
         }
+        
     }
 
 

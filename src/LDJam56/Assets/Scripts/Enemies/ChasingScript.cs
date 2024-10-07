@@ -43,14 +43,10 @@ public class ChasingScript : StateMachineBehaviour
         if (Vector3.Distance(animator.transform.position, target.position) < stats.AttackRange && timer >= stats.AttackDelay)
         {
             timer = 0f;
-            RaycastHit hit;
-            Physics.SphereCast(animator.transform.position, 0.2f, target.position - animator.transform.position, out hit, stats.AttackRange, ~(1 << animator.gameObject.layer));
-            
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
-            {
+           
                 animator.SetBool("attack", true);
                 animator.ResetTrigger("run");
-            }
+            
         }
     }
 

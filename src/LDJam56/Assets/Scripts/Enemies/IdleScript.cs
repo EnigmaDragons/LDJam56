@@ -38,12 +38,10 @@ public class IdleScript : StateMachineBehaviour
             var pDist = Vector3.Distance(animator.transform.position, player.position);
             if (pDist < stats.Range)
             {
-                Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
-                if (hit.collider != null && hit.collider.CompareTag("Player"))
-                {
+                
                     animator.SetTrigger("run");
                     animator.ResetTrigger("idle");
-                }
+                
             }
 
             if (pDist < stats.Attack2Range)         
