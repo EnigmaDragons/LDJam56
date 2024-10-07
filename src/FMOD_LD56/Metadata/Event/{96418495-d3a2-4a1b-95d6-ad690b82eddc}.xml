@@ -246,7 +246,7 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>1200</value>
+			<value>580</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
@@ -296,6 +296,7 @@
 			<destination>{55c4140d-a724-4cc6-8633-0ee5417e32ab}</destination>
 			<destination>{5c163f25-bca9-4b9c-a61d-23ea04390511}</destination>
 			<destination>{0b088075-4e16-4bf9-9aa7-3869b3849ec6}</destination>
+			<destination>{5e7811f2-ef54-431f-aec4-6d0821e98b35}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2cde2647-1272-4a29-b139-dbcc26b851d4}" />
@@ -313,9 +314,6 @@
 		</relationship>
 	</object>
 	<object class="MixerSend" id="{14599cee-09cc-4353-a9c1-dd1f113aa6cc}">
-		<property name="level">
-			<value>-24</value>
-		</property>
 		<property name="inputFormat">
 			<value>1</value>
 		</property>
@@ -385,7 +383,7 @@
 			<value>341.809235</value>
 		</property>
 		<property name="frequencyB">
-			<value>1398.49707</value>
+			<value>1341.7301</value>
 		</property>
 		<property name="frequencyC">
 			<value>562.005615</value>
@@ -394,7 +392,7 @@
 			<value>0.372103453</value>
 		</property>
 		<property name="qualityB">
-			<value>0.623275876</value>
+			<value>0.581413805</value>
 		</property>
 		<property name="gainC">
 			<value>22.2413788</value>
@@ -403,15 +401,27 @@
 	<object class="MixerBusFader" id="{490793bd-d63c-47b4-954e-1f011a360f6e}" />
 	<object class="DelayEffect" id="{55c4140d-a724-4cc6-8633-0ee5417e32ab}">
 		<property name="delay">
-			<value>28</value>
+			<value>8.80000019</value>
 		</property>
+		<property name="feedback">
+			<value>52</value>
+		</property>
+		<property name="level">
+			<value>-5.5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{8d87d4f3-7d30-4d61-bf2b-1cd0fa226e1d}</destination>
+		</relationship>
 	</object>
 	<object class="DelayEffect" id="{5c163f25-bca9-4b9c-a61d-23ea04390511}">
 		<property name="delay">
-			<value>9.80000019</value>
+			<value>2.79999995</value>
+		</property>
+		<property name="feedback">
+			<value>53</value>
 		</property>
 		<property name="level">
-			<value>1.5</value>
+			<value>-0.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{26b78878-437e-4b13-a200-405f965303d7}</destination>
@@ -425,6 +435,28 @@
 			<destination>{6e583c21-7fc0-46f0-ba1b-761e8664e134}</destination>
 		</relationship>
 	</object>
+	<object class="TremoloEffect" id="{5e7811f2-ef54-431f-aec4-6d0821e98b35}">
+		<property name="frequency">
+			<value>6.5</value>
+		</property>
+		<property name="depth">
+			<value>0.629999995</value>
+		</property>
+		<property name="square">
+			<value>0.25999999</value>
+		</property>
+	</object>
+	<object class="LFOModulator" id="{8d87d4f3-7d30-4d61-bf2b-1cd0fa226e1d}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>delay</value>
+		</property>
+		<property name="rate">
+			<value>0.299999982</value>
+		</property>
+		<property name="depth">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="LFOModulator" id="{26b78878-437e-4b13-a200-405f965303d7}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>level</value>
@@ -433,7 +465,7 @@
 			<value>0.299999982</value>
 		</property>
 		<property name="depth">
-			<value>23</value>
+			<value>25</value>
 		</property>
 		<property name="direction">
 			<value>-100</value>
