@@ -22,6 +22,10 @@ MonoBehaviour:
   Amount: 10
   Speed: 0
   Range: 0
+  AttackCooldown: 0.4
+  SpecialCooldown: 2
+  MobilityCooldown: 0
+  DefenseCooldown: 0
   KnockbackForce: 120
   AttackPotency: 0.3
   SpecialPotency: 1
@@ -38,5 +42,13 @@ MonoBehaviour:
     AbilitiesBefore:
     - Types: 01000000
     AbilitiesAfter:
-    - Types: feffffffffffffff
+    - Types: feffffff
     CombinationDescription: Explodes on projectile impact
+  - ValidTypes: 0100000002000000
+    AbilitiesBefore:
+    - Types: 
+    AbilitiesAfter:
+    - Types: 01000000
+    - Types: ffffffff
+    CombinationDescription: Creates an explosion that sends out weaker bullets in
+      every direction

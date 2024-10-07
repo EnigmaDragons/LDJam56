@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameplayRules
   m_EditorClassIdentifier: 
   playerHealth: 5
-  attackCooldown: 0.6
-  specialCooldown: 6
-  mobilityCooldown: 6
-  defenseCooldown: 9
+  attackCooldown: 0.5
+  specialCooldown: 2.5
+  mobilityCooldown: 2.5
+  defenseCooldown: 5
   xpNeededToLevel: 0
   maxAbilityComponents: 5

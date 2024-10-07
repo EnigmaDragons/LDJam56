@@ -5,7 +5,7 @@
 			<value>BossAtt_1</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -85,6 +85,7 @@
 	<object class="MultiSound" id="{bcc4821f-a4b9-4479-9c2a-d8afce574f95}">
 		<relationship name="sounds">
 			<destination>{9f6505b1-5f6f-4f8b-b26f-b07d325317ec}</destination>
+			<destination>{41ebede6-381b-4158-9233-4d9fda719160}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{47adbb9c-abe7-407f-a4bb-73bbb5210805}">
@@ -96,6 +97,7 @@
 	<object class="MixerBusEffectChain" id="{e96c5cba-95e8-45cb-9696-c403dc08e7d3}">
 		<relationship name="effects">
 			<destination>{e7a09f93-2bc8-4b21-a8c3-46222518b8b3}</destination>
+			<destination>{e3f7e0ef-142b-4ee8-88ef-c7b27a24f313}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6dc280ce-f3d3-465c-8c54-2a6764d0786e}" />
@@ -107,8 +109,34 @@
 			<destination>{ecd93eac-7d28-403c-a015-7c72ea1b14e1}</destination>
 		</relationship>
 	</object>
+	<object class="MultiSound" id="{41ebede6-381b-4158-9233-4d9fda719160}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{098f52ce-4c88-4c06-9109-608634a3bc1d}</destination>
+			<destination>{b825e3b6-c4c2-4cf7-af0e-7572c01b6183}</destination>
+			<destination>{ba8ccb0c-6c97-443e-8a90-3d3124f7e70f}</destination>
+			<destination>{7ff25da7-eda4-48e9-9077-4b030889af76}</destination>
+			<destination>{b2f54649-3141-465e-91c1-c59ea0998074}</destination>
+			<destination>{5b386732-d9b2-4d2e-ac96-a21673838be4}</destination>
+			<destination>{ec5067a7-ab9e-4b3c-8f96-c8b7a19cd8e3}</destination>
+			<destination>{53d60337-5095-4206-9efb-fe0cf3a59b11}</destination>
+			<destination>{02396e2f-cfbf-446a-be06-2241c4a518cc}</destination>
+			<destination>{45844ecc-66b3-4702-ab6f-b404e8051c28}</destination>
+			<destination>{ab82ee75-1449-45db-94be-c9ebeffc6f54}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{9ca1e164-c702-498f-854f-5db296547a68}" />
 	<object class="MixerBusFader" id="{e7a09f93-2bc8-4b21-a8c3-46222518b8b3}" />
+	<object class="ProxyEffect" id="{e3f7e0ef-142b-4ee8-88ef-c7b27a24f313}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{2a43a159-e830-4905-978b-fdb7b3d158e7}">
 		<relationship name="audioFile">
 			<destination>{2be43c72-73a7-4dd1-95fa-f43f5db0df8f}</destination>
@@ -129,4 +157,31 @@
 			<destination>{96b94115-27af-4765-8071-f62072904c9d}</destination>
 		</relationship>
 	</object>
+	<object class="SingleSound" id="{098f52ce-4c88-4c06-9109-608634a3bc1d}">
+		<relationship name="audioFile">
+			<destination>{0e395828-733a-4d93-9151-73a84d031abc}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{b825e3b6-c4c2-4cf7-af0e-7572c01b6183}">
+		<relationship name="audioFile">
+			<destination>{921c9f3d-9c5b-4d66-b188-d7d1fe30afdd}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{ba8ccb0c-6c97-443e-8a90-3d3124f7e70f}">
+		<relationship name="audioFile">
+			<destination>{449d60a7-0366-4d93-915d-cc71dbab932a}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{7ff25da7-eda4-48e9-9077-4b030889af76}">
+		<relationship name="audioFile">
+			<destination>{65de0892-a975-4b76-80a8-eb0b95ea8480}</destination>
+		</relationship>
+	</object>
+	<object class="SilenceSound" id="{b2f54649-3141-465e-91c1-c59ea0998074}" />
+	<object class="SilenceSound" id="{5b386732-d9b2-4d2e-ac96-a21673838be4}" />
+	<object class="SilenceSound" id="{ec5067a7-ab9e-4b3c-8f96-c8b7a19cd8e3}" />
+	<object class="SilenceSound" id="{53d60337-5095-4206-9efb-fe0cf3a59b11}" />
+	<object class="SilenceSound" id="{02396e2f-cfbf-446a-be06-2241c4a518cc}" />
+	<object class="SilenceSound" id="{45844ecc-66b3-4702-ab6f-b404e8051c28}" />
+	<object class="SilenceSound" id="{ab82ee75-1449-45db-94be-c9ebeffc6f54}" />
 </objects>

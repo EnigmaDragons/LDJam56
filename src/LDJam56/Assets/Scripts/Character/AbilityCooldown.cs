@@ -9,7 +9,6 @@ public class AbilityCooldown : MonoBehaviour
     [SerializeField] private RadialSegmentedHealthBar cooldownRadial;
     [SerializeField] private AbilityType type;
     [SerializeField] private TMP_Text text;
-    [SerializeField] private GameplayRules rules;
     [SerializeField] private Image image;
 
     private bool _onCooldown = false;
@@ -63,13 +62,13 @@ public class AbilityCooldown : MonoBehaviour
     private float GetBaseCooldown()
     {
         if (type == AbilityType.Attack)
-            return CurrentGameState.ReadonlyGameState.Attack.Cooldown(rules, CurrentGameState.ReadonlyGameState.PlayerStats);
+            return CurrentGameState.ReadonlyGameState.Attack.Cooldown(CurrentGameState.ReadonlyGameState.PlayerStats);
         if (type == AbilityType.Special)
-            return CurrentGameState.ReadonlyGameState.Special.Cooldown(rules, CurrentGameState.ReadonlyGameState.PlayerStats);
+            return CurrentGameState.ReadonlyGameState.Special.Cooldown(CurrentGameState.ReadonlyGameState.PlayerStats);
         if (type == AbilityType.Mobility)
-            return CurrentGameState.ReadonlyGameState.Mobility.Cooldown(rules, CurrentGameState.ReadonlyGameState.PlayerStats);
+            return CurrentGameState.ReadonlyGameState.Mobility.Cooldown(CurrentGameState.ReadonlyGameState.PlayerStats);
         if (type == AbilityType.Defense)
-            return CurrentGameState.ReadonlyGameState.Defense.Cooldown(rules, CurrentGameState.ReadonlyGameState.PlayerStats);
+            return CurrentGameState.ReadonlyGameState.Defense.Cooldown(CurrentGameState.ReadonlyGameState.PlayerStats);
         return 0;
     }
 }

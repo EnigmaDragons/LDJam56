@@ -12,12 +12,14 @@ public class AbilityCustomizeUI : MonoBehaviour
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
     [SerializeField] private TMP_Text compatibleInteractionText;
+    [SerializeField] private TMP_Text cooldownText;
     
     private CodeButton _currentSelectedButton;
     private int _indexSelected;
     private Ability _ability;
     private AbilityData _toAdd;
     private Action _onCancel;
+    private AbilityType _abilityType;
 
     public void Start()
     {
@@ -27,6 +29,7 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel)
     {
+        _abilityType = abilityType;
         abilityTypeText.text = abilityType.ToString();
         _toAdd = abilityToAdd;
         _onCancel = onCancel;
@@ -40,7 +43,7 @@ public class AbilityCustomizeUI : MonoBehaviour
             {
                 var i = abilityInsertIndex;
                 var button = codeButtons[codeButtonIndex];
-                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, button, compatibility.Value.CombinationDescription));
+                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, button, compatibility.Value.CombinationDescription, $"Cooldown: {_ability.BaseCooldown}s -> {_ability.BaseCooldown + abilityToAdd.GetCooldown(_ability.AbilityType)}s"));
                 codeButtonIndex++;
             }
             if (abilityInsertIndex != _ability.Components.Count)
@@ -53,7 +56,7 @@ public class AbilityCustomizeUI : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void SetIndex(int index, CodeButton button, string compatibleInteraction)
+    private void SetIndex(int index, CodeButton button, string compatibleInteraction, string cooldown)
     {
         _indexSelected = index;
         _currentSelectedButton = button;
@@ -65,6 +68,7 @@ public class AbilityCustomizeUI : MonoBehaviour
                 x.Deselect();
         });
         compatibleInteractionText.text = compatibleInteraction;
+        cooldownText.text = cooldown;
     }
 
     private void Update()
@@ -91,7 +95,11 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Confirm()
     {
-        CurrentGameState.UpdateState(s => _ability.Components.Insert(_indexSelected, _toAdd.Type));
+        CurrentGameState.UpdateState(s =>
+        {
+            _ability.Components.Insert(_indexSelected, _toAdd.Type);
+            _ability.BaseCooldown += _toAdd.GetCooldown(_abilityType);
+        });
         Message.Publish(new AbilityUpgraded());
     }
 
