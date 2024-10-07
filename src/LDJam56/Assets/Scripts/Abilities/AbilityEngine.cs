@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -35,8 +36,15 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         var first = abilityData[0];
         if (first.Type == AbilityComponentType.Speed)
         {
+            var nextAbilities = abilityData.Skip(1).ToArray();
+            if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Shield)
+            {
+                var shield = Instantiate(shieldPrefab, player.transform);
+                shield.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, nextAbilities);
+                nextAbilities = Array.Empty<AbilityData>();
+            }
             var speed = Instantiate(speedPrefab, player.transform);
-            speed.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, abilityData.Skip(1).ToArray());
+            speed.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, nextAbilities);
         }
         if (first.Type == AbilityComponentType.Projectile)
         {

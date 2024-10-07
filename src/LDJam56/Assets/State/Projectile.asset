@@ -50,10 +50,9 @@ MonoBehaviour:
     AbilitiesAfter:
     - Types: 01000000
     CombinationDescription: Increases the burst of shots
-  - ValidTypes: 0100000002000000
+  - ValidTypes: 01000000020000000300000004000000
     AbilitiesBefore:
     - Types: 02000000
     AbilitiesAfter:
     - Types: ffffffff
-    CombinationDescription: Sends out weaker bullets in every direction from the
-      explosion
+    CombinationDescription: fires shots in all directions from the explosion

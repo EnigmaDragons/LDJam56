@@ -52,3 +52,9 @@ MonoBehaviour:
     - Types: ffffffff
     CombinationDescription: Creates an explosion that sends out weaker bullets in
       every direction
+  - ValidTypes: 0300000004000000
+    AbilitiesBefore:
+    - Types: 04000000
+    AbilitiesAfter: []
+    CombinationDescription: Everytime you bump into an enemy while shielding explode
+      them
