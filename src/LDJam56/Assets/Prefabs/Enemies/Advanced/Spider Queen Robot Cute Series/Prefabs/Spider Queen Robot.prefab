@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 200
+  HP: 150
   Speed: 6
   Range: 0
   AttackRange: 5
@@ -553,6 +553,9 @@ MonoBehaviour:
   shootTarget: {fileID: 0}
   Collider1: {fileID: 7340852280993084328}
   Collider2: {fileID: 6801768221304411762}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
   SpawningDelay: 5
   MeleeDelay: 4
 --- !u!136 &7132965814180588611
