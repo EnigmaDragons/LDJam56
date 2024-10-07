@@ -114,20 +114,12 @@ public class EnemyHandeler : MonoBehaviour
         if (!_targetFound)
             return;
 
-        Vector3 direction = (shootTarget.position - firePoint.position).normalized;
-
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        EnemyBullets script = projectile.GetComponent<EnemyBullets>();
+        script.speed = Speed;
+        script.target = shootTarget.position;
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.EnemyShoot, gameObject));//publishing the soundeffect i want to play(need to add to SFX enum) go to fmod soundeffects script add there new stuff
-        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
-
-        if (projectileRb != null)
-        {
-            projectileRb.velocity = direction * projectileSpeed;
-        }
-        else
-        {
-            Debug.LogWarning("Projectile prefab is missing a Rigidbody component!");
-        }
+        
         shoot = false;
         agent.updateRotation = true;
     }

@@ -9,7 +9,10 @@ public class GalaxyRun : StateMachineBehaviour
     NavMeshAgent agent;
     GalaxyHandeler handeler;
     float timer;
-    float timer2;
+    private float stuckThreshold = 0.1f;
+    private float stuckTime = 1.5f; 
+    private float stuckTimer = 0.0f;
+    private Vector3 lastPosition;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -18,7 +21,7 @@ public class GalaxyRun : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = handeler.Speed;
         agent.isStopped = false;
-        
+        lastPosition = agent.transform.position;
 
         //reset all interactions
         animator.SetBool("attack2", false);
@@ -32,7 +35,6 @@ public class GalaxyRun : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer += Time.deltaTime;
-        timer2 += Time.deltaTime;
         if (timer >= handeler.Attack2Delay && Vector3.Distance(animator.transform.position, target.position) < handeler.Attack2Range)
         {
             animator.SetBool("attack1", false);
@@ -45,10 +47,36 @@ public class GalaxyRun : StateMachineBehaviour
             animator.SetTrigger("idle");
             animator.ResetTrigger("run");
         }
-        agent.SetDestination(new Vector3(-target.position.x,target.position.y,-target.position.z));
+        Vector3 directionToTarget = target.position - agent.transform.position;
+        Vector3 oppositeDirection = -directionToTarget;
+        Vector3 destination = agent.transform.position + oppositeDirection;
+        agent.SetDestination(destination);
         agent.updateRotation = true;
-        
+
+        if (Vector3.Distance(agent.transform.position, lastPosition) < stuckThreshold)
+        {
+            stuckTimer += Time.deltaTime;
+            if (stuckTimer >= stuckTime)
+            {
+                
+                Vector3 randomDirection = Random.insideUnitSphere * 5.0f;
+                randomDirection += agent.transform.position;
+                NavMeshHit hit;
+                if (NavMesh.SamplePosition(randomDirection, out hit, 5.0f, NavMesh.AllAreas))
+                {
+                    agent.SetDestination(hit.position);
+                }
+                stuckTimer = 0.0f;
+            }
+        }
+        else
+        {
+            stuckTimer = 0.0f;
+        }
+
+        lastPosition = agent.transform.position;
     }
+
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
