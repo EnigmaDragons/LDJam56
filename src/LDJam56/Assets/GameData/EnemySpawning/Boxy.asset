@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Boxy
   m_EditorClassIdentifier: 
   prefab: {fileID: 2659097540966576855, guid: 98e6235ab5a838647812d6b53298b1cf, type: 3}
-  weight: 2
+  weight: 4

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Jellyfish
   m_EditorClassIdentifier: 
   prefab: {fileID: 8877338070603155299, guid: 4973221a3267fec4d86d797171760392, type: 3}
-  weight: 2
+  weight: 4
