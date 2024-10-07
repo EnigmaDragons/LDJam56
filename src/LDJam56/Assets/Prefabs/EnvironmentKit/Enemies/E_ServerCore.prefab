@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 50
+  HP: 20
   Speed: 0
   Range: 0
   AttackRange: 0
