@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5282830460615359875}
   - component: {fileID: 5450849325340908552}
+  - component: {fileID: 6595751879073305450}
   m_Layer: 0
   m_Name: E_BossEnemy
   m_TagString: Untagged
@@ -48,6 +49,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHandler: {fileID: 1813327204441353379}
   hpBar: {fileID: 6009612721258579040}
+--- !u!114 &6595751879073305450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313857229092551709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ad7148f74ea704985343c99c774a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follower: {fileID: 8119235228770684481}
+  target: {fileID: 9106052696387549986}
+  offset: {x: 0, y: 5.5, z: 0}
 --- !u!1001 &3546359387650858112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,11 +132,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5232998444292662868, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7084547029409749216, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}
       propertyPath: mesh
@@ -135,11 +146,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyHpBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 7956283644703761319, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

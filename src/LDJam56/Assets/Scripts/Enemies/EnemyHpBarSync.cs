@@ -44,6 +44,10 @@ public class EnemyHpBarSync : MonoBehaviour
         hpBar.SegmentCount = maxHp;
         hpBar.Value = currentHp;
         
+        // Bug Fix Hack
+        //if (currentHp > 0 && !enemyHandler.gameObject.activeSelf)
+        //    enemyHandler.gameObject.SetActive(true);
+        
         if (currentHp <= 0)
             hpBar.gameObject.SetActive(false);
     }
