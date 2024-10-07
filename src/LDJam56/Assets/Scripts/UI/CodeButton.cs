@@ -29,6 +29,7 @@ public class CodeButton : MonoBehaviour, IPointerEnterHandler
             text.text = _existingCode.DisplayName;
             text.color = existingColor;
         }
+        gameObject.SetActive(true);
     }
     
     public void OnPointerEnter(PointerEventData eventData)
