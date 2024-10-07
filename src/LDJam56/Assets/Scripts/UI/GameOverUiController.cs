@@ -9,6 +9,7 @@ public class GameOverUiController : OnMessage<GameOver>
     [SerializeField] private float greyScaleDuration = 2f;
     [SerializeField] private string postProcessVolumeTag = "PostProcessVolume";
 
+    private bool _hasLost;
     private PostProcessVolume postProcessVolume;
     private ColorGrading colorGrading;
 
@@ -37,7 +38,10 @@ public class GameOverUiController : OnMessage<GameOver>
 
     protected override void Execute(GameOver message)
     {
-        Time.timeScale = 0f;
+        if (_hasLost)
+            return;
+        _hasLost = true;
+        Time.timeScale = 0;
         StartCoroutine(FadeToGreyThenShowUI());
     }
 
