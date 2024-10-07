@@ -42,5 +42,13 @@ MonoBehaviour:
     AbilitiesBefore:
     - Types: 01000000
     AbilitiesAfter:
-    - Types: feffffffffffffff
+    - Types: feffffff
     CombinationDescription: Explodes on projectile impact
+  - ValidTypes: 0100000002000000
+    AbilitiesBefore:
+    - Types: 
+    AbilitiesAfter:
+    - Types: 01000000
+    - Types: ffffffff
+    CombinationDescription: Creates an explosion that sends out weaker bullets in
+      every direction

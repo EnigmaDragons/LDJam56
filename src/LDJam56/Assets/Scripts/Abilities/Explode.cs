@@ -7,6 +7,7 @@ public class Explode : MonoBehaviour
 {
     [SerializeField] private float animationTime;
     [SerializeField] private float castTime;
+    [SerializeField] private Projectile projectilePrefab;
 
     private Action _onCastFinish;
     private float _remainingCastTime;
@@ -21,10 +22,22 @@ public class Explode : MonoBehaviour
         _timeRemaining = animationTime;
     }
     
-    public void Init(float potency, bool playerOriginator, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    public void Init(float potency, bool playerOriginator, Vector3 startingPosition, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
-        potency *= data.GetPotency(type) * CurrentGameState.ReadonlyGameState.PlayerStats.AoEPotency;
-        transform.localScale *= Mathf.Sqrt(potency);
+        var localPotency = potency * data.GetPotency(type) * CurrentGameState.ReadonlyGameState.PlayerStats.AoEPotency;
+        if (nextAbilities.AnyNonAlloc() && nextAbilities[0].Type == AbilityComponentType.Projectile)
+        {
+            var projectiles = 6 + CurrentGameState.ReadonlyGameState.PlayerStats.Projectile * 2;
+            var projectileSpawn = new Vector3(startingPosition.x, projectilePrefab.transform.localPosition.y, startingPosition.z);
+            for (var i = 0; i < projectiles; i++)
+            {
+                var direction = Quaternion.Euler(0, (360 / projectiles) * i, 0) * Vector3.forward; 
+                var projectile = Instantiate(projectilePrefab, projectileSpawn, Quaternion.LookRotation(direction), transform.parent);
+                Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
+                projectile.Init(potency * 0.5f, projectileSpawn, direction, data, type, nextAbilities);   
+            }
+        }
+        transform.localScale *= Mathf.Sqrt(localPotency);
         if (playerOriginator)
         {
             var id = Guid.NewGuid().ToString();
@@ -39,7 +52,7 @@ public class Explode : MonoBehaviour
         }
         _onIndividualHit = e =>
         {
-            e.Damaged((int)Math.Ceiling(data.Amount * potency));
+            e.Damaged((int)Math.Ceiling(data.Amount * localPotency));
             this.ExecuteAfterDelay(0.25f, () =>
             {
                 Vector3 knockbackDirection = (e.transform.position - transform.position).normalized;
@@ -49,10 +62,10 @@ public class Explode : MonoBehaviour
 
                 Rigidbody enemyRb = e.GetComponent<Rigidbody>();
                 // Use ForceMode.VelocityChange for a more immediate, cartoon-like effect
-                enemyRb.AddForce(knockbackDirection * data.KnockbackForce * potency, ForceMode.VelocityChange);
+                enemyRb.AddForce(knockbackDirection * data.KnockbackForce * localPotency, ForceMode.VelocityChange);
                 
                 // Add a small upward torque for spin
-                enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f * potency), ForceMode.Impulse);
+                enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f * localPotency), ForceMode.Impulse);
             });
         };
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.Explode, gameObject));
