@@ -459,6 +459,21 @@ MonoBehaviour:
   shootTarget: {fileID: 0}
   Collider1: {fileID: 0}
   Collider2: {fileID: 0}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 37cc2a3c619718f4a928a0a31228f3d6, type: 2}
+        m_TargetAssemblyTypeName: EventPublisher, Assembly-CSharp
+        m_MethodName: PublishGameWon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &7637130592766140779
 SphereCollider:
   m_ObjectHideFlags: 0

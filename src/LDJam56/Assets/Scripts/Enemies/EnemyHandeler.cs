@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using static Unity.Cinemachine.CinemachineTargetGroup;
 
 public class EnemyHandeler : MonoBehaviour
@@ -27,6 +28,8 @@ public class EnemyHandeler : MonoBehaviour
 
     public Collider Collider1;
     public Collider Collider2;
+
+    public UnityEvent OnDeath;
     
     protected bool _targetFound;
 
@@ -84,11 +87,13 @@ public class EnemyHandeler : MonoBehaviour
         if (HP <= 0)
         {
             _dying = true;
-            animator.SetTrigger("death");
+            if (_hasAnimator)
+                animator.SetTrigger("death");
             Message.Publish(new EnemyKilled());
+            OnDeath.Invoke();
             Debug.Log("I died!", this);
             // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
-            this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), animator.GetCurrentAnimatorClipInfo(0).Length);
+            this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), _hasAnimator ? animator.GetCurrentAnimatorClipInfo(0).Length : 2.5f);
         }
         if(shoot && agent.updateRotation == false)
         {

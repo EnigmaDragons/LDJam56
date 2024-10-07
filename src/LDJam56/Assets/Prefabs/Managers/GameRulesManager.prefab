@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1048770466032757902}
   - component: {fileID: 6805688547544120523}
   - component: {fileID: 8066219586833257511}
+  - component: {fileID: 1195197318824346336}
   m_Layer: 0
   m_Name: GameRulesManager
   m_TagString: Untagged
@@ -120,6 +121,33 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Fmod_MusicState, Assembly-CSharp
         m_MethodName: SetIsLowHealth
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1195197318824346336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200698655176734724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5d6283c2114207a24cbaf96bca27d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c3cd3edfa3cf5c94fbbf792f8728cebb, type: 2}
+        m_TargetAssemblyTypeName: Navigator, Assembly-CSharp
+        m_MethodName: NavigateToCredits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
