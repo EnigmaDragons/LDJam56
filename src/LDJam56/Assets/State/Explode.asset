@@ -15,7 +15,10 @@ MonoBehaviour:
   Type: 2
   Primary: 2
   DisplayName: Explode()
+  Description: 
   Duration: 0
   Amount: 10
   Speed: 0
   Range: 0
+  KnockbackForce: 120
+  Compatibilities: []

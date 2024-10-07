@@ -159,7 +159,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6345208233468127618}
   serializedVersion: 8
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -5075,7 +5075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb30a007bae48a7a6fb5dc08d89e032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationTime: 1
+  animationTime: 0.7
   castTime: 0.4
 --- !u!135 &5884432922782586282
 SphereCollider:
@@ -5141,7 +5141,7 @@ ParticleSystem:
   m_GameObject: {fileID: 7751426030781659451}
   serializedVersion: 8
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
