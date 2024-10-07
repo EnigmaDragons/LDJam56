@@ -25,7 +25,7 @@ public class GalaxySpinAttack : StateMachineBehaviour
     {
         timer += Time.deltaTime;
         
-        if (timer >= handeler.Attack2Delay)
+        if (timer >= handeler.spinDuration)
         {
             animator.SetBool("attack2", false);
             timer2 = 0f;

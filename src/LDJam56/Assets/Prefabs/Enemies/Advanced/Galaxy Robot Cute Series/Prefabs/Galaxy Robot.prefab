@@ -5037,6 +5037,8 @@ GameObject:
   - component: {fileID: 4854774158050721185}
   - component: {fileID: 435789560577994536}
   - component: {fileID: 9084552530725778972}
+  - component: {fileID: 96255635117145420}
+  - component: {fileID: 4039043721140314236}
   m_Layer: 8
   m_Name: Galaxy Robot
   m_TagString: Untagged
@@ -5098,18 +5100,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e7021c9c36f6e4780a08c2728854ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 4362554014230283012}
   HP: 25
   Speed: 4
-  Range: 0
-  AttackRange: 0
-  Attack2Range: 0
-  Damage: 0
+  Range: 18
+  AttackRange: 22
+  Attack2Range: 13
+  Damage: 1
   AttackDelay: 0
-  Attack2Delay: 7
+  Attack2Delay: 22
   firePoint: {fileID: 9215485935901714613}
   projectilePrefab: {fileID: 0}
-  projectileSpeed: 0
+  projectileSpeed: 12
   shoot: 0
   shootTarget: {fileID: 0}
   Collider1: {fileID: 0}
@@ -5117,6 +5119,7 @@ MonoBehaviour:
   point1: {fileID: 6545209488362651777}
   point2: {fileID: 3801489363238714190}
   firePoint2: {fileID: 7524641948233952694}
+  spinDuration: 7
 --- !u!136 &9084552530725778972
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5140,6 +5143,55 @@ CapsuleCollider:
   m_Height: 3.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.91781855, z: 0}
+--- !u!195 &96255635117145420
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230516670665227617}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &4039043721140314236
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230516670665227617}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &3124766118592580639
 GameObject:
   m_ObjectHideFlags: 0

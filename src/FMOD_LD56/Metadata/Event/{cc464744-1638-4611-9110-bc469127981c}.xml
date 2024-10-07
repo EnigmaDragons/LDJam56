@@ -5,7 +5,7 @@
 			<value>BossAtt_2</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{168d7dd5-dc69-4c65-9a00-0526fc47d25c}</destination>
@@ -100,6 +100,7 @@
 	<object class="MixerBusEffectChain" id="{cde1025d-71c1-4e2b-9a1d-75880b34b395}">
 		<relationship name="effects">
 			<destination>{91645c27-cbe0-4fa4-b77a-cde84ab24b5a}</destination>
+			<destination>{d03840bf-129f-457d-8d5d-2f7d44dc2183}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8762ffb0-8623-4aac-a5d5-0785e06fbcea}" />
@@ -133,6 +134,14 @@
 	</object>
 	<object class="MixerBusFader" id="{34ff2180-5440-4a07-a392-6b9dfad47c8e}" />
 	<object class="MixerBusFader" id="{91645c27-cbe0-4fa4-b77a-cde84ab24b5a}" />
+	<object class="ProxyEffect" id="{d03840bf-129f-457d-8d5d-2f7d44dc2183}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{7db44dd5-a242-448f-816c-89b6be5ef547}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{a3ecf04c-4f5d-4398-87d6-d848dd30f33d}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

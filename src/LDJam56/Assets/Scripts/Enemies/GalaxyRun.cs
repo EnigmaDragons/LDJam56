@@ -37,7 +37,7 @@ public class GalaxyRun : StateMachineBehaviour
         {
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", true);
-            timer2 = 0f;
+            timer = 0f;
         }
 
         if ((Vector3.Distance(animator.transform.position, target.position) >= handeler.AttackRange))
