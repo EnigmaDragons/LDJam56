@@ -67,7 +67,42 @@ public class EnemyHandeler : MonoBehaviour
             originalColor = enemyMaterial.color;
         }
     }
-    private void Update()
+    protected void Update()
+    {
+        OnUpdate();
+    }
+    public void BeginAttackBasic1()
+    {
+        Collider1.enabled = true;
+    }
+    public void EndAttackBasic1()
+    {
+        Collider1.enabled = false;
+    }
+    public void BeginAttackBasic2()
+    {
+        Collider2.enabled = true;
+    }
+    public void EndAttackBasic2()
+    {
+        Collider2.enabled = false;
+    }
+    public void BasicShoot()
+    {
+        if (!_targetFound)
+            return;
+
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        EnemyBullets script = projectile.GetComponent<EnemyBullets>();
+        script.speed = Speed;
+        script.target = shootTarget.position;
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.EnemyShoot, gameObject));//publishing the soundeffect i want to play(need to add to SFX enum) go to fmod soundeffects script add there new stuff
+        
+        shoot = false;
+        agent.updateRotation = true;
+    }
+
+    protected virtual void OnUpdate()
     {
         if (_dying)
             return;
@@ -102,37 +137,6 @@ public class EnemyHandeler : MonoBehaviour
             Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, 5 * Time.deltaTime);
             rb.MoveRotation(smoothedRotation);
         }
-
-    }
-    public void BeginAttackBasic1()
-    {
-        Collider1.enabled = true;
-    }
-    public void EndAttackBasic1()
-    {
-        Collider1.enabled = false;
-    }
-    public void BeginAttackBasic2()
-    {
-        Collider2.enabled = true;
-    }
-    public void EndAttackBasic2()
-    {
-        Collider2.enabled = false;
-    }
-    public void BasicShoot()
-    {
-        if (!_targetFound)
-            return;
-
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        EnemyBullets script = projectile.GetComponent<EnemyBullets>();
-        script.speed = Speed;
-        script.target = shootTarget.position;
-        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.EnemyShoot, gameObject));//publishing the soundeffect i want to play(need to add to SFX enum) go to fmod soundeffects script add there new stuff
-        
-        shoot = false;
-        agent.updateRotation = true;
     }
 
     public virtual void Damaged(int damage)

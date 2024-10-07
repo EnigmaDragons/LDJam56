@@ -18,13 +18,14 @@ public class BossHandeler : EnemyHandeler
             spawner.SpawnEnemies();
         }
     }
-    private void Update()
+    protected override void OnUpdate()
     {
         if(HP <= 100f && flag)
         {
             spawner.towerSpawn();
             flag = false;
         }
+        base.OnUpdate();
     }
 
     // Boss-specific method to set the spawner
