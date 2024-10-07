@@ -38,6 +38,11 @@ public class Fmod_MusicState : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Intensity", Mathf.Clamp(intensity, 0f, 2f));
     }
 
+    public void SetIsLowHealth(bool isLow)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Low Health", isLow ? 1f : 0f);
+    }
+
     private void OnDestroy()
     {
         musicEvent.release();

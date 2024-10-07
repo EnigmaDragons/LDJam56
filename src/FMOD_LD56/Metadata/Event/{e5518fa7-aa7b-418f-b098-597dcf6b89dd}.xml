@@ -114,6 +114,8 @@
 			<destination>{3ae7fbd5-09d1-4139-b7b4-4a4766aa14f6}</destination>
 			<destination>{933cd8ea-1ffd-48f6-8c11-659a9c907334}</destination>
 			<destination>{8d4f21ed-3f67-4536-9c9a-b1755108bddd}</destination>
+			<destination>{1d6efe44-60cc-45c4-b86a-42b8adf21cce}</destination>
+			<destination>{a9d2b870-02a0-4886-82c7-39112db731f2}</destination>
 			<destination>{80c696f0-f5be-484d-a9a6-f249dc19f011}</destination>
 			<destination>{920f870e-1d50-431d-bfd0-1cbd0cdbd2d1}</destination>
 		</relationship>
@@ -121,7 +123,7 @@
 	<object class="MixerBusPanner" id="{3f1456d6-e923-44e5-b345-246fbe84c38c}" />
 	<object class="MultiSound" id="{d68117d8-895a-40a3-92ea-dc663c0c169d}">
 		<property name="pitch">
-			<value>1.20000005</value>
+			<value>3.4000001</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{d0ff2071-4929-4793-8b07-995f7054658c}</destination>
@@ -197,7 +199,7 @@
 	</object>
 	<object class="ChorusEffect" id="{933cd8ea-1ffd-48f6-8c11-659a9c907334}">
 		<property name="rate">
-			<value>0.179999992</value>
+			<value>0.159999996</value>
 		</property>
 		<property name="depth">
 			<value>84</value>
@@ -216,6 +218,25 @@
 		<property name="level">
 			<value>-34</value>
 		</property>
+	</object>
+	<object class="MixerSend" id="{1d6efe44-60cc-45c4-b86a-42b8adf21cce}">
+		<property name="level">
+			<value>-26</value>
+		</property>
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{5ff524cc-c063-47c3-bc34-af2c11b9ea72}</destination>
+		</relationship>
+	</object>
+	<object class="ProxyEffect" id="{a9d2b870-02a0-4886-82c7-39112db731f2}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{d2709831-0437-4301-a94e-95b3c507ae6e}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{80c696f0-f5be-484d-a9a6-f249dc19f011}" />
 	<object class="ProxyEffect" id="{920f870e-1d50-431d-bfd0-1cbd0cdbd2d1}">
