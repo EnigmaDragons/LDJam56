@@ -14,4 +14,5 @@ public class PlayerStats
     public int Level = 1;
     public int XP = 0;
     public int Projectile = 1;
+    public float Potency = 1;
 }

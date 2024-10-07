@@ -23,6 +23,10 @@ MonoBehaviour:
   Speed: 20
   Range: 9
   KnockbackForce: 30
+  AttackPotency: 1
+  SpecialPotency: 5
+  MobilityPotency: 1
+  DefensePotency: 1
   Compatibilities:
   - ValidTypes: 01000000
     AbilitiesBefore:

@@ -28,7 +28,7 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         if (first.Type == AbilityComponentType.Speed)
         {
             var speed = Instantiate(speedPrefab, player.transform);
-            speed.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
+            speed.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Projectile)
         {
@@ -46,13 +46,13 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         if (first.Type == AbilityComponentType.Shield)
         {
             var shield = Instantiate(shieldPrefab, player.transform);
-            shield.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
+            shield.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Explode)
         {
             var startingPosition = player.transform.position + explodePrefab.transform.localPosition;
             var explode = Instantiate(explodePrefab, startingPosition, player.transform.rotation, player.transform.parent);
-            explode.Init(true, first, msg.Ability, abilityData.Skip(1).ToArray());
+            explode.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, true, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
     }
 
@@ -67,6 +67,6 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + _direction * forwardOffset;
         var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
-        projectile.Init(startingPosition, _direction, data, type, nextAbilities);
+        projectile.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, startingPosition, _direction, data, type, nextAbilities);
     } 
 }

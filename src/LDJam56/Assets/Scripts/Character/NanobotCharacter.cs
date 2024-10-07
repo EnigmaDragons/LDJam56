@@ -136,6 +136,6 @@ public class NanobotCharacter : OnMessage<TeleportPlayer, PlayerDamaged>, IChara
     protected override void Execute(PlayerDamaged msg)
     {
         var shield = Instantiate(shieldPrefab, gameObject.transform);
-        shield.Init(afterDamageShield, AbilityType.Passive, Array.Empty<AbilityData>());
+        shield.Init(1, afterDamageShield, AbilityType.Passive, Array.Empty<AbilityData>());
     }
 }

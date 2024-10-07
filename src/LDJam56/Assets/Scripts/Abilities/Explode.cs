@@ -21,9 +21,10 @@ public class Explode : MonoBehaviour
         _timeRemaining = animationTime;
     }
     
-    public void Init(bool playerOriginator, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    public void Init(float potency, bool playerOriginator, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
-
+        potency *= data.GetPotency(type);
+        transform.localScale *= Mathf.Sqrt(potency);
         if (playerOriginator)
         {
             var id = Guid.NewGuid().ToString();
@@ -38,7 +39,7 @@ public class Explode : MonoBehaviour
         }
         _onIndividualHit = e =>
         {
-            e.Damaged((int)data.Amount);
+            e.Damaged((int)Math.Ceiling(data.Amount * potency));
             this.ExecuteAfterDelay(0.25f, () =>
             {
                 Vector3 knockbackDirection = (e.transform.position - transform.position).normalized;
@@ -48,10 +49,10 @@ public class Explode : MonoBehaviour
 
                 Rigidbody enemyRb = e.GetComponent<Rigidbody>();
                 // Use ForceMode.VelocityChange for a more immediate, cartoon-like effect
-                enemyRb.AddForce(knockbackDirection * data.KnockbackForce, ForceMode.VelocityChange);
+                enemyRb.AddForce(knockbackDirection * data.KnockbackForce * potency, ForceMode.VelocityChange);
                 
                 // Add a small upward torque for spin
-                enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f), ForceMode.Impulse);
+                enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f * potency), ForceMode.Impulse);
             });
         };
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.Explode, gameObject));

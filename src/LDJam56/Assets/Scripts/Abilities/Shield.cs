@@ -6,11 +6,12 @@ public class Shield : MonoBehaviour
     private Action _onComplete;
     private float _duration;
     
-    public void Init(AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    public void Init(float potency, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
+        potency = data.GetPotency(type);
         var id = Guid.NewGuid().ToString(); 
         CurrentGameState.UpdateState(s => s.PlayerStats.IsInvincible.Add(id));
-        _duration = data.Duration;
+        _duration = data.Duration * potency;
         _onComplete = () => CurrentGameState.UpdateState(s => s.PlayerStats.IsInvincible.Remove(id));
     }
 

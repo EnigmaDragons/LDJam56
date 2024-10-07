@@ -17,9 +17,26 @@ public class AbilityData : ScriptableObject
     public float Speed;
     public float Range;
     public float KnockbackForce;
+    public float AttackPotency = 1;
+    public float SpecialPotency = 1;
+    public float MobilityPotency = 1;
+    public float DefensePotency = 1;
 
     public AbilityCompatibility[] Compatibilities;
 
+    public float GetPotency(AbilityType type)
+    {
+        if (type == AbilityType.Attack)
+            return AttackPotency;
+        if (type == AbilityType.Special)
+            return SpecialPotency;
+        if (type == AbilityType.Mobility)
+            return MobilityPotency;
+        if (type == AbilityType.Defense)
+            return DefensePotency;
+        return 1;
+    }
+    
     public bool IsValid(AbilityType type, List<AbilityComponentType> components)
     {
         for (var i = 0; i <= components.Count; i++)

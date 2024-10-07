@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: PlayerHitShield
   m_EditorClassIdentifier: 
   Type: 4
+  Primary: 0
   DisplayName: Player Hit Shield
   Description: 
-  Duration: 2
+  PassiveDescription: 
+  Icon: {fileID: 0}
+  Duration: 1
   Amount: 0
   Speed: 0
-  Size: 0
   Range: 0
+  KnockbackForce: 0
+  AttackPotency: 1
+  SpecialPotency: 1
+  MobilityPotency: 1
+  DefensePotency: 1
+  Compatibilities: []

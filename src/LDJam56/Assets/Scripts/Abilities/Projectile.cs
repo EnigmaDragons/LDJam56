@@ -15,8 +15,9 @@ public class Projectile : MonoBehaviour
     private float _speed;
     private float _timeTilDeath = 0;
     
-    public void Init(Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    public void Init(float potency, Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
+        var localPotency = potency * data.GetPotency(type);
         _target = startingPosition + direction * data.Range;
         _onHit = () => { };
         if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Explode && (type == AbilityType.Attack || type == AbilityType.Special))
@@ -25,14 +26,14 @@ public class Projectile : MonoBehaviour
                 var explode = Instantiate(explodePrefab,
                     new Vector3(transform.position.x, explodePrefab.transform.position.y, transform.position.z),
                     Quaternion.identity, transform.parent);
-                explode.Init(false, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
+                explode.Init(potency, false, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
             };
 
         _speed = data.Speed;
         _onEnemyHit = e => {
-            e.Damaged((int)data.Amount);
+            e.Damaged((int)Math.Ceiling(data.Amount * localPotency));
             Vector3 knockbackDirection = (_target - transform.position).normalized;
-            e.GetComponent<Rigidbody>().AddForce(knockbackDirection * data.KnockbackForce, ForceMode.Impulse);
+            e.GetComponent<Rigidbody>().AddForce(knockbackDirection * data.KnockbackForce * localPotency, ForceMode.Impulse);
         };
     }
 

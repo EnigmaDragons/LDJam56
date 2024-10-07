@@ -9,11 +9,12 @@ public class Speed : MonoBehaviour
     private float _duration;
     private float _timeTilDeath;
     
-    public void Init(AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    public void Init(float potency, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
-        CurrentGameState.UpdateState(s => s.PlayerStats.Speed += data.Amount);
+        potency *= data.GetPotency(type);
+        CurrentGameState.UpdateState(s => s.PlayerStats.Speed += data.Amount * potency);
         _duration = data.Duration;
-        _onComplete = () => CurrentGameState.UpdateState(s => s.PlayerStats.Speed -= data.Amount);
+        _onComplete = () => CurrentGameState.UpdateState(s => s.PlayerStats.Speed -= data.Amount * potency);
     }
 
     private void Update()
