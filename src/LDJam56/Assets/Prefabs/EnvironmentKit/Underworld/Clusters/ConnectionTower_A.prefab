@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6315290675210414404
 Transform:
@@ -115,7 +115,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5569141954851425163, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 2523892059998181976, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 6836402483984133728, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 741341967259092178, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 3314784763189252363, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 4633993188867031256, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 4437784933940458720, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7566096454351085138, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7890614499215756634, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 274195632203717769, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 9085817478978824369, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 3062816745379643907, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7953734718606489333, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 13067664977110822, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 9076725062495048478, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 2981664546022668716, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
@@ -189,7 +205,25 @@ PrefabInstance:
       value: CableTower_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5021930545185229355, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 2915537020089656992, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7953734718606489333, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 13067664977110822, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 9076725062495048478, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 2981664546022668716, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 5569141954851425163, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 2523892059998181976, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 6836402483984133728, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 741341967259092178, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 3314784763189252363, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 4633993188867031256, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 4437784933940458720, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7566096454351085138, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 7890614499215756634, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 274195632203717769, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 9085817478978824369, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
+    - {fileID: 3062816745379643907, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89bec660a66cbf41a6e26ee76a1615f, type: 3}
@@ -266,6 +300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LargeCableA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 96ad834d4496bb74ca3bc73a13653ece,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -346,6 +385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LargeCableB (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ab446fd65418844b069d7c9a2a4b0a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -424,6 +468,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LargeCableB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78ab446fd65418844b069d7c9a2a4b0a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
