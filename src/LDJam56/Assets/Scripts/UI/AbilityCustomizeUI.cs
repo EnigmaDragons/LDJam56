@@ -1,14 +1,17 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AbilityCustomizeUI : MonoBehaviour
 {
+    [SerializeField] private TMP_Text abilityTypeText;
     [SerializeField] private CodeButton[] codeButtons;
     [SerializeField] private AllAbilities allAbilities;
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
 
+    private AbilityType _abilityType;
     private int _indexSelected;
     private Ability _ability;
     private AbilityData _toAdd;
@@ -23,27 +26,47 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel, Action onComplete)
     {
+        _abilityType = abilityType;
+        abilityTypeText.text = abilityType.ToString();
         _toAdd = abilityToAdd;
         _onCancel = onCancel;
         _onComplete = onComplete;
-        codeButtons.ForEach(x => x.gameObject.SetActive(false));
-        codeButtons[0].gameObject.SetActive(true);
-        codeButtons[0].Init(null, abilityToAdd, () => SetIndex(0));
         _ability = CurrentGameState.GetAbility(abilityType);
-        for (var i = 0; i < _ability.Components.Count; i++)
+        codeButtons.ForEach(x => x.gameObject.SetActive(false));
+
+        if (abilityType == AbilityType.Passive)
         {
-            codeButtons[i * 2 + 1].gameObject.SetActive(true);
-            codeButtons[i * 2 + 1].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
-            codeButtons[i * 2 + 2].gameObject.SetActive(true);
-            var indexToSet = i + 1;
-            codeButtons[i * 2 + 2].Init(null, abilityToAdd, () => SetIndex(indexToSet));
+            _indexSelected = _ability.Components.Count;
+            for (var i = 0; i <= _ability.Components.Count; i++)
+            {
+                if (i == _ability.Components.Count)
+                {
+                    codeButtons[i].Init(null, abilityToAdd, () => { });
+                    codeButtons[i].Select();
+                }
+                else
+                    codeButtons[i].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
+            }
         }
-        SetIndex(0);
+        else
+        {
+            codeButtons[0].gameObject.SetActive(true);
+            codeButtons[0].Init(null, abilityToAdd, () => SetIndex(0));
+            for (var i = 0; i < _ability.Components.Count; i++)
+            {
+                codeButtons[i * 2 + 1].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
+                var indexToSet = i + 1;
+                codeButtons[i * 2 + 2].Init(null, abilityToAdd, () => SetIndex(indexToSet));
+            }
+            SetIndex(0);
+        }
         gameObject.SetActive(true);
     }
 
     private void SetIndex(int index)
     {
+        if (_abilityType == AbilityType.Passive)
+            return;
         _indexSelected = index;
         for (var i = 0; i <= _ability.Components.Count; i++)
         {
@@ -69,7 +92,7 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Confirm()
     {
-        _ability.Components.Insert(_indexSelected, _toAdd.Type);
+        CurrentGameState.UpdateState(s => _ability.Components.Insert(_indexSelected, _toAdd.Type));
         _onComplete();
     }
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{39148946-cb82-4829-84f2-0a9120285716}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
 		<property name="name">
 			<value>DX_MST</value>
 		</property>
@@ -16,9 +19,50 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{3262d15c-adf7-4e11-8bdf-10bad0b927c6}">
 		<relationship name="effects">
+			<destination>{9c5431f7-44b5-49bf-9e62-ca41895eca5c}</destination>
+			<destination>{b67ca2c6-3167-481b-a35e-cfac320250ea}</destination>
+			<destination>{67007d39-7f18-4724-91ef-3a83df6fa603}</destination>
 			<destination>{312e3dea-68ef-434f-ac6e-e76897f987e7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ab02d404-90a7-46bc-91a4-2c3653812cc3}" />
+	<object class="DelayEffect" id="{9c5431f7-44b5-49bf-9e62-ca41895eca5c}">
+		<property name="delay">
+			<value>220</value>
+		</property>
+		<property name="feedback">
+			<value>0</value>
+		</property>
+		<property name="level">
+			<value>-16</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{b67ca2c6-3167-481b-a35e-cfac320250ea}">
+		<property name="delay">
+			<value>260</value>
+		</property>
+		<property name="level">
+			<value>-28</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{db5d062d-b928-433a-91c8-3ba3c0c54789}</destination>
+		</relationship>
+	</object>
+	<object class="ChorusEffect" id="{67007d39-7f18-4724-91ef-3a83df6fa603}">
+		<property name="rate">
+			<value>0.0549999997</value>
+		</property>
+		<property name="depth">
+			<value>36</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{312e3dea-68ef-434f-ac6e-e76897f987e7}" />
+	<object class="RandomizerModulator" id="{db5d062d-b928-433a-91c8-3ba3c0c54789}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>delay</value>
+		</property>
+		<property name="amount">
+			<value>29</value>
+		</property>
+	</object>
 </objects>

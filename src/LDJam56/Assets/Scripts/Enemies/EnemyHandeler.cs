@@ -37,6 +37,7 @@ public class EnemyHandeler : MonoBehaviour
     private Material enemyMaterial;
     private Color originalColor;
     private Coroutine flashCoroutine;
+    private bool _dying = false;
 
     private float _maxHP;
     public float MaxHp => _maxHP;
@@ -59,6 +60,9 @@ public class EnemyHandeler : MonoBehaviour
     }
     private void Update()
     {
+        if (_dying)
+            return;
+        
         if (!_targetFound)
         {
             var obj = GameObject.FindWithTag("Player");
@@ -73,6 +77,7 @@ public class EnemyHandeler : MonoBehaviour
         
         if (HP <= 0)
         {
+            _dying = true;
             animator.SetTrigger("death");
             Message.Publish(new EnemyKilled());
             // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
