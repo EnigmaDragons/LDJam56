@@ -128,3 +128,17 @@ MonoBehaviour:
       Data3: 1773000341
       Data4: -588414453
     Path: event:/HeroGirl/HeroShield
+  playerBomb:
+    Guid:
+      Data1: 1601289650
+      Data2: 1122156542
+      Data3: -92039801
+      Data4: 1322041011
+    Path: event:/HeroGirl/PlayerBomb
+  playerSpeed:
+    Guid:
+      Data1: 845184786
+      Data2: 1142596775
+      Data3: -796165970
+      Data4: 1521006293
+    Path: event:/HeroGirl/HeroDash

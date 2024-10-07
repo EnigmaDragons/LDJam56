@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9140803450329313287}
   - component: {fileID: 293527614970317631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   MaxStableSlopeAngle: 60
   StableGroundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   DiscreteCollisionEvents: 0
   StepHandling: 1
   MaxStepHeight: 0.5
@@ -273,7 +273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motor: {fileID: 4844353861470617664}
-  rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
   queuedTime: 0.4
 --- !u!114 &7705457658377970714
 MonoBehaviour:
@@ -365,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4364054782814494006}
   - component: {fileID: 1705941445118190320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TargetingArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
