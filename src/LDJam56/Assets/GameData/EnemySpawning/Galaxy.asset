@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de5e6c0e19cf4047a8b382f04493521a, type: 3}
-  m_Name: Boxy
+  m_Name: Galaxy
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8880868073103893889, guid: 98e6235ab5a838647812d6b53298b1cf, type: 3}
-  weight: 2
+  prefab: {fileID: 1981588002741540561, guid: 4945fd55357e0f9409ee41949fe38d72, type: 3}
+  weight: 1
