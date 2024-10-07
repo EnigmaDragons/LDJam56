@@ -160,11 +160,11 @@ MonoBehaviour:
     Path: event:/EnemyBots/BossAtt_1
   enemyDeath:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1628714847
+      Data2: 1124853749
+      Data3: -1441788253
+      Data4: -1641021493
+    Path: event:/EnemyBots/BossDeath
   enemyOther:
     Guid:
       Data1: 0

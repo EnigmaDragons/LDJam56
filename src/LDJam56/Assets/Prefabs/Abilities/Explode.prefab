@@ -5077,6 +5077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationTime: 0.7
   castTime: 0.4
+  projectilePrefab: {fileID: 1724623990564704997, guid: fef4abaf180332442a4b64159bcbc033,
+    type: 3}
 --- !u!135 &5884432922782586282
 SphereCollider:
   m_ObjectHideFlags: 0
