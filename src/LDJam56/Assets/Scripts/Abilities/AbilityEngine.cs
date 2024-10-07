@@ -24,6 +24,14 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
             Debug.LogError("ability missing");
             return;
         }
+        while ((msg.Ability == AbilityType.Attack || msg.Ability == AbilityType.Special) && abilityData[0].Type == AbilityComponentType.Speed)
+        {
+            if (msg.Ability == AbilityType.Attack)
+                CurrentGameState.UpdateState(s => s.Attack.CooldownRemaining *= 0.5f);
+            if (msg.Ability == AbilityType.Special)
+                CurrentGameState.UpdateState(s => s.Special.CooldownRemaining *= 0.5f);
+            abilityData = abilityData.Skip(1).ToArray();
+        }
         var first = abilityData[0];
         if (first.Type == AbilityComponentType.Speed)
         {
