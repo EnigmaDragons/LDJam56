@@ -39,7 +39,7 @@
 			<value>6.80000019</value>
 		</property>
 		<property name="releaseTime">
-			<value>84</value>
+			<value>52</value>
 		</property>
 		<property name="gain">
 			<value>2</value>
@@ -98,7 +98,11 @@
 			<value>8.5</value>
 		</property>
 	</object>
-	<object class="LimiterEffect" id="{58af37dc-5f5b-4161-a978-cec6861a7dc1}" />
+	<object class="LimiterEffect" id="{58af37dc-5f5b-4161-a978-cec6861a7dc1}">
+		<property name="boost">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{02202943-e6e9-409a-9184-19e09af1dfd0}" />
 	<object class="LoudnessMeter" id="{8103172f-4147-4684-afd5-093474beb52d}" />
 </objects>
