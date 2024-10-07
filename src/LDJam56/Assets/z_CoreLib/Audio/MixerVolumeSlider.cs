@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
 using FMOD.Studio;
@@ -19,7 +21,7 @@ public sealed class MixerVolumeSlider : MonoBehaviour
     [SerializeField] private BusType[] linkedBusTypes;
 
     private Bus bus;
-    private Bus[] linkedBuses;
+    private Bus[] linkedBuses = Array.Empty<Bus>();
 
     public System.Action<float> onValueChanged;
 
@@ -30,7 +32,8 @@ public sealed class MixerVolumeSlider : MonoBehaviour
         
         bus.getVolume(out float volume);
         slider.value = volume;
-        
+
+        linkedBuses = linkedBusTypes.Select(b => RuntimeManager.GetBus(GetBusPath(b))).ToArray();
         slider.onValueChanged.AddListener(SetLevel);
     }
 
