@@ -118,7 +118,7 @@
 			<value>-30</value>
 		</property>
 		<property name="attackTime">
-			<value>73</value>
+			<value>170</value>
 		</property>
 		<property name="releaseTime">
 			<value>1900</value>
