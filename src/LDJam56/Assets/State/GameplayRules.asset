@@ -17,3 +17,4 @@ MonoBehaviour:
   specialCooldown: 6
   mobilityCooldown: 6
   defenseCooldown: 9
+  xpNeededToLevel: 3

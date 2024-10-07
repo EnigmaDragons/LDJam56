@@ -32,19 +32,20 @@ public class AbilityCustomizeUI : MonoBehaviour
         _ability = CurrentGameState.GetAbility(abilityType);
         for (var i = 0; i < _ability.Components.Count; i++)
         {
-            codeButtons[i * 2 - 1].gameObject.SetActive(true);
-            codeButtons[i * 2 - 1].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
-            codeButtons[i * 2].gameObject.SetActive(true);
-            var indexToSet = i;
-            codeButtons[i * 2].Init(null, abilityToAdd, () => SetIndex(indexToSet));
+            codeButtons[i * 2 + 1].gameObject.SetActive(true);
+            codeButtons[i * 2 + 1].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
+            codeButtons[i * 2 + 2].gameObject.SetActive(true);
+            var indexToSet = i + 1;
+            codeButtons[i * 2 + 2].Init(null, abilityToAdd, () => SetIndex(indexToSet));
         }
         SetIndex(0);
+        gameObject.SetActive(true);
     }
 
     private void SetIndex(int index)
     {
         _indexSelected = index;
-        for (var i = 0; i < _ability.Components.Count; i++)
+        for (var i = 0; i <= _ability.Components.Count; i++)
         {
             if (i == index)
                 codeButtons[i * 2].Select();
