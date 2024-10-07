@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8012272228016187688}
   - component: {fileID: 1682708625957147219}
   - component: {fileID: 1406323694176370691}
-  - component: {fileID: 3304519465045821010}
   - component: {fileID: 3337727082687067439}
   - component: {fileID: 8854487264947055097}
   - component: {fileID: 4580462170637927799}
@@ -89,36 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3304519465045821010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5974022873230404800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a81f3f1b8144ee99caabfae9d4f0dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 37cc2a3c619718f4a928a0a31228f3d6, type: 2}
-        m_TargetAssemblyTypeName: EventPublisher, Assembly-CSharp
-        m_MethodName: PublishPlayerIsDead
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3337727082687067439
 MonoBehaviour:
   m_ObjectHideFlags: 0
