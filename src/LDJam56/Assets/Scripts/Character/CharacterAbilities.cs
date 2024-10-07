@@ -4,7 +4,6 @@ using UnityEngine;
 public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] private KinematicCharacterMotor motor;
-    [SerializeField] private GameplayRules rules;
     [SerializeField] private float queuedTime;
 
     private float _timeSinceLastQueuedInput;
@@ -47,25 +46,25 @@ public class CharacterAbilities : MonoBehaviour
             
         if (CurrentGameState.ReadonlyGameState.Defense.CooldownRemaining <= 0 && _queuedInput == AbilityType.Defense)
         {
-            CurrentGameState.UpdateState(s => s.Defense.CooldownRemaining = s.Defense.Cooldown(rules, s.PlayerStats));
+            CurrentGameState.UpdateState(s => s.Defense.CooldownRemaining = s.Defense.Cooldown(s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Defense));
             _queuedInput = AbilityType.Passive;
         }
         else if (CurrentGameState.ReadonlyGameState.Mobility.CooldownRemaining <= 0 && _queuedInput == AbilityType.Mobility)
         {
-            CurrentGameState.UpdateState(s => s.Mobility.CooldownRemaining = s.Mobility.Cooldown(rules, s.PlayerStats));
+            CurrentGameState.UpdateState(s => s.Mobility.CooldownRemaining = s.Mobility.Cooldown(s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Mobility));
             _queuedInput = AbilityType.Passive;
         }
         else if (CurrentGameState.ReadonlyGameState.Special.CooldownRemaining <= 0 && _queuedInput == AbilityType.Special)
         {
-            CurrentGameState.UpdateState(s => s.Special.CooldownRemaining = s.Special.Cooldown(rules, s.PlayerStats));
+            CurrentGameState.UpdateState(s => s.Special.CooldownRemaining = s.Special.Cooldown(s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Special));
             _queuedInput = AbilityType.Passive;
         }
         else if (CurrentGameState.ReadonlyGameState.Attack.CooldownRemaining <= 0 && _queuedInput == AbilityType.Attack)
         {
-            CurrentGameState.UpdateState(s => s.Attack.CooldownRemaining = s.Attack.Cooldown(rules, s.PlayerStats));
+            CurrentGameState.UpdateState(s => s.Attack.CooldownRemaining = s.Attack.Cooldown(s.PlayerStats));
             Message.Publish(new ActivateAbility(AbilityType.Attack));
             _queuedInput = AbilityType.Passive;
         }

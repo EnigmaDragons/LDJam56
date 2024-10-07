@@ -18,6 +18,7 @@ public class AbilityCustomizeUI : MonoBehaviour
     private Ability _ability;
     private AbilityData _toAdd;
     private Action _onCancel;
+    private AbilityType _abilityType;
 
     public void Start()
     {
@@ -27,6 +28,7 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel)
     {
+        _abilityType = abilityType;
         abilityTypeText.text = abilityType.ToString();
         _toAdd = abilityToAdd;
         _onCancel = onCancel;
@@ -40,12 +42,12 @@ public class AbilityCustomizeUI : MonoBehaviour
             {
                 var i = abilityInsertIndex;
                 var button = codeButtons[codeButtonIndex];
-                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, button, compatibility.Value.CombinationDescription));
+                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, button, compatibility.Value.CombinationDescription), _ability);
                 codeButtonIndex++;
             }
             if (abilityInsertIndex != _ability.Components.Count)
             {
-                codeButtons[codeButtonIndex].Init(allAbilities.GetAbility(_ability.Components[abilityInsertIndex]), null, () => {});
+                codeButtons[codeButtonIndex].Init(allAbilities.GetAbility(_ability.Components[abilityInsertIndex]), null, () => {}, _ability);
                 codeButtonIndex++;
             }
         }
@@ -91,7 +93,11 @@ public class AbilityCustomizeUI : MonoBehaviour
 
     public void Confirm()
     {
-        CurrentGameState.UpdateState(s => _ability.Components.Insert(_indexSelected, _toAdd.Type));
+        CurrentGameState.UpdateState(s =>
+        {
+            _ability.Components.Insert(_indexSelected, _toAdd.Type);
+            _ability.BaseCooldown += _toAdd.GetCooldown(_abilityType);
+        });
         Message.Publish(new AbilityUpgraded());
     }
 
