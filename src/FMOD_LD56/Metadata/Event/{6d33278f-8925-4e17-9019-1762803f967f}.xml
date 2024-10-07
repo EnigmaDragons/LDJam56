@@ -1369,6 +1369,9 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{ffa95a68-19ef-4823-8d98-c5fdc69adbea}">
 		<relationship name="effects">
+			<destination>{4da66756-3176-46bd-ba33-6e15b4293773}</destination>
+			<destination>{3062b976-048a-4c3e-a6b1-992a244151bf}</destination>
+			<destination>{deca6e37-9566-40aa-b465-a8c78e01df5a}</destination>
 			<destination>{822f7620-ae78-4472-8ca9-46eba257e847}</destination>
 		</relationship>
 	</object>
@@ -1624,6 +1627,33 @@
 			<destination>{235f7e47-e023-49a6-a869-b91ccf88b43b}</destination>
 		</relationship>
 	</object>
+	<object class="DelayEffect" id="{4da66756-3176-46bd-ba33-6e15b4293773}">
+		<property name="level">
+			<value>-10.5</value>
+		</property>
+	</object>
+	<object class="ChorusEffect" id="{3062b976-048a-4c3e-a6b1-992a244151bf}">
+		<property name="rate">
+			<value>0.299999982</value>
+		</property>
+		<property name="depth">
+			<value>65</value>
+		</property>
+		<property name="mix">
+			<value>58</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{385d2fdd-3e3c-486e-8ea8-638d5188251a}</destination>
+		</relationship>
+	</object>
+	<object class="ProxyEffect" id="{deca6e37-9566-40aa-b465-a8c78e01df5a}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="preset">
+			<destination>{d2709831-0437-4301-a94e-95b3c507ae6e}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{822f7620-ae78-4472-8ca9-46eba257e847}" />
 	<object class="MixerBusFader" id="{8244c635-e8e6-4a06-b15c-c442af734f04}" />
 	<object class="AutomationCurve" id="{3f1de6ec-71b8-4dcc-8e79-5986fde48c1a}">
@@ -1752,6 +1782,14 @@
 		</property>
 		<property name="value">
 			<value>-6</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{385d2fdd-3e3c-486e-8ea8-638d5188251a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>rate</value>
+		</property>
+		<property name="amount">
+			<value>8</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{748668d1-a3fb-406f-b5b7-17f6cc4d717d}">
