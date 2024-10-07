@@ -23,7 +23,7 @@ public class Explode : MonoBehaviour
     
     public void Init(float potency, bool playerOriginator, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
-        potency *= data.GetPotency(type);
+        potency *= data.GetPotency(type) * CurrentGameState.ReadonlyGameState.PlayerStats.AoEPotency;
         transform.localScale *= Mathf.Sqrt(potency);
         if (playerOriginator)
         {

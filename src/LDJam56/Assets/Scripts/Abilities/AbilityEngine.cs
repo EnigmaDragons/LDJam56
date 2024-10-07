@@ -68,5 +68,16 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
         var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
         projectile.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, startingPosition, _direction, data, type, nextAbilities);
+        for (var i = 1; i < CurrentGameState.ReadonlyGameState.PlayerStats.Projectile; i++)
+        {
+            var leftDirection = Quaternion.Euler(0, 15 * i, 0) * _direction;
+            var rightDirection = Quaternion.Euler(0, -15 * i, 0) * _direction;
+            var leftStartingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + leftDirection * forwardOffset;
+            var rightStartingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + rightDirection * forwardOffset;
+            var leftProjectile = Instantiate(projectilePrefab, leftStartingPosition, Quaternion.LookRotation(leftDirection), player.transform.parent);
+            var rightProjectile = Instantiate(projectilePrefab, rightStartingPosition, Quaternion.LookRotation(rightDirection), player.transform.parent);
+            leftProjectile.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, leftStartingPosition, leftDirection, data, type, nextAbilities);
+            rightProjectile.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, rightStartingPosition, rightDirection, data, type, nextAbilities);
+        }
     } 
 }
