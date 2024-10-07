@@ -107,3 +107,24 @@ MonoBehaviour:
       Data3: -955836265
       Data4: -1596585959
     Path: event:/DX/PlayerSad
+  playerFallOffSound:
+    Guid:
+      Data1: -1175735672
+      Data2: 1277366360
+      Data3: 114636722
+      Data4: -458562378
+    Path: event:/HeroGirl/PlayerFallOff
+  playerRewindTimeSound:
+    Guid:
+      Data1: -2012806290
+      Data2: 1335216904
+      Data3: 1416794520
+      Data4: -1359977933
+    Path: event:/HeroGirl/PlayerRewind
+  playerShieldSound:
+    Guid:
+      Data1: -1774091115
+      Data2: 1243337634
+      Data3: 1773000341
+      Data4: -588414453
+    Path: event:/HeroGirl/HeroShield
