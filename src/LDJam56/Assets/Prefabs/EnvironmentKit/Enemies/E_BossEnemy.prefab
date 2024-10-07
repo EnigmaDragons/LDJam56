@@ -403,6 +403,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7132965814180588611, guid: a13524ce38f6309418cc0da1cafeeb22,
+        type: 3}
+      propertyPath: m_Height
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132965814180588611, guid: a13524ce38f6309418cc0da1cafeeb22,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7401717507657148919, guid: a13524ce38f6309418cc0da1cafeeb22,
         type: 3}
       propertyPath: m_Layer

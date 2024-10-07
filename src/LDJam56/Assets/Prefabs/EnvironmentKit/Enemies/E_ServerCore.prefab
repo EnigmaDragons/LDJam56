@@ -758,6 +758,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _maxHP: 0
 --- !u!135 &7637130592766140779
 SphereCollider:
   m_ObjectHideFlags: 0

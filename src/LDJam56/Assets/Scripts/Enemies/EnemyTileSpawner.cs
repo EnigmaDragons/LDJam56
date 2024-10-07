@@ -48,6 +48,7 @@ public class EnemyTileSpawner : MonoBehaviour
                 EnemyHandlerHolder enemyPrefab = enemiesToSpawn.Dequeue();
                 var enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
                 enemy.Handler.HP = (int)Math.Ceiling(enemy.Handler.HP * currentTile.Placement.NormalizedDepth);
+                enemy.Handler._maxHP = enemy.Handler.HP;
             }
         }
     }
