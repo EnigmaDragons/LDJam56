@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Explode : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class Explode : MonoBehaviour
         _hits = new HashSet<EnemyHandeler>();
         _timeRemaining = animationTime;
     }
-
+    
     public void Init(bool playerOriginator, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
 
@@ -35,7 +36,24 @@ public class Explode : MonoBehaviour
                 s.PlayerStats.IsSilenced.Remove(id);
             });
         }
-        _onIndividualHit = e => e.Damaged((int)data.Amount);
+        _onIndividualHit = e =>
+        {
+            e.Damaged((int)data.Amount);
+            this.ExecuteAfterDelay(0.25f, () =>
+            {
+                Vector3 knockbackDirection = (e.transform.position - transform.position).normalized;
+                // Add upward force for a more exaggerated, cartoon-like toss
+                knockbackDirection.y = Mathf.Max(knockbackDirection.y, 0.5f);
+                knockbackDirection = knockbackDirection.normalized;
+
+                Rigidbody enemyRb = e.GetComponent<Rigidbody>();
+                // Use ForceMode.VelocityChange for a more immediate, cartoon-like effect
+                enemyRb.AddForce(knockbackDirection * data.KnockbackForce, ForceMode.VelocityChange);
+                
+                // Add a small upward torque for spin
+                enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f), ForceMode.Impulse);
+            });
+        };
         Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.Explode, gameObject));
     }
 

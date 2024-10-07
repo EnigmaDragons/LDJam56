@@ -11,6 +11,8 @@ public class AbilityData : ScriptableObject
     public float Amount;
     public float Speed;
     public float Range;
+    
+    public float KnockbackForce;
 
     public AbilityCompatibility[] Compatibilities;
 }

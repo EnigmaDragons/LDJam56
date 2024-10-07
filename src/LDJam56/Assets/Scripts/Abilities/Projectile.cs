@@ -18,7 +18,11 @@ public class Projectile : MonoBehaviour
         _target = startingPosition + direction * data.Range;
         _onHit = () => { };
         _speed = data.Speed;
-        _onEnemyHit = e => e.Damaged((int)data.Amount);
+        _onEnemyHit = e => {
+            e.Damaged((int)data.Amount);
+            Vector3 knockbackDirection = (_target - transform.position).normalized;
+            e.GetComponent<Rigidbody>().AddForce(knockbackDirection * data.KnockbackForce, ForceMode.Impulse);
+        };
     }
 
     private void Update()
