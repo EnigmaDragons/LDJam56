@@ -26,7 +26,7 @@ public static class TeleportUtility
             
             // Re-enable the motor
             MonoBehaviour monoBehaviour = player.GetComponent<MonoBehaviour>();
-            if (monoBehaviour != null)
+            if (monoBehaviour != null && player.activeSelf)
             {
                 monoBehaviour.ExecuteAfterDelay(0.15f, reset);
             }

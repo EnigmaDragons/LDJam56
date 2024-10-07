@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class CameraFollowPosition : MonoBehaviour
+public class Follow : MonoBehaviour
 {
-    [SerializeField] private Transform cameraTransform;
+    [FormerlySerializedAs("cameraTransform")] [SerializeField] private Transform follower;
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
 
@@ -11,17 +12,15 @@ public class CameraFollowPosition : MonoBehaviour
         if (target == null)
         {
             Debug.LogError("CameraFollowPosition: No target assigned!");
-            return;
         }
-        if (cameraTransform == null)
+        if (follower == null)
         {
             Debug.LogError("CameraFollowPosition: No camera transform assigned!");
-            return;
         }
     }
 
     private void LateUpdate()
     {
-      cameraTransform.position = target.position + offset;
+      follower.position = target.position + offset;
     }
 }

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6c2d6c773c7743c40a9e3c7c03841cc3
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Editor/Resources/tooltips.csv
+  uploadId: 649502

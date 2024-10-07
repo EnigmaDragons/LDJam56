@@ -30,7 +30,7 @@ public class BossSpawner : MonoBehaviour
             Debug.LogError("NavMeshSurface not found in the scene.");
             return;
         }
-        handler.setSpawner(this);
+        handler.SetSpawner(this);
     }
 
     public void SpawnEnemies()

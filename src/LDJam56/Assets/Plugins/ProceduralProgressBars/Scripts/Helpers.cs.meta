@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3a942fbc6f4f9f34bb749f570bdba3dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Scripts/Helpers.cs
+  uploadId: 649502

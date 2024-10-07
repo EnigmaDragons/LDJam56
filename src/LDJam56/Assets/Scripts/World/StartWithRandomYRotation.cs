@@ -2,6 +2,8 @@
 
 public class StartWithRandomYRotation : MonoBehaviour
 {
+    [SerializeField] private GameObject target;
+    
     private void Awake()
     {
         // Generate a random rotation around the Y-axis
@@ -11,6 +13,13 @@ public class StartWithRandomYRotation : MonoBehaviour
         Quaternion newRotation = Quaternion.Euler(0f, randomYRotation, 0f);
         
         // Apply the new rotation to the object
-        transform.rotation = newRotation;
+        if (target != null)
+        {
+            target.transform.rotation = newRotation;
+        }
+        else
+        {
+            transform.rotation = newRotation;
+        }
     }
 }

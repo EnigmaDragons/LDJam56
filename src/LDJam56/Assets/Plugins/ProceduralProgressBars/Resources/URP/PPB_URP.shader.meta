@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: b67f3d4983b028e4db225d79cd1dd9ac
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Resources/URP/PPB_URP.shader
+  uploadId: 649502

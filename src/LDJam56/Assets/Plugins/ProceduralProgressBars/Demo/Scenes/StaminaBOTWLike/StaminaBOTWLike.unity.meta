@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3207d5e280b3c244da4552ec17e8c232
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Demo/Scenes/StaminaBOTWLike/StaminaBOTWLike.unity
+  uploadId: 649502

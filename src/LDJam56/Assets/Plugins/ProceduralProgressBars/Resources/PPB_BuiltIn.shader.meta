@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bf63c547d9e3d3c4c9ecf0e72f3f3da1
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Resources/PPB_BuiltIn.shader
+  uploadId: 649502

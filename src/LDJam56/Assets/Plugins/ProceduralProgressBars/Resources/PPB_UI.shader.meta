@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f4236d3d3ad997445a582bd6f053c31b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Resources/PPB_UI.shader
+  uploadId: 649502

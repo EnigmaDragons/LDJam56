@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2bb2b4c6a1243a949b87f0b3236bc38d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Prefabs/Linear Progress Bar.prefab
+  uploadId: 649502

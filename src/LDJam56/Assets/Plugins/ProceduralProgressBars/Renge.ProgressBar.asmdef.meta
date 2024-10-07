@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3e4302f01e5ccc74495210cf1f83c303
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Renge.ProgressBar.asmdef
+  uploadId: 649502

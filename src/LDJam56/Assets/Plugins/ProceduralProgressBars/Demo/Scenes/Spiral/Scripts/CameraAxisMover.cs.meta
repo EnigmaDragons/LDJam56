@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 67614d1c5b66198498e7ae37c831d6f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Demo/Scenes/Spiral/Scripts/CameraAxisMover.cs
+  uploadId: 649502
