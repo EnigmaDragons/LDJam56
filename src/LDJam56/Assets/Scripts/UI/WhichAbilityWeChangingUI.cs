@@ -26,10 +26,10 @@ public class WhichAbilityWeChangingUI : MonoBehaviour
     {
         passiveButton.Init(ability);
         _onAbility = onAbility;
-        attackButton.interactable = IsSelectable(AbilityType.Attack, ability);
-        specialButton.interactable = IsSelectable(AbilityType.Special, ability);
-        mobilityButton.interactable = IsSelectable(AbilityType.Mobility, ability);
-        defenseButton.interactable = IsSelectable(AbilityType.Defense, ability);
+        attackButton.gameObject.SetActive(IsSelectable(AbilityType.Attack, ability));
+        specialButton.gameObject.SetActive(IsSelectable(AbilityType.Special, ability));
+        mobilityButton.gameObject.SetActive(IsSelectable(AbilityType.Mobility, ability));
+        defenseButton.gameObject.SetActive(IsSelectable(AbilityType.Defense, ability));
     }
 
     private void SelectAbility(AbilityType abilityType)
