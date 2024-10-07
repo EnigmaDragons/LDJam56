@@ -15,4 +15,6 @@ public class PlayerStats
     public int XP = 0;
     public int Projectile = 1;
     public float Potency = 1;
+    public float AoEPotency = 1;
+    public float AfterHitShieldPotency = 1;
 }

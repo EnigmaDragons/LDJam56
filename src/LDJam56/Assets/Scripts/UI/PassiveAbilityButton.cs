@@ -27,7 +27,20 @@ namespace UI
 
         private void OnClick()
         {
-            CurrentGameState.UpdateState(s => s.Passives.Components.Add(_type));
+            CurrentGameState.UpdateState(s =>
+            {
+                s.Passives.Components.Add(_type);
+                if (_type == AbilityComponentType.Speed)
+                    s.PlayerStats.Speed += 0.1f;
+                if (_type == AbilityComponentType.Projectile)
+                    s.PlayerStats.Projectile += 1;
+                if (_type == AbilityComponentType.Explode)
+                    s.PlayerStats.AoEPotency += 0.1f;
+                if (_type == AbilityComponentType.Explode)
+                    s.PlayerStats.AoEPotency += 0.1f;
+                if (_type == AbilityComponentType.Shield)
+                    s.PlayerStats.AfterHitShieldPotency += 0.5f;
+            });
             Message.Publish(new AbilityUpgraded());
         }
 

@@ -9,6 +9,8 @@ public class Shield : MonoBehaviour
     public void Init(float potency, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
         potency = data.GetPotency(type);
+        if (type == AbilityType.Passive)
+            potency *= CurrentGameState.ReadonlyGameState.PlayerStats.AfterHitShieldPotency;
         var id = Guid.NewGuid().ToString(); 
         CurrentGameState.UpdateState(s => s.PlayerStats.IsInvincible.Add(id));
         _duration = data.Duration * potency;
