@@ -46,8 +46,12 @@ public class EnemyHandeler : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        if (agent != null)
+        {
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+        }
+
         animator = GetComponent<Animator>();
         _hasAnimator = animator != null;
         rb = GetComponent<Rigidbody>();

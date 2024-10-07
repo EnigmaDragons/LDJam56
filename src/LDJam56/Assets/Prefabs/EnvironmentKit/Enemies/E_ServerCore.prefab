@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   follower: {fileID: 152806578809414206}
   target: {fileID: 8467563398343445127}
-  offset: {x: 0, y: 15.64, z: 0}
+  offset: {x: 0, y: 15.64, z: -5}
 --- !u!1001 &545335585921535726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 13
+  m_Radius: 11
   m_Center: {x: 0, y: 5, z: 0}
 --- !u!54 &1176145158725440360
 Rigidbody:
@@ -518,7 +518,7 @@ PrefabInstance:
     - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 14
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}
