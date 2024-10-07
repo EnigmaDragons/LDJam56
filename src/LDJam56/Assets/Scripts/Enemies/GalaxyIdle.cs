@@ -10,6 +10,7 @@ public class GalaxyIdle : StateMachineBehaviour
     NavMeshAgent agent;
     RaycastHit hit;
     bool flag;
+    float timer = 0f;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         handeler = animator.GetComponent<GalaxyHandeler>();
@@ -23,11 +24,12 @@ public class GalaxyIdle : StateMachineBehaviour
         animator.SetBool("attack1", false);
         animator.ResetTrigger("run");
         flag = true;
+        timer = 0f;
     }
 
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    { timer += Time.deltaTime;
         if (Vector3.Distance(animator.transform.position, player.position) < handeler.Range)
         {
             
@@ -36,9 +38,10 @@ public class GalaxyIdle : StateMachineBehaviour
             
         }
         
-        if(Vector3.Distance(animator.transform.position, player.position) < handeler.AttackRange)
+        if(Vector3.Distance(animator.transform.position, player.position) < handeler.AttackRange && timer >= handeler.AttackDelay)
         if (flag)
         {
+                timer = 0f;   
             if (Random.Range(1, 4) == 1)
                 animator.SetBool("attack1", true);
             else

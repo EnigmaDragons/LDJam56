@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 250
+  HP: 500
   Speed: 6
   Range: 0
   AttackRange: 5
@@ -556,6 +556,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  _maxHP: 0
   SpawningDelay: 5
   MeleeDelay: 4
 --- !u!136 &7132965814180588611
