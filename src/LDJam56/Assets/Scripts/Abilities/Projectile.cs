@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     public void Init(float potency, Vector3 startingPosition, Vector3 direction, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
         var localPotency = potency * data.GetPotency(type);
-        _target = startingPosition + direction * data.Range;
+        _target = startingPosition + direction * data.Range * CurrentGameState.ReadonlyGameState.PlayerStats.Range;
         _onHit = () => { };
         if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Explode && (type == AbilityType.Attack || type == AbilityType.Special))
             _onHit = () =>
