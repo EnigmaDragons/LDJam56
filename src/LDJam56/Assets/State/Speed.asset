@@ -15,9 +15,9 @@ MonoBehaviour:
   Type: 3
   Primary: 3
   DisplayName: Speed()
-  Description: Increases the speed of your movement or actions
+  Description: Increases speed of movement or actions
   PassiveDescription: Gain 10% Movement Speed
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 2e7da0b2aaf71e04a9bce67a79cb727b, type: 3}
   Duration: 3
   Amount: 0.5
   Speed: 0

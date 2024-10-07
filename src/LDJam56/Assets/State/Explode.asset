@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: Explode()
   Description: Creates an explosion
   PassiveDescription: All Area of Effects have 10% increased Potency
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 0f788d11365721b438c0af874ebc5592, type: 3}
   Duration: 0
   Amount: 10
   Speed: 0
