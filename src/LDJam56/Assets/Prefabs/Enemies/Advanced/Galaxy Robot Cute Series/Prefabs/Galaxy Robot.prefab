@@ -5101,8 +5101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4362554014230283012}
-  HP: 25
-  Speed: 8
+  HP: 50
+  Speed: 6
   Range: 16
   AttackRange: 26
   Attack2Range: 10
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   Attack2Delay: 20
   firePoint: {fileID: 9215485935901714613}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
-  projectileSpeed: 12
+  projectileSpeed: 15
   shoot: 0
   shootTarget: {fileID: 0}
   Collider1: {fileID: 0}

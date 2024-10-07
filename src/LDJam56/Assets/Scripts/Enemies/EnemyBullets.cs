@@ -18,7 +18,7 @@ public class EnemyBullets : MonoBehaviour
     {
         if (flag)
         {
-            actualTarget = target;
+            actualTarget = new Vector3(target.x,target.y+1,target.z);
             direction = (actualTarget - transform.position).normalized;
             flag = false;
         }
