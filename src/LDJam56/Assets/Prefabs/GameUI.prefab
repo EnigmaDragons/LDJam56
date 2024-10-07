@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7293419844750428526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1712,10 +1712,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6663425983741791808, guid: c06220aca3de0d8459418c4edd63d3ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8037787782264645411, guid: c06220aca3de0d8459418c4edd63d3ed,
         type: 3}
       propertyPath: m_Name
       value: MinimapUi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037787782264645411, guid: c06220aca3de0d8459418c4edd63d3ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1969,6 +1979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CustomizeMovesUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915698645444422439, guid: 3dac3ad036326db429a0dd900b4ae589,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9057837753669568825, guid: 3dac3ad036326db429a0dd900b4ae589,
         type: 3}
@@ -2318,6 +2333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XpBar
       objectReference: {fileID: 0}
+    - target: {fileID: 8444922441870947986, guid: ca8177750424fdb42a23dcbd7cf4825c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2441,6 +2461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616263411259477949, guid: d73dbd63e277fd64bbf165b888265aa7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
