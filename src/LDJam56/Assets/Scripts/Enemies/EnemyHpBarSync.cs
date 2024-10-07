@@ -50,8 +50,8 @@ public class EnemyHpBarSync : MonoBehaviour
         }
         else
         {
-            hpBar.SegmentCount = maxHp/5;
-            hpBar.Value = currentHp/5;
+            hpBar.SegmentCount = maxHp/10;
+            hpBar.Value = currentHp/10;
         }
         
         // Bug Fix Hack

@@ -816,8 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 20
-  Speed: 6
+  HP: 30
+  Speed: 8
   Range: 22
   AttackRange: 3
   Attack2Range: 30

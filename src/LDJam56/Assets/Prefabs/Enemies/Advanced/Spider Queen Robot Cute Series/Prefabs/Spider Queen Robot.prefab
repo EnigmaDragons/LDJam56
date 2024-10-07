@@ -538,8 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 600
-  Speed: 6
+  HP: 3000
+  Speed: 9
   Range: 0
   AttackRange: 5
   Attack2Range: 5
@@ -557,8 +557,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _maxHP: 0
-  SpawningDelay: 5
-  MeleeDelay: 4
+  SpawningDelay: 3
+  MeleeDelay: 3
 --- !u!136 &7132965814180588611
 CapsuleCollider:
   m_ObjectHideFlags: 0
