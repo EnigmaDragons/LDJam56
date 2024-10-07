@@ -18,12 +18,27 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
     
     protected override void Execute(NavigateToSceneRequested msg)
     {
+        Log.Info($"Loading scene {msg.SceneName} - Reload: {msg.Reload}");
         _isLoading = true;
         onStartedLoading.Invoke();
         _startedTransitionAt = Time.timeSinceLevelLoad;
         this.ExecuteAfterDelay(() =>
         {
-            _loadState = SceneManager.LoadSceneAsync(msg.SceneName);
+            Log.Info($"Coroutine started - Loading scene {msg.SceneName} - Reload: {msg.Reload}");
+            if (msg.Reload && msg.SceneName == SceneManager.GetActiveScene().name)
+            {
+                Log.Info($"Reloading scene {msg.SceneName}");
+                _loadState = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+                _loadState.completed += (op) => {
+                    Log.Info($"Scene {msg.SceneName} unloaded, loading...");
+                    _loadState = SceneManager.LoadSceneAsync(msg.SceneName, LoadSceneMode.Single);
+                };
+            }
+            else
+            {
+                Log.Info($"Loading scene {msg.SceneName}");
+                _loadState = SceneManager.LoadSceneAsync(msg.SceneName);
+            }
             _loadState.completed += OnLoadFinished;
         }, loadFadeDuration);
     }

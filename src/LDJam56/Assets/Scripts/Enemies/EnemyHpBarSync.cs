@@ -20,7 +20,11 @@ public class EnemyHpBarSync : MonoBehaviour
         {
             Debug.LogError("ProceduralProgressBar component not found in children.");
         }
-        _isInitialized = true;
+
+        if (hpBar != null && enemyHandler != null)
+        {
+            _isInitialized = true;
+        }
     }
 
     private void Update()
