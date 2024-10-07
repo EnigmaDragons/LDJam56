@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4443911561034423729}
   - component: {fileID: 9149643475986250495}
   - component: {fileID: 547007673156424486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,13 +61,13 @@ SphereCollider:
     m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 7927
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 2
   m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1001 &3847024538662531349
 PrefabInstance:
@@ -136,6 +136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FXHexShield
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633303022859853924, guid: 0f884b6ea95e91343a5f734606a8878c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

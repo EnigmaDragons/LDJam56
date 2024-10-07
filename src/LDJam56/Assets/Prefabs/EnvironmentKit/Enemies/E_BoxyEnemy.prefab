@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2512854434010938068}
   - component: {fileID: 7055744444213375762}
   - component: {fileID: 8430978113662353980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: E_BoxyEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyHpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868911665244075058, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
