@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1102650459465463200}
   - component: {fileID: 5006820555885788666}
   - component: {fileID: 6327972947194360848}
+  - component: {fileID: 6140687931515625016}
   m_Layer: 8
   m_Name: E_ServerCore
   m_TagString: Untagged
@@ -64,6 +65,19 @@ MonoBehaviour:
   follower: {fileID: 152806578809414206}
   target: {fileID: 8467563398343445127}
   offset: {x: 0, y: 15.64, z: -5}
+--- !u!114 &6140687931515625016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589093167812682470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188a29e7bc94058af5c58c2cf800bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Handler: {fileID: 7488243617469541477}
 --- !u!1001 &545335585921535726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -744,6 +758,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _maxHP: 0
 --- !u!135 &7637130592766140779
 SphereCollider:
   m_ObjectHideFlags: 0

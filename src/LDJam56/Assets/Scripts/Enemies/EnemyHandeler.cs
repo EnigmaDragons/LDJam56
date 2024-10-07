@@ -42,7 +42,7 @@ public class EnemyHandeler : MonoBehaviour
     private Coroutine flashCoroutine;
     private bool _dying = false;
 
-    private float _maxHP;
+    public float _maxHP;
     public float MaxHp => _maxHP;
     private bool _hasAnimator;
 

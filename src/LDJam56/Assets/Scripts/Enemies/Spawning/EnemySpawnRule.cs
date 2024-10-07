@@ -3,6 +3,6 @@
 [CreateAssetMenu]
 public class EnemySpawnRule : ScriptableObject
 {
-    public GameObject prefab;
+    public EnemyHandlerHolder prefab;
     public int weight = 1;
 }
