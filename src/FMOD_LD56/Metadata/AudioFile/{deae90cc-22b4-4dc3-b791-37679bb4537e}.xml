@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{bb86fad4-343f-4441-a8b2-d8a4649efe79}">
+	<object class="AudioFile" id="{deae90cc-22b4-4dc3-b791-37679bb4537e}">
 		<property name="assetPath">
-			<value>Music/menu music loop.ogg</value>
+			<value>Music/menu music outro B.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
