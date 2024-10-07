@@ -43,7 +43,6 @@ public class EnemyTileSpawner : MonoBehaviour
             {
                 GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
                 Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
-                Log.Info($"Spawned Enemy - {enemyPrefab.name}");
             }
         }
     }

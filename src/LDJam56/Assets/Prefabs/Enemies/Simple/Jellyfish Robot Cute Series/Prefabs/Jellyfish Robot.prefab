@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6739179931065256677}
   - component: {fileID: -4925913076214545121}
   - component: {fileID: -1680750843201903568}
+  - component: {fileID: 4884627590842898054}
   m_Layer: 0
   m_Name: Jellyfish Robot
   m_TagString: Untagged
@@ -241,6 +242,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4884627590842898054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871558523169533350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2866b6a17cb148819de10d125e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 0
 --- !u!1 &1459531630289425545
 GameObject:
   m_ObjectHideFlags: 0

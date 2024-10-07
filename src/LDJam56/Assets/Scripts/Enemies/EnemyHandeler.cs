@@ -33,13 +33,25 @@ public class EnemyHandeler : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
     Rigidbody rb;
+    private Renderer enemyRenderer;
+    private Material enemyMaterial;
+    private Color originalColor;
+    private Coroutine flashCoroutine;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
-         rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        enemyRenderer = GetComponentInChildren<Renderer>();
+        if (enemyRenderer != null)
+        {
+            enemyMaterial = new Material(enemyRenderer.material);
+            enemyRenderer.material = enemyMaterial;
+            originalColor = enemyMaterial.color;
+        }
     }
     private void Update()
     {
@@ -120,6 +132,33 @@ public class EnemyHandeler : MonoBehaviour
         {
             animator.SetTrigger("hit");
             Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotDamaged, transform.position));
+            if (flashCoroutine != null)
+            {
+                StopCoroutine(flashCoroutine);
+            }
+            flashCoroutine = StartCoroutine(FlashRed());
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        float flashDuration = 0.5f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < flashDuration)
+        {
+            float t = elapsedTime / flashDuration;
+            if (enemyMaterial != null)
+            {
+                enemyMaterial.color = Color.Lerp(Color.red, originalColor, t);
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        if (enemyMaterial != null)
+        {
+            enemyMaterial.color = originalColor;
         }
     }
     
