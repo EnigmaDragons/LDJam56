@@ -86,8 +86,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8188076, y: 0.6697865, z: 0.51671684}
-  m_Center: {x: 0.075658254, y: -0.070761174, z: 0.044106405}
+  m_Size: {x: 0.7198087, y: 0.13197266, z: 0.24429274}
+  m_Center: {x: 0.12515779, y: 0.00012439697, z: 0.026522592}
 --- !u!114 &2747875208767121907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,8 +608,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8901583, y: 0.54963493, z: 0.58046234}
-  m_Center: {x: 0.06221295, y: 0.073502995, z: 0.016209537}
+  m_Size: {x: 0.7548126, y: 0.08312898, z: 0.3256178}
+  m_Center: {x: 0.12988582, y: -0.0027987782, z: 0.0051026335}
 --- !u!114 &950274559641666290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   HP: 10
   Speed: 4.5
-  Range: 11
+  Range: 20
   AttackRange: 3
   Attack2Range: 14
   Damage: 1

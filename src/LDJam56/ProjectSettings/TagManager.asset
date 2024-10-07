@@ -9,6 +9,7 @@ TagManager:
   - Loader
   - AppManagers
   - Damaging
+  - BossRoomTeleport
   layers:
   - Default
   - TransparentFX

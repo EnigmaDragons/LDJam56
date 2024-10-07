@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e4b39fa9cd104d0499b9b490f692a6d2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Prefabs/CircularProgressBar.prefab
+  uploadId: 649502

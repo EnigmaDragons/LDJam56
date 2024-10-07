@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b9ef0daef23cd0b43b34f745c29f6f3a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Demo/Scenes/AmmoDisplay/AmmoDisplay.unity
+  uploadId: 649502

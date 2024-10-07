@@ -8,7 +8,8 @@ public class EnemyTileSpawner : MonoBehaviour
 {
     [SerializeField] private int minEnemies = 6;
     [SerializeField] private int maxEnemies = 20;
-    [SerializeField] private List<GameObject> enemyPrefabs;
+    [SerializeField] private EnemySpawnPool enemySpawnPool;
+    [SerializeField] private BoxCollider safeZone;
 
     private Tile currentTile;
     private NavMeshSurface navMeshSurface;
@@ -35,13 +36,14 @@ public class EnemyTileSpawner : MonoBehaviour
     private void SpawnEnemies()
     {
         int enemyCount = Random.Range(minEnemies, maxEnemies + 1);
+        Queue<GameObject> enemiesToSpawn = new Queue<GameObject>(enemySpawnPool.GetRandomPrefabs(enemyCount));
 
-        for (int i = 0; i < enemyCount; i++)
+        while (enemiesToSpawn.Count > 0)
         {
             Vector3 spawnPosition = GetValidSpawnPosition();
             if (spawnPosition != Vector3.zero)
             {
-                GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+                GameObject enemyPrefab = enemiesToSpawn.Dequeue();
                 Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
             }
         }
@@ -56,7 +58,7 @@ public class EnemyTileSpawner : MonoBehaviour
 
             if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
             {
-                if (!Physics.CheckSphere(hit.position, 0.5f, LayerMask.GetMask("Obstacle")))
+                if (!Physics.CheckSphere(hit.position, 0.5f, LayerMask.GetMask("Obstacle")) && !IsInSafeZone(hit.position))
                 {
                     return hit.position;
                 }
@@ -74,5 +76,14 @@ public class EnemyTileSpawner : MonoBehaviour
             Random.Range(bounds.min.y, bounds.max.y),
             Random.Range(bounds.min.z, bounds.max.z)
         );
+    }
+
+    private bool IsInSafeZone(Vector3 position)
+    {
+        if (safeZone != null)
+        {
+            return safeZone.bounds.Contains(position);
+        }
+        return false;
     }
 }

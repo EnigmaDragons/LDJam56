@@ -38,6 +38,9 @@ public class EnemyHandeler : MonoBehaviour
     private Color originalColor;
     private Coroutine flashCoroutine;
 
+    private float _maxHP;
+    public float MaxHp => _maxHP;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -46,6 +49,7 @@ public class EnemyHandeler : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         enemyRenderer = GetComponentInChildren<Renderer>();
+        _maxHP = HP;
         if (enemyRenderer != null)
         {
             enemyMaterial = new Material(enemyRenderer.material);
@@ -125,7 +129,7 @@ public class EnemyHandeler : MonoBehaviour
         agent.updateRotation = true;
     }
 
-    public void Damaged(int damage)
+    public virtual void Damaged(int damage)
     {
         HP -= damage;
         if (HP > 0)

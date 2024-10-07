@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 07d97b14d5ed4cf428eed12510d0b004
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Scripts/ProgressBarProperties.cs
+  uploadId: 649502

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b76fcf80ab9ea344e809b8cc33dd4e89
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 237711
+  packageName: Procedural Health and Progress Bars
+  packageVersion: 1.1.11
+  assetPath: Assets/ProceduralProgressBars/Demo/Scenes/AbstractLoadingScreen/Content/PBAnim.anim
+  uploadId: 649502

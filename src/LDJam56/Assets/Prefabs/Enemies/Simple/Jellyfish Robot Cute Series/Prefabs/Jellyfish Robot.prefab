@@ -114,8 +114,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
-  m_Height: 1.5132666
+  m_Radius: 0.42
+  m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.140516, z: 0}
 --- !u!114 &7656457835378106980
@@ -133,7 +133,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   HP: 8
   Speed: 4
-  Range: 11
+  Range: 18
   AttackRange: 4
   Attack2Range: 2
   Damage: 1
@@ -144,7 +144,7 @@ MonoBehaviour:
   projectileSpeed: 8
   shoot: 0
   shootTarget: {fileID: 0}
-  Collider1: {fileID: 4482693778562845556}
+  Collider1: {fileID: 2185624438051969450}
   Collider2: {fileID: 5389628961889451929}
 --- !u!195 &6739179931065256677
 NavMeshAgent:
@@ -457,10 +457,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 46267447104351854}
-  - component: {fileID: 4482693778562845556}
+  - component: {fileID: 2185624438051969450}
   - component: {fileID: 5253588806907026140}
   m_Layer: 0
   m_Name: attack1Collider
@@ -709,8 +709,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6550711792362212659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4482693778562845556
-BoxCollider:
+--- !u!135 &2185624438051969450
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -719,17 +719,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.62303925, y: 0.50331736, z: 0.540671}
-  m_Center: {x: -0.043852836, y: 0.048405264, z: -0.007232249}
+  m_Radius: 0.24
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5253588806907026140
 MonoBehaviour:
   m_ObjectHideFlags: 0
