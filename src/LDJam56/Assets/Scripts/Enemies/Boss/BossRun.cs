@@ -21,7 +21,6 @@ public class BossRun : StateMachineBehaviour
         animator.ResetTrigger("attack2");
         animator.ResetTrigger("attack1");
         animator.SetTrigger("run");
-        handeler.BeginAttackBasic1();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -38,7 +37,7 @@ public class BossRun : StateMachineBehaviour
         }
         agent.SetDestination(target.position);
         agent.updateRotation = true;
-        if(timer2 >= handeler.MeleeDelay * 2.8)
+        if(timer2 >= handeler.MeleeDelay * 4)
         {
             timer2 = 0f;
             animator.ResetTrigger("run");
