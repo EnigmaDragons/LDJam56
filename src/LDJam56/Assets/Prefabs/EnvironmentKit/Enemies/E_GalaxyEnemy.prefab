@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8801222694764497827}
   - component: {fileID: 2884757563415561516}
   - component: {fileID: 6293557358992325692}
+  - component: {fileID: 8051069377385574000}
   m_Layer: 8
   m_Name: E_GalaxyEnemy
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Handler: {fileID: 2634984425493897007}
+--- !u!114 &8051069377385574000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981588002741540561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e46fc1415c32c4d8488c752397ced7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHandler: {fileID: 2634984425493897007}
+  hpBar: {fileID: 3801474567549045568}
 --- !u!1001 &2494259806455672839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,6 +154,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Galaxy Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084552530725778972, guid: 8de71a01b1adad74c8a2744d28e12104,
+        type: 3}
+      propertyPath: m_Height
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084552530725778972, guid: 8de71a01b1adad74c8a2744d28e12104,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -248,3 +273,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6237715310828655520}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3801474567549045568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7084547029409749216, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6237715310828655520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e84ff758a500224bbf72e946445aea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
