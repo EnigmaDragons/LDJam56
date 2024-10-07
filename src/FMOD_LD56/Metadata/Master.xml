@@ -16,6 +16,8 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{d81ad6ec-4e14-4317-bc1e-e3e78fda7567}">
 		<relationship name="effects">
+			<destination>{5ff3b94c-c5bc-4464-8a86-ebf5011ba462}</destination>
+			<destination>{54507dcc-a9d0-4236-8ac4-5035a0a49fe7}</destination>
 			<destination>{58af37dc-5f5b-4161-a978-cec6861a7dc1}</destination>
 			<destination>{02202943-e6e9-409a-9184-19e09af1dfd0}</destination>
 			<destination>{8103172f-4147-4684-afd5-093474beb52d}</destination>
@@ -24,6 +26,76 @@
 	<object class="MixerBusPanner" id="{5aafb52c-8e89-4174-8e5e-ffcce493cda9}">
 		<property name="overridingOutputFormat">
 			<value>2</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{5ff3b94c-c5bc-4464-8a86-ebf5011ba462}">
+		<property name="threshold">
+			<value>-23</value>
+		</property>
+		<property name="ratio">
+			<value>1.70000005</value>
+		</property>
+		<property name="attackTime">
+			<value>6.80000019</value>
+		</property>
+		<property name="releaseTime">
+			<value>84</value>
+		</property>
+		<property name="gain">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{54507dcc-a9d0-4236-8ac4-5035a0a49fe7}">
+		<property name="filterTypeA">
+			<value>6</value>
+		</property>
+		<property name="filterTypeB">
+			<value>9</value>
+		</property>
+		<property name="filterTypeC">
+			<value>9</value>
+		</property>
+		<property name="filterTypeD">
+			<value>9</value>
+		</property>
+		<property name="filterTypeE">
+			<value>8</value>
+		</property>
+		<property name="frequencyA">
+			<value>30.2687225</value>
+		</property>
+		<property name="frequencyB">
+			<value>380</value>
+		</property>
+		<property name="frequencyC">
+			<value>1100</value>
+		</property>
+		<property name="frequencyD">
+			<value>5604.55469</value>
+		</property>
+		<property name="frequencyE">
+			<value>10000</value>
+		</property>
+		<property name="qualityA">
+			<value>0.351172417</value>
+		</property>
+		<property name="qualityB">
+			<value>0.399999976</value>
+		</property>
+		<property name="qualityC">
+			<value>0.340000004</value>
+		</property>
+		<property name="qualityD">
+			<value>0.620000005</value>
+		</property>
+		<property name="gainB">
+			<value>-2.5</value>
+		</property>
+		<property name="gainC">
+			<value>0.5</value>
+		</property>
+		<property name="gainE">
+			<value>8.5</value>
 		</property>
 	</object>
 	<object class="LimiterEffect" id="{58af37dc-5f5b-4161-a978-cec6861a7dc1}" />

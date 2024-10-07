@@ -20,6 +20,7 @@
 			<destination>{227d301c-7648-47ab-9bd6-f3372523854c}</destination>
 			<destination>{cf28b247-3ec0-4240-973d-8a1d9c6e8fd4}</destination>
 			<destination>{7264f0d3-fe00-4a30-bfe2-dc65100e5869}</destination>
+			<destination>{6828e3be-98dc-4827-bb81-66a7aaaf94f0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5ea2ff66-28f3-4ece-be8f-04dc9c2cb161}" />
@@ -81,6 +82,17 @@
 			<value>5.6896553</value>
 		</property>
 	</object>
+	<object class="MultibandEqEffect" id="{6828e3be-98dc-4827-bb81-66a7aaaf94f0}">
+		<property name="frequencyA">
+			<value>22000</value>
+		</property>
+		<property name="qualityA">
+			<value>0.644206941</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{d25f0c1a-77b7-45a7-a433-f2824b5d0533}</destination>
+		</relationship>
+	</object>
 	<object class="SidechainModulator" id="{3c161141-391a-43ff-8583-08b9b5a1ebee}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>frequencyA</value>
@@ -96,6 +108,23 @@
 		</property>
 		<relationship name="sidechains">
 			<destination>{bc08995c-517b-47d5-b936-fa38a9e9a3e7}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{d25f0c1a-77b7-45a7-a433-f2824b5d0533}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>frequencyA</value>
+		</property>
+		<property name="amount">
+			<value>-30</value>
+		</property>
+		<property name="attackTime">
+			<value>170</value>
+		</property>
+		<property name="releaseTime">
+			<value>1900</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{89ed5b0a-8a41-4d91-ad26-ada9f41dd877}</destination>
 		</relationship>
 	</object>
 </objects>

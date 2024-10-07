@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minEnemies: 6
-  maxEnemies: 8
+  maxEnemies: 12
   enemyPrefabs:
   - {fileID: 5608986638789766344, guid: eead503f853940b4dbf7b708ba686244, type: 3}
   handler: {fileID: 9147524364815684068}
