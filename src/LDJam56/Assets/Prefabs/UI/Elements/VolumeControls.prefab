@@ -852,6 +852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8970765954255602357}
   busType: 1
+  linkedBusTypes: 
 --- !u!1 &8970765954317796384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,6 +1320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8970765954973351650}
   busType: 3
+  linkedBusTypes: 
 --- !u!1 &8970765955026379026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 8970765955211690056}
   busType: 2
+  linkedBusTypes: 0300000004000000
 --- !u!1 &8970765955235841628
 GameObject:
   m_ObjectHideFlags: 0
