@@ -15,6 +15,7 @@ public class CodeGainedUI : OnMessage<PlayerGainedCode>
     
     protected override void Execute(PlayerGainedCode msg)
     {
+        _ability = msg.Ability;
         Time.timeScale = 0;
         shownUI.Init(msg.Ability);
     }
@@ -34,7 +35,11 @@ public class CodeGainedUI : OnMessage<PlayerGainedCode>
     private void SelectAbilityType(AbilityType abilityType)
     {
         whereToApplyUI.gameObject.SetActive(false);
-        abilityCustomizeUI.Init(abilityType, _ability, () => whereToApplyUI.gameObject.SetActive(true), () =>
+        abilityCustomizeUI.Init(abilityType, _ability, () =>
+        {
+            whereToApplyUI.gameObject.SetActive(true);
+            abilityCustomizeUI.gameObject.SetActive(false);
+        }, () =>
         {
             abilityCustomizeUI.gameObject.SetActive(false);
             Time.timeScale = 1;

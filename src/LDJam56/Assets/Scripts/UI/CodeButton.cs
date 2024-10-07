@@ -5,45 +5,46 @@ using UnityEngine.EventSystems;
 
 public class CodeButton : MonoBehaviour, IPointerEnterHandler
 {
-    [SerializeField] private TMP_Text existingText;
-    [SerializeField] private TMP_Text addingText;
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private Color existingColor;
+    [SerializeField] private Color addedColor;
+    [SerializeField] private Color possibleColor;
 
-    private Action onSelect;
+    private Action _onSelect;
     private AbilityData _existingCode;
     private AbilityData _codeBeingAdded;
 
     public void Init(AbilityData existingCode, AbilityData codeBeingAdded, Action onSelect)
     {
+        _onSelect = onSelect;
         _existingCode = existingCode;
         _codeBeingAdded = codeBeingAdded;
         if (_existingCode == null)
         {
-            existingText.gameObject.SetActive(false);
-            addingText.gameObject.SetActive(true);
-            addingText.text = _codeBeingAdded.DisplayName;
+            text.text = _codeBeingAdded.DisplayName;
+            text.color = possibleColor;
         }
         else
         {
-            existingText.gameObject.SetActive(true);
-            addingText.gameObject.SetActive(false);
-            existingText.text = _existingCode.DisplayName;
+            text.text = _existingCode.DisplayName;
+            text.color = existingColor;
         }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        onSelect();
+        _onSelect();
     }
 
     public void Deselect()
     {
         if (_codeBeingAdded != null)
-            addingText.text = ""; 
+            text.color = possibleColor;
     }
 
     public void Select()
     {
         if (_codeBeingAdded != null)
-            addingText.text = _codeBeingAdded.DisplayName; 
+            text.color = addedColor; 
     }
 }
