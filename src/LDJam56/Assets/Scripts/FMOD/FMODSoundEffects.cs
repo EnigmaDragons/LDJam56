@@ -16,11 +16,13 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
     [SerializeField] private EventReference explode;
     [SerializeField] private EventReference playerHappyOneLiner;
     [SerializeField] private EventReference playerSadOneLiner;
+    [SerializeField] private EventReference playerFallOffSound;
+    [SerializeField] private EventReference playerRewindTimeSound;
 
     //Message.Publish(new PlayOneShotSoundEffect { SoundEffect = SoundEffectEnum., Source =  });
     //Message.Publish(new StartSoundEffect { SoundEffect = SoundEffectEnum., Transform = , Moving = false, Parameters = n });
     //Message.Publish(new StopSoundEffect { SoundEffect = SoundEffectEnum. });
-    
+
     private EventReference GetEventReference(SoundEffectEnum soundEffect)
     {
         if (soundEffect == SoundEffectEnum.BotExplode)
@@ -39,6 +41,10 @@ public class FMODSoundEffects : OnMessage<PlayOneShotSoundEffect, StartSoundEffe
             return playerSadOneLiner;
         if (soundEffect == SoundEffectEnum.BotDamaged)
             return botDamagedSound;
+        if (soundEffect == SoundEffectEnum.PlayerFallOff)
+            return playerFallOffSound;
+        if (soundEffect == SoundEffectEnum.PlayerRewindTime)
+            return playerRewindTimeSound;
         Debug.LogError($"Missing Sound Effect {soundEffect}");
         return missingSoundEffect;
     }

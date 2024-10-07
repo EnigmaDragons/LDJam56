@@ -190,7 +190,57 @@ PrefabInstance:
     - target: {fileID: 4434601779088953899, guid: 154c6384377241242a599da99374cbba,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerFallOffSound.Path
+      value: event:/HeroGirl/PlayerFallOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerRewindTimeSound.Path
+      value: event:/HeroGirl/PlayerRewind
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerFallOffSound.Guid.Data1
+      value: -1175735672
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerFallOffSound.Guid.Data2
+      value: 1277366360
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerFallOffSound.Guid.Data3
+      value: 114636722
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerFallOffSound.Guid.Data4
+      value: -458562378
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerRewindTimeSound.Guid.Data1
+      value: -2012806290
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerRewindTimeSound.Guid.Data2
+      value: 1335216904
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerRewindTimeSound.Guid.Data3
+      value: 1416794520
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468923334931303983, guid: 154c6384377241242a599da99374cbba,
+        type: 3}
+      propertyPath: playerRewindTimeSound.Guid.Data4
+      value: -1359977933
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -751,7 +801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &556282199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spider Queen Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034543127878964930, guid: a13524ce38f6309418cc0da1cafeeb22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1322,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 7452048470565006579, guid: 7a8f88e1583d1c74aa9fc1bf870e32ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7927397984398461401, guid: 7a8f88e1583d1c74aa9fc1bf870e32ac,
         type: 3}
@@ -1332,12 +1387,12 @@ PrefabInstance:
     - target: {fileID: 7927397984398461401, guid: 7a8f88e1583d1c74aa9fc1bf870e32ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18253422
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927397984398461401, guid: 7a8f88e1583d1c74aa9fc1bf870e32ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.014165
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927397984398461401, guid: 7a8f88e1583d1c74aa9fc1bf870e32ac,
         type: 3}
@@ -1531,17 +1586,17 @@ PrefabInstance:
     - target: {fileID: 1675492867163848546, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1675492867163848546, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1675492867163848546, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1675492867163848546, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
@@ -1561,12 +1616,12 @@ PrefabInstance:
     - target: {fileID: 2443770291567366736, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.18253422
       objectReference: {fileID: 0}
     - target: {fileID: 2443770291567366736, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.014165
       objectReference: {fileID: 0}
     - target: {fileID: 6841204343680087823, guid: 04879895681a46d438121ab2da1242b6,
         type: 3}
@@ -1614,8 +1669,8 @@ SceneRoots:
   - {fileID: 1583684600}
   - {fileID: 468539020}
   - {fileID: 1932255571}
-  - {fileID: 2093427187}
   - {fileID: 331855617}
   - {fileID: 770976907}
   - {fileID: 1232292591}
   - {fileID: 556282202}
+  - {fileID: 2093427187}
