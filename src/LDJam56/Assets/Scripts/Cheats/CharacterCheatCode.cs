@@ -8,6 +8,14 @@ public class CharacterCheatCode : MonoBehaviour
         {
             TeleportToBossRoom();
         }
+        if (Input.GetKey(KeyCode.H) && Input.GetKeyDown(KeyCode.P))
+        {
+            CurrentGameState.UpdateState(s =>
+            {
+                s.PlayerStats.MaxLife = 999;
+                s.PlayerStats.CurrentLife = 999;
+            });
+        }
     }
 
     private void TeleportToBossRoom()

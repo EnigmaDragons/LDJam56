@@ -11,4 +11,6 @@
     PlayerFallOff = 8,
     PlayerRewindTime = 9,
     PlayerShield = 10,
+    PlayerBomb = 11,
+    PlayerSpeed = 12,
 }

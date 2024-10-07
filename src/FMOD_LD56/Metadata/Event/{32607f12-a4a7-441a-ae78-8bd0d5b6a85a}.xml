@@ -95,6 +95,9 @@
 	<object class="MixerBusPanner" id="{6d2da66c-2bad-465b-89eb-2914f2d561db}" />
 	<object class="MixerBusEffectChain" id="{8eddf97d-8423-4dae-81d9-91cb822ef105}">
 		<relationship name="effects">
+			<destination>{815b8a06-fd84-41f6-99ca-5d3db3591158}</destination>
+			<destination>{16dd3aed-6e70-48b8-94cb-0553f11537fa}</destination>
+			<destination>{118c7058-0e6e-48dc-8df5-08cf02169c71}</destination>
 			<destination>{a61236c8-ac71-450e-baa8-ecb494c55260}</destination>
 		</relationship>
 	</object>
@@ -108,10 +111,51 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{bb6da938-9f82-49a3-a7f6-ab653d192cc0}" />
+	<object class="ProxyEffect" id="{815b8a06-fd84-41f6-99ca-5d3db3591158}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{d2709831-0437-4301-a94e-95b3c507ae6e}</destination>
+		</relationship>
+	</object>
+	<object class="DelayEffect" id="{16dd3aed-6e70-48b8-94cb-0553f11537fa}">
+		<property name="delay">
+			<value>2.60000014</value>
+		</property>
+		<property name="feedback">
+			<value>86</value>
+		</property>
+		<property name="level">
+			<value>-13</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{56ac379d-adce-40ed-a0d7-f585e40f7e30}</destination>
+		</relationship>
+	</object>
+	<object class="ChorusEffect" id="{118c7058-0e6e-48dc-8df5-08cf02169c71}">
+		<property name="rate">
+			<value>0.0899999961</value>
+		</property>
+		<property name="depth">
+			<value>81</value>
+		</property>
+		<property name="mix">
+			<value>62</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{a61236c8-ac71-450e-baa8-ecb494c55260}" />
 	<object class="RandomizerModulator" id="{1a5acb4e-0457-46bc-932a-c2871bf1bf47}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>3</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{56ac379d-adce-40ed-a0d7-f585e40f7e30}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>delay</value>
 		</property>
 		<property name="amount">
 			<value>3</value>

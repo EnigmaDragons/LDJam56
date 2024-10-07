@@ -71,7 +71,7 @@ public class Explode : MonoBehaviour
                 enemyRb.AddTorque(Random.insideUnitSphere * (data.KnockbackForce * 0.2f * localPotency), ForceMode.Impulse);
             });
         };
-        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.Explode, gameObject));
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.PlayerBomb, gameObject));
     }
 
     private void Update()
