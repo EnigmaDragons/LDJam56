@@ -90,6 +90,7 @@ public class MeleeWalkEnemy : MonoBehaviour
             }
             Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotExplode, gameObject));
             gameObject.SetActive(false);
+            Debug.Log("I turned myself off", this);
             contactObject.SetActive(false);
         }
     }

@@ -80,6 +80,7 @@ public class EnemyHandeler : MonoBehaviour
             _dying = true;
             animator.SetTrigger("death");
             Message.Publish(new EnemyKilled());
+            Debug.Log("I died!", this);
             // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
             this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), animator.GetCurrentAnimatorClipInfo(0).Length);
         }
@@ -170,5 +171,4 @@ public class EnemyHandeler : MonoBehaviour
             enemyMaterial.color = originalColor;
         }
     }
-    
 }
