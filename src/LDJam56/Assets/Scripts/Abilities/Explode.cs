@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,7 @@ public class Explode : MonoBehaviour
     [SerializeField] private float animationTime;
     [SerializeField] private float castTime;
     [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private float projectileOffset;
 
     private Action _onCastFinish;
     private float _remainingCastTime;
@@ -31,10 +33,11 @@ public class Explode : MonoBehaviour
             var projectileSpawn = new Vector3(startingPosition.x, projectilePrefab.transform.localPosition.y, startingPosition.z);
             for (var i = 0; i < projectiles; i++)
             {
-                var direction = Quaternion.Euler(0, (360 / projectiles) * i, 0) * Vector3.forward; 
-                var projectile = Instantiate(projectilePrefab, projectileSpawn, Quaternion.LookRotation(direction), transform.parent);
+                var direction = Quaternion.Euler(0, (360 / projectiles) * i, 0) * Vector3.forward;
+                var spawn = projectileSpawn + direction * projectileOffset;
+                var projectile = Instantiate(projectilePrefab, spawn, Quaternion.LookRotation(direction), transform.parent);
                 Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
-                projectile.Init(potency * 0.5f, projectileSpawn, direction, data, type, nextAbilities);   
+                projectile.Init(potency * 0.5f, spawn, direction, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());   
             }
         }
         transform.localScale *= Mathf.Sqrt(localPotency);

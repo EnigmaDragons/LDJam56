@@ -46,7 +46,7 @@ MonoBehaviour:
     CombinationDescription: Explodes on projectile impact
   - ValidTypes: 0100000002000000
     AbilitiesBefore:
-    - Types: 
+    - Types: feffffff
     AbilitiesAfter:
     - Types: 01000000
     - Types: ffffffff

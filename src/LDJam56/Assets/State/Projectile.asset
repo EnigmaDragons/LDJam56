@@ -46,7 +46,7 @@ MonoBehaviour:
     CombinationDescription: Fires a projectile that will explode when it hits
   - ValidTypes: 0100000002000000
     AbilitiesBefore:
-    - Types: 00000000
+    - Types: 0000000003000000
     AbilitiesAfter:
     - Types: 01000000
     CombinationDescription: Increases the burst of shots
