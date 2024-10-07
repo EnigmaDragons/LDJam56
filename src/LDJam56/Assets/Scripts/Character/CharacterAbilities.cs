@@ -12,6 +12,8 @@ public class CharacterAbilities : MonoBehaviour
     
     private void Update()
     {
+        if (Time.timeScale == 0)
+            return;
         CurrentGameState.LowerCooldowns(Time.deltaTime);
         if (Input.GetButton("Defense"))
         {
