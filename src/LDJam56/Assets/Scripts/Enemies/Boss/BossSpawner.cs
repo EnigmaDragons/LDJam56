@@ -72,9 +72,9 @@ public class BossSpawner : MonoBehaviour
     private Vector3 GetRandomPointInBounds(Bounds bounds)
     {
         return new Vector3(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-            Random.Range(bounds.min.z, bounds.max.z)
+            Random.Range(transform.position.x -14f, transform.position.x +7.5f),
+            0f,
+            Random.Range(transform.position.z - 7f, transform.position.z +4f)
         );
     }
 }

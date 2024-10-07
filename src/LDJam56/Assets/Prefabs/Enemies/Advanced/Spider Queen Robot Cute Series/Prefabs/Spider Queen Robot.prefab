@@ -538,11 +538,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 101
+  HP: 200
   Speed: 6
   Range: 0
-  AttackRange: 6
-  Attack2Range: 0
+  AttackRange: 5
+  Attack2Range: 5
   Damage: 1
   AttackDelay: 0
   Attack2Delay: 0

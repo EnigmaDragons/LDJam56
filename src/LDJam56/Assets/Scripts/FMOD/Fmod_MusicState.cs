@@ -32,6 +32,18 @@ public class Fmod_MusicState : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Gamestate", 4f); // Assuming 4f represents "Game Over" state
         Debug.Log("Music state set to Game Over");
     }
+    
+    public void SetIntroState()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Gamestate", 5f); 
+        Debug.Log("Music state set to Intro");
+    }
+
+    public void SetVictoryState()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Gamestate", 6f); 
+        Debug.Log("Music state set to Victory");
+    }
 
     public void SetIntensity(float intensity)
     {
