@@ -1017,8 +1017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 2218044200085044577}
-  HP: 9
-  Speed: 12
+  HP: 200
+  Speed: 20
   Range: 40
   AttackRange: 3
   Attack2Range: 0
@@ -1032,6 +1032,10 @@ MonoBehaviour:
   shootTarget: {fileID: 0}
   Collider1: {fileID: 4586011832073649462}
   Collider2: {fileID: 3606792934333428841}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHP: 0
 --- !u!54 &7637246380523214341
 Rigidbody:
   m_ObjectHideFlags: 0

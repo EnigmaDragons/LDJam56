@@ -10,6 +10,7 @@ namespace UI
         [SerializeField] private GameObject hoverDescription;
         [SerializeField] private TMP_Text text;
         [SerializeField] private Button button;
+        [SerializeField] private GameObject textPanel;
         
         private AbilityComponentType _type;
 
@@ -17,6 +18,7 @@ namespace UI
         {
             button.onClick.AddListener(OnClick);
             hoverDescription.gameObject.SetActive(false);
+            textPanel.gameObject.SetActive(false);
         }
 
         public void Init(AbilityData ability)
@@ -47,11 +49,13 @@ namespace UI
         public void OnPointerEnter(PointerEventData eventData)
         {
             hoverDescription.gameObject.SetActive(true);
+            textPanel.gameObject.SetActive(true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             hoverDescription.gameObject.SetActive(false);
+            textPanel.gameObject.SetActive(false);
         }
     }
 }
