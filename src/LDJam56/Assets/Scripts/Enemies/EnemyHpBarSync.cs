@@ -36,13 +36,21 @@ public class EnemyHpBarSync : MonoBehaviour
             _isProgressBarInitialized = hpBar.IsInitialized;
             return;
         }
-        
+
         var currentHp = enemyHandler.HP;
         var maxHp = enemyHandler.MaxHp;
-        
+
         // Update the progress bar
-        hpBar.SegmentCount = maxHp;
-        hpBar.Value = currentHp;
+        if (maxHp <= 100)
+        { 
+            hpBar.SegmentCount = maxHp;
+            hpBar.Value = currentHp; 
+        }
+        else
+        {
+            hpBar.SegmentCount = maxHp/5;
+            hpBar.Value = currentHp/5;
+        }
         
         // Bug Fix Hack
         //if (currentHp > 0 && !enemyHandler.gameObject.activeSelf)
