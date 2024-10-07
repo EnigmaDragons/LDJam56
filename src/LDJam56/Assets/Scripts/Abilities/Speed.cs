@@ -15,6 +15,7 @@ public class Speed : MonoBehaviour
         CurrentGameState.UpdateState(s => s.PlayerStats.Speed += data.Amount * potency);
         _duration = data.Duration;
         _onComplete = () => CurrentGameState.UpdateState(s => s.PlayerStats.Speed -= data.Amount * potency);
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.PlayerSpeed, gameObject));
     }
 
     private void Update()

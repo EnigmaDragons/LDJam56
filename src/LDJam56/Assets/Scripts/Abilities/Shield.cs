@@ -15,6 +15,7 @@ public class Shield : MonoBehaviour
 
     public void Init(float potency, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
+        Message.Publish(new StartSoundEffect() { SoundEffect = SoundEffectEnum.PlayerShield, Moving = true, Transform = transform.parent});
         _onEnemyBump = () => { };
         _enemiesHit = new HashSet<Collider>();
         if (nextAbilities.AnyNonAlloc() && nextAbilities[0].Type == AbilityComponentType.Explode)
@@ -41,6 +42,7 @@ public class Shield : MonoBehaviour
         if (_duration < Time.deltaTime)
         {
             _onComplete();
+            Message.Publish(new StopSoundEffect() { SoundEffect = SoundEffectEnum.PlayerShield });
             Destroy(gameObject);
         }
     }
