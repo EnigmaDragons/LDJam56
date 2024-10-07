@@ -5101,7 +5101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4362554014230283012}
-  HP: 25
+  HP: 44
   Speed: 6
   Range: 16
   AttackRange: 26
@@ -5119,6 +5119,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  _maxHP: 0
   point1: {fileID: 6545209488362651777}
   point2: {fileID: 3801489363238714190}
   firePoint2: {fileID: 7524641948233952694}
