@@ -1,8 +1,7 @@
 ﻿using System;
-using TMPro;
 using UnityEngine;
 
-public class AbilityCustomizeUI
+public class AbilityCustomizeUI : MonoBehaviour
 {
     [SerializeField] private CodeButton[] codeButtons;
     [SerializeField] private AllAbilities allAbilities;

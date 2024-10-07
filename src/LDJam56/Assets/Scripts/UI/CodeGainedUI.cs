@@ -1,15 +1,43 @@
 ﻿using UnityEngine;
 
-public class CodeGainedUI : OnMessage<CodeGainedUI>
+public class CodeGainedUI : OnMessage<PlayerGainedCode>
 {
-    [SerializeField] private GameObject shownUI;
-    [SerializeField] private GameObject whereToApplyUI;
-    [SerializeField] private GameObject attackAbilityUI;
-    [SerializeField] private GameObject specialAbilityUI;
-    [SerializeField]
+    [SerializeField] private ShowCodeGained shownUI;
+    [SerializeField] private WhichAbilityWeChangingUI whereToApplyUI;
+    [SerializeField] private AbilityCustomizeUI abilityCustomizeUI;
 
-    protected override void Execute(CodeGainedUI msg)
+    private AbilityData _ability;
+    
+    private void Start()
     {
-        
+        whereToApplyUI.Init(SelectAbilityType);
+    }
+    
+    protected override void Execute(PlayerGainedCode msg)
+    {
+        Time.timeScale = 0;
+        shownUI.Init(msg.Ability);
+    }
+
+    private void Update()
+    {
+        if (shownUI.gameObject.activeInHierarchy)
+        {
+            if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Attack"))
+            {
+                shownUI.Disable();
+                whereToApplyUI.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void SelectAbilityType(AbilityType abilityType)
+    {
+        whereToApplyUI.gameObject.SetActive(false);
+        abilityCustomizeUI.Init(abilityType, _ability, () => whereToApplyUI.gameObject.SetActive(true), () =>
+        {
+            abilityCustomizeUI.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        });
     }
 }
