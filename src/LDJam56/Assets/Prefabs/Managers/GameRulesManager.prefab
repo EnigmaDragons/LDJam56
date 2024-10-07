@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8734058387380935751}
   - component: {fileID: 1948304640939250356}
+  - component: {fileID: 1048770466032757902}
+  - component: {fileID: 6805688547544120523}
+  - component: {fileID: 8066219586833257511}
   m_Layer: 0
   m_Name: GameRulesManager
   m_TagString: Untagged
@@ -44,3 +47,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ee3d13b172e8649843ca6bf5998866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1048770466032757902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200698655176734724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e01139f5a44cc7bb10e50cd32e1c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6805688547544120523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200698655176734724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8409c790e91643c7b5aa47d13bf0bc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1048770466032757902}
+        m_TargetAssemblyTypeName: Fmod_MusicState, Assembly-CSharp
+        m_MethodName: SetGameOverState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8066219586833257511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200698655176734724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dfcdd9e05c2e0459a9f3c99ed84af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLowHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1048770466032757902}
+        m_TargetAssemblyTypeName: Fmod_MusicState, Assembly-CSharp
+        m_MethodName: SetIsLowHealth
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onNotLowHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1048770466032757902}
+        m_TargetAssemblyTypeName: Fmod_MusicState, Assembly-CSharp
+        m_MethodName: SetIsLowHealth
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
