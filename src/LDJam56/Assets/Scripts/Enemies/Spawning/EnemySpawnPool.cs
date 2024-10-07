@@ -7,9 +7,9 @@ public class EnemySpawnPool : ScriptableObject
 {
     public EnemySpawnRule[] enemies;
 
-    public Queue<GameObject> GetRandomPrefabs(int n)
+    public Queue<EnemyHandlerHolder> GetRandomPrefabs(int n)
     {
-        List<GameObject> weightedPool = new List<GameObject>();
+        List<EnemyHandlerHolder> weightedPool = new List<EnemyHandlerHolder>();
         
         // Create a weighted pool with at least 5 times n entries
         int totalEntries = Mathf.Max(5 * n, enemies.Sum(rule => rule.weight));
@@ -27,7 +27,7 @@ public class EnemySpawnPool : ScriptableObject
         for (int i = weightedPool.Count - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
-            GameObject temp = weightedPool[i];
+            EnemyHandlerHolder temp = weightedPool[i];
             weightedPool[i] = weightedPool[j];
             weightedPool[j] = temp;
         }

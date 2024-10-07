@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using DunGen;
 using Unity.AI.Navigation;
+using Random = UnityEngine.Random;
 
 public class EnemyTileSpawner : MonoBehaviour
 {
@@ -36,15 +38,16 @@ public class EnemyTileSpawner : MonoBehaviour
     private void SpawnEnemies()
     {
         int enemyCount = Random.Range(minEnemies, maxEnemies + 1);
-        Queue<GameObject> enemiesToSpawn = new Queue<GameObject>(enemySpawnPool.GetRandomPrefabs(enemyCount));
+        Queue<EnemyHandlerHolder> enemiesToSpawn = new Queue<EnemyHandlerHolder>(enemySpawnPool.GetRandomPrefabs(enemyCount));
 
         while (enemiesToSpawn.Count > 0)
         {
             Vector3 spawnPosition = GetValidSpawnPosition();
             if (spawnPosition != Vector3.zero)
             {
-                GameObject enemyPrefab = enemiesToSpawn.Dequeue();
-                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
+                EnemyHandlerHolder enemyPrefab = enemiesToSpawn.Dequeue();
+                var enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
+                enemy.Handler.HP = (int)Math.Ceiling(enemy.Handler.HP * currentTile.Placement.NormalizedDepth);
             }
         }
     }
