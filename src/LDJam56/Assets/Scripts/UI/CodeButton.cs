@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class CodeButton : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private TMP_Text text;
-    [SerializeField] private TMP_Text cooldownChange;
     [SerializeField] private Color existingColor;
     [SerializeField] private Color addedColor;
     [SerializeField] private Color possibleColor;
@@ -17,7 +16,7 @@ public class CodeButton : MonoBehaviour, IPointerEnterHandler
     private AbilityData _existingCode;
     private AbilityData _codeBeingAdded;
 
-    public void Init(AbilityData existingCode, AbilityData codeBeingAdded, Action onSelect, Ability ability)
+    public void Init(AbilityData existingCode, AbilityData codeBeingAdded, Action onSelect)
     {
         _onSelect = onSelect;
         _existingCode = existingCode;
@@ -26,7 +25,6 @@ public class CodeButton : MonoBehaviour, IPointerEnterHandler
         {
             text.text = _codeBeingAdded.DisplayName;
             text.color = possibleColor;
-            cooldownChange.text = $"Cooldown: {ability.BaseCooldown} -> {ability.BaseCooldown + codeBeingAdded.GetCooldown(ability.AbilityType)}";
         }
         else
         {
