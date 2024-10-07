@@ -21,16 +21,16 @@ MonoBehaviour:
     m_Value: 0.8
   intensity:
     m_OverrideState: 1
-    m_Value: 1.15
+    m_Value: 0.24
   scatter:
     m_OverrideState: 1
-    m_Value: 0.683
+    m_Value: 1
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.998576, g: 0.6880518, b: 0.43529955, a: 1}
+    m_Value: {r: 1, g: 0.93277985, b: 0.64951944, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: FOG Profile
+  m_Name: Menu Profile
   m_EditorClassIdentifier: 
   components:
   - {fileID: 4839954680614142470}
@@ -162,10 +162,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.296
+    m_Value: 0.25
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.669
+    m_Value: 0.875
   rounded:
     m_OverrideState: 1
     m_Value: 0
@@ -184,10 +184,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.98712224, y: 0.9716528, z: 1, w: -0.008114856}
+    m_Value: {x: 0.927726, y: 0.8607105, z: 1, w: -0.008114694}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.94325, z: 0.9753821, w: -0.01260159}
+    m_Value: {x: 1, y: 0.8952172, z: 0.8823069, w: 0.06414948}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 0.84837234, y: 0.6009785, z: 1, w: 0.25103936}
+    m_Value: {x: 1, y: 0.92238873, z: 0.8918879, w: 0.33521953}

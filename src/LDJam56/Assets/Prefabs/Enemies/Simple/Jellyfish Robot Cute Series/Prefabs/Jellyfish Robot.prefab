@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  HP: 8
+  HP: 16
   Speed: 7
   Range: 21
   AttackRange: 4
@@ -149,6 +149,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  _maxHP: 0
 --- !u!195 &6739179931065256677
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -5040,7 +5040,7 @@ GameObject:
   - component: {fileID: 96255635117145420}
   - component: {fileID: 4039043721140314236}
   m_Layer: 8
-  m_Name: Galaxy Robot
+  m_Name: tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5101,14 +5101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4362554014230283012}
-  HP: 44
-  Speed: 6
-  Range: 16
-  AttackRange: 26
-  Attack2Range: 10
+  HP: 100
+  Speed: 0
+  Range: 2
+  AttackRange: 20
+  Attack2Range: 1
   Damage: 1
-  AttackDelay: 2
-  Attack2Delay: 20
+  AttackDelay: 4
+  Attack2Delay: 100
   firePoint: {fileID: 9215485935901714613}
   projectilePrefab: {fileID: 191804, guid: 233f5ac3f4dd01f43899c0a13f051c39, type: 3}
   projectileSpeed: 15
@@ -5119,7 +5119,6 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
-  _maxHP: 0
   point1: {fileID: 6545209488362651777}
   point2: {fileID: 3801489363238714190}
   firePoint2: {fileID: 7524641948233952694}
