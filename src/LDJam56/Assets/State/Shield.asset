@@ -15,7 +15,16 @@ MonoBehaviour:
   Type: 4
   Primary: 4
   DisplayName: Shield()
+  Description: Grants you invincibility
+  PassiveDescription: Invincible after being hit lasts 0.5 seconds longer
+  Icon: {fileID: 0}
   Duration: 3
   Amount: 0
   Speed: 0
   Range: 0
+  KnockbackForce: 0
+  Compatibilities:
+  - Ability: 4
+    abilitiesBefore: 00000000
+    abilitiesAfter: 00000000
+    CombinationDescription: Grants you invincibility for 3 seconds

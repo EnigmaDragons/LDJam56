@@ -18,3 +18,4 @@ MonoBehaviour:
   mobilityCooldown: 6
   defenseCooldown: 9
   xpNeededToLevel: 3
+  maxAbilityComponents: 5

@@ -15,10 +15,16 @@ MonoBehaviour:
   Type: 1
   Primary: 1
   DisplayName: Projectile()
-  Description: 
+  Description: Adds damaging projectiles into your abilities
+  PassiveDescription: Increase number of projectiles of your abilities
+  Icon: {fileID: 0}
   Duration: 0
   Amount: 1
   Speed: 20
   Range: 9
   KnockbackForce: 30
-  Compatibilities: []
+  Compatibilities:
+  - Ability: 1
+    abilitiesBefore: 00000000
+    abilitiesAfter: 00000000
+    CombinationDescription: Shoots a projectile at your target

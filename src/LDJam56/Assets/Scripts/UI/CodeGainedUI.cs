@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CodeGainedUI : OnMessage<PlayerGainedCode>
+public class CodeGainedUI : OnMessage<PlayerGainedCode, AbilityUpgraded>
 {
     [SerializeField] private ShowCodeGained shownUI;
     [SerializeField] private WhichAbilityWeChangingUI whereToApplyUI;
@@ -8,16 +8,20 @@ public class CodeGainedUI : OnMessage<PlayerGainedCode>
 
     private AbilityData _ability;
     
-    private void Start()
-    {
-        whereToApplyUI.Init(SelectAbilityType);
-    }
-    
     protected override void Execute(PlayerGainedCode msg)
     {
+        whereToApplyUI.Init(SelectAbilityType, msg.Ability);
         _ability = msg.Ability;
         Time.timeScale = 0;
         shownUI.Init(msg.Ability);
+    }
+
+    protected override void Execute(AbilityUpgraded msg)
+    {
+        shownUI.gameObject.SetActive(false);
+        whereToApplyUI.gameObject.SetActive(false);
+        abilityCustomizeUI.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -39,10 +43,6 @@ public class CodeGainedUI : OnMessage<PlayerGainedCode>
         {
             whereToApplyUI.gameObject.SetActive(true);
             abilityCustomizeUI.gameObject.SetActive(false);
-        }, () =>
-        {
-            abilityCustomizeUI.gameObject.SetActive(false);
-            Time.timeScale = 1;
         });
     }
 }

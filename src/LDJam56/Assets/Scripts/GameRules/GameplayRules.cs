@@ -9,6 +9,7 @@ public class GameplayRules : ScriptableObject
     [SerializeField] private float mobilityCooldown;
     [SerializeField] private float defenseCooldown;
     [SerializeField] private int xpNeededToLevel;
+    [SerializeField] private int maxAbilityComponents;
 
     public int PlayerHealth => playerHealth;
     public float AttackCooldown => attackCooldown;
@@ -16,4 +17,5 @@ public class GameplayRules : ScriptableObject
     public float MobilityCooldown => mobilityCooldown;
     public float DefenseCooldown => defenseCooldown;
     public int XpNeededToLevel => xpNeededToLevel;
+    public int MaxAbilityComponents => maxAbilityComponents;
 }

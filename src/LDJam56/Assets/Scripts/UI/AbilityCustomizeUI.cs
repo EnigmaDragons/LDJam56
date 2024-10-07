@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +11,13 @@ public class AbilityCustomizeUI : MonoBehaviour
     [SerializeField] private AllAbilities allAbilities;
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
-
-    private AbilityType _abilityType;
+    [SerializeField] private TMP_Text compatibleInteractionText;
+    
+    private CodeButton _currentSelectedButton;
     private int _indexSelected;
     private Ability _ability;
     private AbilityData _toAdd;
     private Action _onCancel;
-    private Action _onComplete;
 
     public void Start()
     {
@@ -24,57 +25,40 @@ public class AbilityCustomizeUI : MonoBehaviour
         cancel.onClick.AddListener(Cancel);
     }
 
-    public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel, Action onComplete)
+    public void Init(AbilityType abilityType, AbilityData abilityToAdd, Action onCancel)
     {
-        _abilityType = abilityType;
         abilityTypeText.text = abilityType.ToString();
         _toAdd = abilityToAdd;
         _onCancel = onCancel;
-        _onComplete = onComplete;
         _ability = CurrentGameState.GetAbility(abilityType);
         codeButtons.ForEach(x => x.gameObject.SetActive(false));
-
-        if (abilityType == AbilityType.Passive)
+        var codeButtonIndex = 0;
+        for (var abilityInsertIndex = 0; abilityInsertIndex <= _ability.Components.Count; abilityInsertIndex++)
         {
-            _indexSelected = _ability.Components.Count;
-            for (var i = 0; i <= _ability.Components.Count; i++)
+            var compatibility = abilityToAdd.GetMaybeCompatible(abilityType, _ability.Components, abilityInsertIndex);
+            if (compatibility.IsPresent)
             {
-                if (i == _ability.Components.Count)
-                {
-                    codeButtons[i].Init(null, abilityToAdd, () => { });
-                    codeButtons[i].Select();
-                }
-                else
-                    codeButtons[i].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
+                var i = abilityInsertIndex;
+                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, codeButtons[codeButtonIndex], compatibility.Value.CombinationDescription));
+                codeButtonIndex++;
+            }
+            if (abilityInsertIndex != _ability.Components.Count)
+            {
+                codeButtons[codeButtonIndex].Init(allAbilities.GetAbility(_ability.Components[abilityInsertIndex]), null, () => {});
+                codeButtonIndex++;
             }
         }
-        else
-        {
-            codeButtons[0].gameObject.SetActive(true);
-            codeButtons[0].Init(null, abilityToAdd, () => SetIndex(0));
-            for (var i = 0; i < _ability.Components.Count; i++)
-            {
-                codeButtons[i * 2 + 1].Init(allAbilities.GetAbility(_ability.Components[i]), null, () => {});
-                var indexToSet = i + 1;
-                codeButtons[i * 2 + 2].Init(null, abilityToAdd, () => SetIndex(indexToSet));
-            }
-            SetIndex(0);
-        }
+        codeButtons.First(x => x.Selectable).OnPointerEnter(null);
         gameObject.SetActive(true);
     }
 
-    private void SetIndex(int index)
+    private void SetIndex(int index, CodeButton button, string compatibleInteraction)
     {
-        if (_abilityType == AbilityType.Passive)
-            return;
         _indexSelected = index;
-        for (var i = 0; i <= _ability.Components.Count; i++)
-        {
-            if (i == index)
-                codeButtons[i * 2].Select();
-            else
-                codeButtons[i * 2].Deselect();
-        }
+        _currentSelectedButton = button;
+        codeButtons.ForEach(x => x.Deselect());
+        button.Select();
+        compatibleInteractionText.text = compatibleInteraction;
     }
 
     private void Update()
@@ -83,17 +67,26 @@ public class AbilityCustomizeUI : MonoBehaviour
             Confirm();
         else if (Input.GetButtonDown("Cancel"))
             Cancel();
-        
+
         if (_indexSelected != _ability.Components.Count && Input.GetKeyDown(KeyCode.DownArrow))
-            SetIndex(_indexSelected + 1);
+        {
+            codeButtons
+                .Skip(codeButtons.FirstIndexOf(x => x == _currentSelectedButton) + 1)
+                .FirstOrMaybe(x => x.Selectable)
+                .IfPresent(b => b.OnPointerEnter(null));
+        }
         if (_indexSelected != 0 && Input.GetKeyDown(KeyCode.UpArrow))
-            SetIndex(_indexSelected - 1);
+        {
+            codeButtons.Take(codeButtons.FirstIndexOf(x => x == _currentSelectedButton))
+                .FirstOrMaybe(x => x.Selectable)
+                .IfPresent(b => b.OnPointerEnter(null));
+        }
     }
 
     public void Confirm()
     {
         CurrentGameState.UpdateState(s => _ability.Components.Insert(_indexSelected, _toAdd.Type));
-        _onComplete();
+        Message.Publish(new AbilityUpgraded());
     }
 
     public void Cancel()

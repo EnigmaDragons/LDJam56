@@ -15,7 +15,16 @@ MonoBehaviour:
   Type: 3
   Primary: 3
   DisplayName: Speed()
-  Duration: 2
+  Description: Increases the speed of your movement or actions
+  PassiveDescription: Gain 10% Movement Speed
+  Icon: {fileID: 0}
+  Duration: 3
   Amount: 0.5
   Speed: 0
   Range: 0
+  KnockbackForce: 0
+  Compatibilities:
+  - Ability: 3
+    abilitiesBefore: 00000000
+    abilitiesAfter: 00000000
+    CombinationDescription: Gives you +50% movement speed for 3 seconds

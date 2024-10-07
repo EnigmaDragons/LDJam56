@@ -10,6 +10,8 @@ public class CodeButton : MonoBehaviour, IPointerEnterHandler
     [SerializeField] private Color addedColor;
     [SerializeField] private Color possibleColor;
 
+    public bool Selectable => _codeBeingAdded != null;
+    
     private Action _onSelect;
     private AbilityData _existingCode;
     private AbilityData _codeBeingAdded;
