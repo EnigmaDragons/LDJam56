@@ -33,10 +33,10 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _SoftParticlesFarFadeDistance: 146.4
+    - _SoftParticlesFarFadeDistance: 475
     - _SoftParticlesNearFadeDistance: 0
     m_Colors:
-    - _SoftParticleFadeParams: {r: 0, g: 0.0068306015, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0.002105263, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &967450646572734108

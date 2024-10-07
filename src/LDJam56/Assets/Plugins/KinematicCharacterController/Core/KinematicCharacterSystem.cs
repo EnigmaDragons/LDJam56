@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -122,6 +123,8 @@ namespace KinematicCharacterController
 
         private void FixedUpdate()
         {
+            if (CharacterMotors.Any(x => x == null))
+                CharacterMotors = CharacterMotors.Where(x => x != null).ToList();
             if (Settings.AutoSimulation)
             {
                 float deltaTime = Time.deltaTime;
@@ -153,6 +156,8 @@ namespace KinematicCharacterController
         /// </summary>
         public static void PreSimulationInterpolationUpdate(float deltaTime)
         {
+            if (CharacterMotors.Any(x => x == null))
+                CharacterMotors = CharacterMotors.Where(x => x != null).ToList();
             // Save pre-simulation poses and place transform at transient pose
             for (int i = 0; i < CharacterMotors.Count; i++)
             {
@@ -225,6 +230,8 @@ namespace KinematicCharacterController
         /// </summary>
         public static void PostSimulationInterpolationUpdate(float deltaTime)
         {
+            if (CharacterMotors.Any(x => x == null))
+                CharacterMotors = CharacterMotors.Where(x => x != null).ToList();
             _lastCustomInterpolationStartTime = Time.time;
             _lastCustomInterpolationDeltaTime = deltaTime;
 
@@ -261,6 +268,8 @@ namespace KinematicCharacterController
         /// </summary>
         private static void CustomInterpolationUpdate()
         {
+            if (CharacterMotors.Any(x => x == null))
+                CharacterMotors = CharacterMotors.Where(x => x != null).ToList();
             float interpolationFactor = Mathf.Clamp01((Time.time - _lastCustomInterpolationStartTime) / _lastCustomInterpolationDeltaTime);
 
             // Handle characters interpolation

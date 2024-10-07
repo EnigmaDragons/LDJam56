@@ -34,10 +34,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _FlipbookBlending: 0
-    - _SoftParticlesFarFadeDistance: 144.4
-    - _SoftParticlesNearFadeDistance: 0
+    - _SoftParticlesFarFadeDistance: 175
+    - _SoftParticlesNearFadeDistance: 55
     m_Colors:
-    - _SoftParticleFadeParams: {r: 0, g: 0.006925208, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 55, g: 0.008333334, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &967450646572734108

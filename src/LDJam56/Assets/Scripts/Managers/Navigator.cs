@@ -11,6 +11,7 @@ public sealed class Navigator : ScriptableObject
 
     private static void NavigateTo(string sceneName)
     {
+        Time.timeScale = 1f;
         Log.Info($"Navigating to {sceneName}");
         Message.Publish(new NavigateToSceneRequested(sceneName));
     }

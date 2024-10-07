@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,8 +32,7 @@ namespace KinematicCharacterController.Examples
 
         private void Update()
         {
-
-            KinematicCharacterSystem.Simulate(Time.deltaTime, KinematicCharacterSystem.CharacterMotors, KinematicCharacterSystem.PhysicsMovers);
+            KinematicCharacterSystem.Simulate(Time.deltaTime, KinematicCharacterSystem.CharacterMotors.Where(x => x.gameObject != null).ToList(), KinematicCharacterSystem.PhysicsMovers);
         }
 
         private void UpdateOnImages()

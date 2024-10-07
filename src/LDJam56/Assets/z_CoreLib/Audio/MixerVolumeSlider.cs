@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
 using FMOD.Studio;
@@ -10,13 +12,16 @@ public sealed class MixerVolumeSlider : MonoBehaviour
         Master,
         Music,
         SFX,
-        UI
+        UI,
+        DX,
     }
 
     [SerializeField] private Slider slider;
     [SerializeField] private BusType busType;
+    [SerializeField] private BusType[] linkedBusTypes;
 
     private Bus bus;
+    private Bus[] linkedBuses = Array.Empty<Bus>();
 
     public System.Action<float> onValueChanged;
 
@@ -27,7 +32,8 @@ public sealed class MixerVolumeSlider : MonoBehaviour
         
         bus.getVolume(out float volume);
         slider.value = volume;
-        
+
+        linkedBuses = linkedBusTypes.Select(b => RuntimeManager.GetBus(GetBusPath(b))).ToArray();
         slider.onValueChanged.AddListener(SetLevel);
     }
 
@@ -43,6 +49,8 @@ public sealed class MixerVolumeSlider : MonoBehaviour
                 return "bus:/MST_BUS/SFX_MST";
             case BusType.UI:
                 return "bus:/MST_BUS/UI_MST";
+            case BusType.DX:
+                return "bus:/MST_BUS/DX_MST";
             default:
                 Debug.LogError("Invalid bus type");
                 return string.Empty;
@@ -52,6 +60,7 @@ public sealed class MixerVolumeSlider : MonoBehaviour
     public void SetLevel(float sliderValue)
     {
         bus.setVolume(sliderValue);
+        linkedBuses.ForEach(b => b.setVolume(sliderValue));
         onValueChanged?.Invoke(sliderValue);
     }
 
