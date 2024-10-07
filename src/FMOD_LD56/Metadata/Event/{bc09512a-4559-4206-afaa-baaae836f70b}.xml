@@ -103,7 +103,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{17476ba4-9364-4bc4-995f-5ea7df8e6804}">
 		<property name="volume">
-			<value>-23</value>
+			<value>-15.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{3b00d32c-b0e2-467b-bd35-e7170c437f87}</destination>
@@ -179,6 +179,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{68d8e152-7cc5-4860-b00b-7953eb44b68e}">
+		<property name="volume">
+			<value>-4.5</value>
+		</property>
 		<property name="name">
 			<value>dirt</value>
 		</property>
@@ -247,7 +250,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e8187b81-8b0c-424f-8a9c-2a08e6e83083}">
 		<property name="volume">
-			<value>-7.5</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>metal</value>
@@ -477,6 +480,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{67b4f58d-b6d7-4593-b11d-828ebdf23746}">
 		<relationship name="effects">
+			<destination>{73787d36-da44-4e29-90a8-9f13946b6095}</destination>
 			<destination>{dfc0052e-a702-4b5c-bc45-1c8fb35e11f9}</destination>
 		</relationship>
 	</object>
@@ -666,14 +670,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{47ff3bb4-eb63-4e8c-b372-563ef5ca65d2}" />
 	<object class="MultibandEqEffect" id="{766493cf-8c50-4899-8590-ceb36987c55e}">
+		<property name="filterTypeA">
+			<value>3</value>
+		</property>
 		<property name="filterTypeB">
 			<value>9</value>
 		</property>
 		<property name="filterTypeC">
 			<value>9</value>
 		</property>
+		<property name="filterTypeD">
+			<value>9</value>
+		</property>
 		<property name="frequencyA">
-			<value>5053.00928</value>
+			<value>7490.58887</value>
 		</property>
 		<property name="frequencyB">
 			<value>476.162323</value>
@@ -681,8 +691,11 @@
 		<property name="frequencyC">
 			<value>2396.7063</value>
 		</property>
+		<property name="frequencyD">
+			<value>85.2911987</value>
+		</property>
 		<property name="qualityA">
-			<value>1.33120692</value>
+			<value>1.50955176</value>
 		</property>
 		<property name="gainB">
 			<value>-21.7241383</value>
@@ -690,11 +703,14 @@
 		<property name="gainC">
 			<value>-13.965517</value>
 		</property>
+		<property name="gainD">
+			<value>8.79310417</value>
+		</property>
 	</object>
 	<object class="DistortionEffect" id="{469744d3-8695-440f-a0e8-a87149bb7c21}" />
 	<object class="MixerSend" id="{15d300de-1a25-416b-945d-55a19789e64d}">
 		<property name="level">
-			<value>-35</value>
+			<value>-26</value>
 		</property>
 		<property name="inputFormat">
 			<value>0</value>
@@ -719,6 +735,17 @@
 		<relationship name="automationCurves">
 			<destination>{2259dc33-6a82-4aef-ba94-416b3f701c6c}</destination>
 		</relationship>
+	</object>
+	<object class="MultibandEqEffect" id="{73787d36-da44-4e29-90a8-9f13946b6095}">
+		<property name="filterTypeA">
+			<value>3</value>
+		</property>
+		<property name="frequencyA">
+			<value>4949.39258</value>
+		</property>
+		<property name="qualityA">
+			<value>0.330241382</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{dfc0052e-a702-4b5c-bc45-1c8fb35e11f9}" />
 	<object class="Automator" id="{8184db5b-b74a-44fe-b1ae-bd386e25a6b7}">

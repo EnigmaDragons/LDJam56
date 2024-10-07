@@ -1,5 +1,7 @@
+using System;
 using System.Diagnostics; // For running external processes
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -48,12 +50,12 @@ public class BuildScript
     private static bool ValidateBuild()
         => !EditorApplication.isPlaying; // Disable during play mode
 
-    [MenuItem("File/Set FMOD Install Path")]
+    [MenuItem("File/Set FMOD Tool Path")]
     public static void SetFmodExecutablePath()
     {
         // Prompt the user to select the FMOD install directory
         string path = EditorUtility.OpenFolderPanel(
-            "Select FMOD Install Directory",
+            "Select FMOD Tool Directory",
             Directory.GetParent(FmodExecutablePath).FullName,
             Path.GetFileName(FmodExecutablePath));
 
@@ -97,6 +99,9 @@ public class BuildScript
         // Path to your FMOD project (relative to project root)
         string fullFmodProjectPath = Path.Combine(solutionPath, FmodProjectPath);
 
+        UnityEngine.Debug.Log($"fullFmodExecutable: {fullFmodExecutable}");
+        UnityEngine.Debug.Log($"fullFmodProjectPath: {fullFmodProjectPath}");
+
         // Ensure FMOD Studio executable exists
         if (!File.Exists(fullFmodExecutable))
         {
@@ -118,6 +123,8 @@ public class BuildScript
             {
                 FileName = fullFmodExecutable,
                 Arguments = $"-build {fullFmodProjectPath}", // FMOD command-line build argument
+                // https://fmod.com/docs/2.02/unreal/user-guide.html#commandlet
+                // Arguments = $"{fullFmodProjectPath} -run=FMODGenerateAssets -rebuild",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
@@ -133,8 +140,8 @@ public class BuildScript
         string output = fmodProcess.StandardOutput.ReadToEnd();
         string error = fmodProcess.StandardError.ReadToEnd();
 
-        // Wait for FMOD process to exit, with a 60-second timeout
-        bool exited = fmodProcess.WaitForExit(60000); // Wait for 60 seconds
+        // Wait for FMOD process to exit
+        bool exited = fmodProcess.WaitForExit(120000); // Wait for 2 minutes
         if (!exited)
         {
             UnityEngine.Debug.LogError("FMOD build timed out.");
@@ -142,6 +149,17 @@ public class BuildScript
         }
         var statusfmod = fmodProcess.ExitCode == 0 ? "successfully" : $"with errors: {error}";
         UnityEngine.Debug.Log($"FMOD build completed {statusfmod}");
+
+        try
+        {
+            UnityEngine.Debug.Log("Refreshing FMOD banks...");
+            FMODUnity.EventManager.RefreshBanks();
+            UnityEngine.Debug.Log("FMOD banks refreshed successfully.");
+        }
+        catch (Exception ex)
+        {
+            UnityEngine.Debug.LogError($"Failed to refresh FMOD banks: {ex.Message}");
+        }
 
         // Always log FMOD build output
         UnityEngine.Debug.Log($"FMOD build output: {output}");
@@ -171,6 +189,7 @@ public class BuildScript
     private static void BuildWindows(string buildPathWindows)
     {
         if (!Directory.Exists(buildPathWindows)) Directory.CreateDirectory(buildPathWindows);
+
         // Windows Build
         BuildPlayerOptions buildPlayerOptionsWindows = new BuildPlayerOptions
         {
@@ -188,22 +207,10 @@ public class BuildScript
         UnityEngine.Debug.Log($"Windows build path {buildPathWindows}");
     }
 
-    // Dynamically get all scene files from the Assets/Scenes folder
+    // Dynamically get all scene files from the Build Settings
     private static string[] GetScenes()
-    {
-        // Path to the Scenes folder
-        string scenesFolder = Path.Combine(Application.dataPath, "Scenes", "Final-DontTOUCH");
-
-        // Get all files ending with .unity in the Scenes folder
-        string[] sceneFiles = Directory.GetFiles(scenesFolder, "*.unity", SearchOption.TopDirectoryOnly);
-
-        // Convert the absolute file paths to relative Unity paths (from Assets folder)
-        for (int i = 0; i < sceneFiles.Length; i++)
-        {
-            // Convert file path from full path to a relative Unity path
-            sceneFiles[i] = "Assets" + sceneFiles[i].Replace(Application.dataPath, "").Replace("\\", "/");
-        }
-
-        return sceneFiles;
-    }
+        => EditorBuildSettings.scenes
+            .Where(scene => scene.enabled) // Only include enabled scenes
+            .Select(scene => scene.path)   // Get the path for each scene
+            .ToArray();                    // Convert to an array
 }

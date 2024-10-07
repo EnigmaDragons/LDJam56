@@ -10,6 +10,8 @@ public class ChasingScript : StateMachineBehaviour
     EnemyHandeler stats;
     float timer;
     float timer2;
+    bool hasAttack1 = true;
+    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     { 
         stats = animator.GetComponent<EnemyHandeler>();
@@ -27,7 +29,9 @@ public class ChasingScript : StateMachineBehaviour
         timer2 += Time.deltaTime;
         if (timer >= stats.Attack2Delay && Vector3.Distance(animator.transform.position, target.position) < stats.Attack2Range)
         {
-            animator.SetBool("attack1", false);
+            if (hasAttack1)
+                animator.SetBool("attack1", false);
+            
             animator.SetBool("attack2", true); 
             timer2 = 0f;
         }

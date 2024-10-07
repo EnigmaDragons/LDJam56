@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5180995784082717796}
   - component: {fileID: 5927591778970929884}
+  - component: {fileID: 5306896019951912593}
+  - component: {fileID: 1738223433015437584}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -63,3 +65,32 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &5306896019951912593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571016658330016124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbf71c7cf69f7d4a91cd1efa5962fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicState: {fileID: 1738223433015437584}
+  updateInterval: 0.5
+  nearnessRange: 20
+  enemyThresholdForIntensity1: 3
+  enemyThresholdForIntensity2: 7
+--- !u!114 &1738223433015437584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571016658330016124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e01139f5a44cc7bb10e50cd32e1c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

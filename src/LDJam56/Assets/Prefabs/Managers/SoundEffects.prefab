@@ -64,21 +64,28 @@ MonoBehaviour:
       Data2: 1201462178
       Data3: 160387500
       Data4: -155651962
-    Path: event:/EnemyBot/BotDestroyed
+    Path: event:/EnemyBots/BotDestroyed
+  botDamagedSound:
+    Guid:
+      Data1: 535820897
+      Data2: 1198609015
+      Data3: -1966945622
+      Data4: -875914411
+    Path: event:/EnemyBots/BotDamaged
   enemyShootSoundEffect:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1146384241
+      Data2: 1216157562
+      Data3: 2078932097
+      Data4: 2034646222
+    Path: event:/EnemyBots/BoxyFire
   projectileHit:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -532058755
+      Data2: 1189859389
+      Data3: 442690997
+      Data4: 1313042793
+    Path: event:/EnemyBots/BoxyHit
   explode:
     Guid:
       Data1: -1743465237
@@ -86,3 +93,17 @@ MonoBehaviour:
       Data3: 160387500
       Data4: -155651962
     Path: event:/EnemyBots/BotDestroyed
+  playerHappyOneLiner:
+    Guid:
+      Data1: -338467148
+      Data2: 1197622138
+      Data3: 1428896155
+      Data4: -363112300
+    Path: event:/DX/PlayerHappy
+  playerSadOneLiner:
+    Guid:
+      Data1: -18237949
+      Data2: 1142062993
+      Data3: -955836265
+      Data4: -1596585959
+    Path: event:/DX/PlayerSad

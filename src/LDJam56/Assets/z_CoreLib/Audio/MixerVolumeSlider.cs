@@ -1,26 +1,62 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
 public sealed class MixerVolumeSlider : MonoBehaviour 
 {
-    [SerializeField] private AudioMixer mixer;
+    public enum BusType
+    {
+        Master,
+        Music,
+        SFX,
+        UI
+    }
+
     [SerializeField] private Slider slider;
-    [SerializeField] private string valueName = "MusicVolume";
-    [SerializeField] private FloatReference reductionDb = new FloatReference(0f);
+    [SerializeField] private BusType busType;
+
+    private Bus bus;
+
+    public System.Action<float> onValueChanged;
 
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat(valueName, 0.5f);
+        string busPath = GetBusPath(busType);
+        bus = RuntimeManager.GetBus(busPath);
+        
+        bus.getVolume(out float volume);
+        slider.value = volume;
+        
         slider.onValueChanged.AddListener(SetLevel);
     }
-    
+
+    private string GetBusPath(BusType type)
+    {
+        switch (type)
+        {
+            case BusType.Master:
+                return "bus:/MST_BUS";
+            case BusType.Music:
+                return "bus:/MST_BUS/MUSIC_MST";
+            case BusType.SFX:
+                return "bus:/MST_BUS/SFX_MST";
+            case BusType.UI:
+                return "bus:/MST_BUS/UI_MST";
+            default:
+                Debug.LogError("Invalid bus type");
+                return string.Empty;
+        }
+    }
+
     public void SetLevel(float sliderValue)
     {
-        var mixerVolume = (Mathf.Log10(sliderValue) * 20) - reductionDb;
-        Debug.Log($"Slider - Set Audio Level for {valueName} to {sliderValue} ({mixerVolume}db)");
-        mixer.SetFloat(valueName, mixerVolume);
-        PlayerPrefs.SetFloat(valueName, sliderValue);
-        Message.Publish(new MixerVolumeChanged(valueName));
+        bus.setVolume(sliderValue);
+        onValueChanged?.Invoke(sliderValue);
+    }
+
+    public void SetValueWithoutNotify(float value)
+    {
+        slider.SetValueWithoutNotify(value);
     }
 }
