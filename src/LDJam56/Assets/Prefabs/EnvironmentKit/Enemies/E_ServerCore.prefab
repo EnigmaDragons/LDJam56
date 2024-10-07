@@ -369,6 +369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743861219872972499, guid: bd97c31916501684ea0e58504e4e495b,
         type: 3}
+      propertyPath: m_TagString
+      value: ServerCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743861219872972499, guid: bd97c31916501684ea0e58504e4e495b,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -473,7 +478,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 11.2
+  m_Radius: 13
   m_Center: {x: 0, y: 5, z: 0}
 --- !u!54 &1176145158725440360
 Rigidbody:
@@ -497,7 +502,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -517,6 +522,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -528,7 +543,7 @@ PrefabInstance:
     - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4727199054608192193, guid: a7c9124ad35d56e4c9a7ba21c30fe8fb,
         type: 3}

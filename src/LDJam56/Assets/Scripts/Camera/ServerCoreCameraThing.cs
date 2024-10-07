@@ -1,12 +1,28 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
+using System.Collections;
 
 public class ServerCoreCameraThing : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineCamera cameraman;
+    [SerializeField] private CinemachinePositionComposer positionComposer;
+    [SerializeField] private float finalPositionDistance = 84;
+    [SerializeField] private float lerpDuration = 5f;
     private CinemachineTargetGroup targetGroup;
 
-    void Start()
+    private float _initialPositionDistance;
+    
+    public void DoIt()
+    {
+        GroupVersion();
+    }
+    
+    private void PositionFollowVersion()
+    {
+        StartCoroutine(LerpCameraDistance());
+    }
+    
+    private void GroupVersion()
     {
         // Create a new GameObject for the target group
         GameObject targetGroupObject = new GameObject("DynamicTargetGroup");
@@ -23,10 +39,12 @@ public class ServerCoreCameraThing : MonoBehaviour
             targetGroup.AddMember(serverCore.transform, 1, 2);
 
             // Set the virtual camera to follow and look at the target group
-            if (virtualCamera != null)
+            if (cameraman != null)
             {
-                virtualCamera.Follow = targetGroup.transform;
-                virtualCamera.LookAt = targetGroup.transform;
+                _initialPositionDistance = positionComposer.CameraDistance;
+                StartCoroutine(LerpCameraDistance());
+                cameraman.Follow = targetGroup.transform;
+                cameraman.LookAt = targetGroup.transform;
             }
             else
             {
@@ -37,5 +55,18 @@ public class ServerCoreCameraThing : MonoBehaviour
         {
             Debug.LogError("Could not find Player or ServerCore!");
         }
+    }
+
+    private IEnumerator LerpCameraDistance()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < lerpDuration)
+        {
+            float t = elapsedTime / lerpDuration;
+            positionComposer.CameraDistance = Mathf.Lerp(_initialPositionDistance, finalPositionDistance, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        positionComposer.CameraDistance = finalPositionDistance;
     }
 }    

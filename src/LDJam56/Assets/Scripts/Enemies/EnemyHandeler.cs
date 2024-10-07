@@ -41,6 +41,7 @@ public class EnemyHandeler : MonoBehaviour
 
     private float _maxHP;
     public float MaxHp => _maxHP;
+    private bool _hasAnimator;
 
     private void Awake()
     {
@@ -48,6 +49,7 @@ public class EnemyHandeler : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
+        _hasAnimator = animator != null;
         rb = GetComponent<Rigidbody>();
         enemyRenderer = GetComponentInChildren<Renderer>();
         _maxHP = HP;
@@ -129,7 +131,10 @@ public class EnemyHandeler : MonoBehaviour
         HP -= damage;
         if (HP > 0)
         {
-            animator.SetTrigger("hit");
+            if (_hasAnimator)
+            {
+                animator.SetTrigger("hit");
+            }
             Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotDamaged, transform.position));
             if (flashCoroutine != null)
             {
