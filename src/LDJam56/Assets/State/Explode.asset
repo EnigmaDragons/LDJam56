@@ -24,8 +24,8 @@ MonoBehaviour:
   Range: 0
   AttackCooldown: 0.4
   SpecialCooldown: 2
-  MobilityCooldown: 0
-  DefenseCooldown: 0
+  MobilityCooldown: 1
+  DefenseCooldown: 1
   KnockbackForce: 120
   AttackPotency: 0.3
   SpecialPotency: 1

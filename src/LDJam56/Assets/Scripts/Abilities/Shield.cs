@@ -11,18 +11,18 @@ public class Shield : MonoBehaviour
     private Action _onComplete;
     private float _duration;
 
-    private HashSet<Collider> _enemiesHit;
+    private HashSet<EnemyHandeler> _enemiesHit;
 
     public void Init(float potency, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
     {
         Message.Publish(new StartSoundEffect() { SoundEffect = SoundEffectEnum.PlayerShield, Moving = true, Transform = transform.parent});
         _onEnemyBump = () => { };
-        _enemiesHit = new HashSet<Collider>();
+        _enemiesHit = new HashSet<EnemyHandeler>();
         if (nextAbilities.AnyNonAlloc() && nextAbilities[0].Type == AbilityComponentType.Explode)
         {
             _onEnemyBump = () =>
             {
-                var explodeStartingPosition = new Vector3(transform.position.x, explodePrefab.transform.position.y, explodePrefab.transform.position.z);
+                var explodeStartingPosition = new Vector3(transform.position.x, explodePrefab.transform.position.y, transform.transform.position.z);
                 var explode = Instantiate(explodePrefab, explodeStartingPosition, Quaternion.identity, transform.parent.parent);
                 explode.Init(potency * 0.5f, false, explodeStartingPosition, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
             };
@@ -49,9 +49,10 @@ public class Shield : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_enemiesHit.Contains(other))
+        var enemy = other.GetComponent<EnemyHandeler>();
+        if (enemy == null || _enemiesHit.Contains(enemy))
             return;
-        _enemiesHit.Add(other);
+        _enemiesHit.Add(enemy);
         _onEnemyBump();
     }
 }
