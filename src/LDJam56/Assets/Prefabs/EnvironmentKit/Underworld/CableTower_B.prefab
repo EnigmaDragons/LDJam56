@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9099474192838907746
 Transform:
@@ -106,6 +106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capacitor_C
       objectReference: {fileID: 0}
+    - target: {fileID: 6891638658470927742, guid: 02176c24af8228e4a8e7d8205f38e25d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -129,6 +134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diode_LED
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646884897739137434, guid: d2c50a8b3c511ba429f7cff24d9824bc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5419762868561001248, guid: d2c50a8b3c511ba429f7cff24d9824bc,
         type: 3}
@@ -402,6 +412,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resistor_C
       objectReference: {fileID: 0}
+    - target: {fileID: 8992170215070992416, guid: 053c53fa5157ef942911223f07f5f08e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -623,6 +638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Capacitor_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891638658470927742, guid: 02176c24af8228e4a8e7d8205f38e25d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -879,6 +899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Capacitor_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383251556418868346, guid: 570620875e0d8014685fccc0a17d743d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1763611542859419328, guid: 570620875e0d8014685fccc0a17d743d,
         type: 3}

@@ -305,7 +305,7 @@ MonoBehaviour:
   maxEnemies: 12
   enemyPrefabs:
   - {fileID: 5608986638789766344, guid: eead503f853940b4dbf7b708ba686244, type: 3}
-  handler: {fileID: 0}
+  handler: {fileID: 5939252930125516208}
 --- !u!1 &6258723282902856423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1520,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5424106839246840083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5939252930125516208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1813327204441353379, guid: 59e75ab7e377e2f4c8cfb83e79d1b6f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5424106839246840083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ab77e2cda87764b8fef80edaec25a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7402620333636246798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3313857229092551709, guid: 59e75ab7e377e2f4c8cfb83e79d1b6f3,

@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MotherBoard_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 192e16c0ad7144b419dafb3c4c97a017,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capacitor_B
       objectReference: {fileID: 0}
+    - target: {fileID: 1383251556418868346, guid: 570620875e0d8014685fccc0a17d743d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1763611542859419328, guid: 570620875e0d8014685fccc0a17d743d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -167,6 +172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capacitor_C
       objectReference: {fileID: 0}
+    - target: {fileID: 6891638658470927742, guid: 02176c24af8228e4a8e7d8205f38e25d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -190,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inductor_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191413209536330441, guid: b6c323002b9d4ae419d71d236f3583b5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7531945586011316339, guid: b6c323002b9d4ae419d71d236f3583b5,
         type: 3}
@@ -280,6 +295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resistor_A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1303736974996286471, guid: 495ed0f3c8329134e935d9c2d14428f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1827367931005269693, guid: 495ed0f3c8329134e935d9c2d14428f6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -369,6 +389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inductor_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7191413209536330441, guid: b6c323002b9d4ae419d71d236f3583b5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7531945586011316339, guid: b6c323002b9d4ae419d71d236f3583b5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -457,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Resistor_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303736974996286471, guid: 495ed0f3c8329134e935d9c2d14428f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1827367931005269693, guid: 495ed0f3c8329134e935d9c2d14428f6,
         type: 3}
@@ -738,6 +768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chip_Small_B
       objectReference: {fileID: 0}
+    - target: {fileID: 6894279463226448931, guid: c28d96c556c388042a1f9f395f082336,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -761,6 +796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Resistor_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303736974996286471, guid: 495ed0f3c8329134e935d9c2d14428f6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1827367931005269693, guid: 495ed0f3c8329134e935d9c2d14428f6,
         type: 3}

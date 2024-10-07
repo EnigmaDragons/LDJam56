@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using static Unity.Cinemachine.CinemachineTargetGroup;
 
 public class EnemyHandeler : MonoBehaviour
@@ -27,6 +28,8 @@ public class EnemyHandeler : MonoBehaviour
 
     public Collider Collider1;
     public Collider Collider2;
+
+    public UnityEvent OnDeath;
     
     protected bool _targetFound;
 
@@ -41,13 +44,19 @@ public class EnemyHandeler : MonoBehaviour
 
     private float _maxHP;
     public float MaxHp => _maxHP;
+    private bool _hasAnimator;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        if (agent != null)
+        {
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+        }
+
         animator = GetComponent<Animator>();
+        _hasAnimator = animator != null;
         rb = GetComponent<Rigidbody>();
         enemyRenderer = GetComponentInChildren<Renderer>();
         _maxHP = HP;
@@ -78,11 +87,13 @@ public class EnemyHandeler : MonoBehaviour
         if (HP <= 0)
         {
             _dying = true;
-            animator.SetTrigger("death");
+            if (_hasAnimator)
+                animator.SetTrigger("death");
             Message.Publish(new EnemyKilled());
+            OnDeath.Invoke();
             Debug.Log("I died!", this);
             // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
-            this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), animator.GetCurrentAnimatorClipInfo(0).Length);
+            this.ExecuteAfterDelay(() => this.gameObject.SetActive(false), _hasAnimator ? animator.GetCurrentAnimatorClipInfo(0).Length : 2.5f);
         }
         if(shoot && agent.updateRotation == false)
         {
@@ -129,7 +140,10 @@ public class EnemyHandeler : MonoBehaviour
         HP -= damage;
         if (HP > 0)
         {
-            animator.SetTrigger("hit");
+            if (_hasAnimator)
+            {
+                animator.SetTrigger("hit");
+            }
             Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.BotDamaged, transform.position));
             if (flashCoroutine != null)
             {
