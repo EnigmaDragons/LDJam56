@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e6c0e19cf4047a8b382f04493521a, type: 3}
   m_Name: Galaxy
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1981588002741540561, guid: 4945fd55357e0f9409ee41949fe38d72, type: 3}
+  prefab: {fileID: 6293557358992325692, guid: 4945fd55357e0f9409ee41949fe38d72, type: 3}
   weight: 1

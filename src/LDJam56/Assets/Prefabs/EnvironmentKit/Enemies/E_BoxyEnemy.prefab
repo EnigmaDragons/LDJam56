@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2512854434010938068}
   - component: {fileID: 7055744444213375762}
   - component: {fileID: 8430978113662353980}
+  - component: {fileID: 2659097540966576855}
   m_Layer: 8
   m_Name: E_BoxyEnemy
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MonoBehaviour:
   follower: {fileID: 4446886748639116073}
   target: {fileID: 6356918186109377968}
   offset: {x: 0, y: 2, z: 0}
+--- !u!114 &2659097540966576855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880868073103893889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188a29e7bc94058af5c58c2cf800bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Handler: {fileID: 3268825909628505507}
 --- !u!1001 &4167011592991009717
 PrefabInstance:
   m_ObjectHideFlags: 0

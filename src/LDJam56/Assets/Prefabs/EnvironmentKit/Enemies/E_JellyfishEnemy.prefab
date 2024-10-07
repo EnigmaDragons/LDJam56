@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8244990394668171292}
   - component: {fileID: 5847821738089882144}
   - component: {fileID: 4483199529547659666}
+  - component: {fileID: 8877338070603155299}
   m_Layer: 8
   m_Name: E_JellyfishEnemy
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MonoBehaviour:
   follower: {fileID: 7324232777340979789}
   target: {fileID: 4137022991912640543}
   offset: {x: 0, y: 2.3, z: 0}
+--- !u!114 &8877338070603155299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584590012761873905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188a29e7bc94058af5c58c2cf800bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Handler: {fileID: 6087510846352651623}
 --- !u!1001 &2611670627690829964
 PrefabInstance:
   m_ObjectHideFlags: 0

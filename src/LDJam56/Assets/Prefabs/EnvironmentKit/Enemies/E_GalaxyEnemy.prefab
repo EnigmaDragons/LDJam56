@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5360013588824189141}
   - component: {fileID: 8801222694764497827}
   - component: {fileID: 2884757563415561516}
+  - component: {fileID: 6293557358992325692}
   m_Layer: 8
   m_Name: E_GalaxyEnemy
   m_TagString: Untagged
@@ -63,6 +64,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4353018263786311014}
+--- !u!114 &6293557358992325692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981588002741540561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a188a29e7bc94058af5c58c2cf800bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Handler: {fileID: 2634984425493897007}
 --- !u!1001 &2494259806455672839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +145,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de71a01b1adad74c8a2744d28e12104, type: 3}
+--- !u!114 &2634984425493897007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 435789560577994536, guid: 8de71a01b1adad74c8a2744d28e12104,
+    type: 3}
+  m_PrefabInstance: {fileID: 2494259806455672839}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353018263786311014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e7021c9c36f6e4780a08c2728854ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3972974906365515740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1567168783274354651, guid: 8de71a01b1adad74c8a2744d28e12104,

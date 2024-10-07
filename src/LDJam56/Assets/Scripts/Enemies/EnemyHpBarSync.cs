@@ -11,6 +11,8 @@ public class EnemyHpBarSync : MonoBehaviour
 
     private void Start()
     {
+        
+        
         if (enemyHandler == null)
         {
             Debug.LogError("EnemyHandler component not found on this GameObject.");
