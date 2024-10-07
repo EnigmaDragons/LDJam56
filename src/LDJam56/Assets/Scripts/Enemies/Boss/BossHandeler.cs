@@ -20,7 +20,7 @@ public class BossHandeler : EnemyHandeler
     }
     private void Update()
     {
-        if(HP <= 70f && flag)
+        if(HP <= 100f && flag)
         {
             spawner.towerSpawn();
             flag = false;
