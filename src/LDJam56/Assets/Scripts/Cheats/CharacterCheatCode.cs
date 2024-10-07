@@ -16,6 +16,10 @@ public class CharacterCheatCode : MonoBehaviour
                 s.PlayerStats.CurrentLife = 999;
             });
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void TeleportToBossRoom()
