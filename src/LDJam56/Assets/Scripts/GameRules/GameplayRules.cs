@@ -8,10 +8,12 @@ public class GameplayRules : ScriptableObject
     [SerializeField] private float specialCooldown;
     [SerializeField] private float mobilityCooldown;
     [SerializeField] private float defenseCooldown;
+    [SerializeField] private int xpNeededToLevel;
 
     public int PlayerHealth => playerHealth;
     public float AttackCooldown => attackCooldown;
     public float SpecialCooldown => specialCooldown;
     public float MobilityCooldown => mobilityCooldown;
     public float DefenseCooldown => defenseCooldown;
+    public int XpNeededToLevel => xpNeededToLevel;
 }

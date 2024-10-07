@@ -50,4 +50,18 @@ public static class CurrentGameState
             s.Defense.CooldownRemaining = Math.Max(0, s.Defense.CooldownRemaining - time);
         });
     }
+
+    public static Ability GetAbility(AbilityType type)
+    {
+        Ability ability = null;
+        if (type == AbilityType.Attack)
+            ability = gameState.Attack;
+        if (type == AbilityType.Defense)
+            ability = gameState.Defense;
+        if (type == AbilityType.Mobility)
+            ability = gameState.Mobility;
+        if (type == AbilityType.Special)
+            ability = gameState.Special;
+        return ability;
+    }
 }

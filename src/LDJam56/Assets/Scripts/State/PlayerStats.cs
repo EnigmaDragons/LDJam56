@@ -11,4 +11,6 @@ public class PlayerStats
     public List<string> IsSilenced = new List<string>();
     public int MaxLife = 5;
     public int CurrentLife = 5;
+    public int Level = 1;
+    public int XP = 0;
 }

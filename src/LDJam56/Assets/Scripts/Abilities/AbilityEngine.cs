@@ -4,7 +4,7 @@ using UnityEngine;
 public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
 {
     [SerializeField] private GameplayRules rules;
-    [SerializeField] private AbilityData[] allAbilities;
+    [SerializeField] private AllAbilities allAbilities;
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private Explode explodePrefab;
     [SerializeField] private Shield shieldPrefab;
@@ -16,8 +16,8 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
     
     protected override void Execute(ActivateAbility msg)
     {
-        var ability = GetAbilityInst(msg.Ability);
-        var abilityData = ability.Components.Select(x => allAbilities.FirstOrDefault(a => a.Type == x)).ToArray();
+        var ability = CurrentGameState.GetAbility(msg.Ability);
+        var abilityData = ability.Components.Select(x => allAbilities.GetAbility(x)).ToArray();
         if (abilityData.AnyNonAlloc(x => x == null))
         {
             Debug.LogError("ability missing");
@@ -30,9 +30,10 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
             speed.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Projectile)
-        {
+        { 
             var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + _direction * forwardOffset;
             var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
+            Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
             projectile.Init(startingPosition, _direction, first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Shield)
@@ -51,19 +52,5 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
     protected override void Execute(TargetingUpdated msg)
     {
         _direction = msg.Direction;
-    }
-
-    private Ability GetAbilityInst(AbilityType type)
-    {
-        Ability ability = null;
-        if (type == AbilityType.Attack)
-            ability = CurrentGameState.ReadonlyGameState.Attack;
-        else if (type == AbilityType.Special)
-            ability = CurrentGameState.ReadonlyGameState.Special;
-        else if (type == AbilityType.Mobility)
-            ability = CurrentGameState.ReadonlyGameState.Mobility;
-        else if (type == AbilityType.Defense)
-            ability = CurrentGameState.ReadonlyGameState.Defense;
-        return ability;
     }
 }
