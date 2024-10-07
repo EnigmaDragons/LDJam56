@@ -53,6 +53,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2213036067458500427}
     m_Modifications:
+    - target: {fileID: 46267447104351854, guid: 97402dcf57b78d8459436da67da8620c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 46267447104351854, guid: 97402dcf57b78d8459436da67da8620c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 527965105997723420, guid: 97402dcf57b78d8459436da67da8620c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -107,6 +117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jellyfish Robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482693778562845556, guid: 97402dcf57b78d8459436da67da8620c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
