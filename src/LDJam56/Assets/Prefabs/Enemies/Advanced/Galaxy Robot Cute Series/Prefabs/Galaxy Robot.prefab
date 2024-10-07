@@ -5101,7 +5101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4362554014230283012}
-  HP: 50
+  HP: 25
   Speed: 6
   Range: 16
   AttackRange: 26
@@ -5116,6 +5116,9 @@ MonoBehaviour:
   shootTarget: {fileID: 0}
   Collider1: {fileID: 0}
   Collider2: {fileID: 5446822089175071489}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
   point1: {fileID: 6545209488362651777}
   point2: {fileID: 3801489363238714190}
   firePoint2: {fileID: 7524641948233952694}
