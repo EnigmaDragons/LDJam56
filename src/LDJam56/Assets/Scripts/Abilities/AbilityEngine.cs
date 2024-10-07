@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
@@ -30,11 +31,17 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
             speed.Init(first, msg.Ability, abilityData.Skip(1).ToArray());
         }
         if (first.Type == AbilityComponentType.Projectile)
-        { 
-            var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + _direction * forwardOffset;
-            var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
-            Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
-            projectile.Init(startingPosition, _direction, first, msg.Ability, abilityData.Skip(1).ToArray());
+        {
+            var projectilesInARow = 0;
+            foreach (var x in abilityData)
+            {
+                if (x.Type == AbilityComponentType.Projectile)
+                    projectilesInARow += 1;
+                else
+                    break;
+            }
+            for (var i = 0; i < projectilesInARow; i++)
+                StartCoroutine(ShootProjectile(i * 0.2f, first, msg.Ability, abilityData.Skip(projectilesInARow).ToArray()));
         }
         if (first.Type == AbilityComponentType.Shield)
         {
@@ -53,4 +60,13 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
     {
         _direction = msg.Direction;
     }
+
+    private IEnumerator ShootProjectile(float delay, AbilityData data, AbilityType type, AbilityData[] nextAbilities)
+    {
+        yield return new WaitForSeconds(delay);
+        var startingPosition = player.transform.position + new Vector3(0, projectilePrefab.transform.localPosition.y, 0) + _direction * forwardOffset;
+        var projectile = Instantiate(projectilePrefab, startingPosition, Quaternion.LookRotation(_direction), player.transform.parent);
+        Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
+        projectile.Init(startingPosition, _direction, data, type, nextAbilities);
+    } 
 }

@@ -39,7 +39,8 @@ public class AbilityCustomizeUI : MonoBehaviour
             if (compatibility.IsPresent)
             {
                 var i = abilityInsertIndex;
-                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, codeButtons[codeButtonIndex], compatibility.Value.CombinationDescription));
+                var button = codeButtons[codeButtonIndex];
+                codeButtons[codeButtonIndex].Init(null, abilityToAdd, () => SetIndex(i, button, compatibility.Value.CombinationDescription));
                 codeButtonIndex++;
             }
             if (abilityInsertIndex != _ability.Components.Count)
@@ -56,8 +57,13 @@ public class AbilityCustomizeUI : MonoBehaviour
     {
         _indexSelected = index;
         _currentSelectedButton = button;
-        codeButtons.ForEach(x => x.Deselect());
-        button.Select();
+        codeButtons.ForEach(x =>
+        {
+            if (x == button)
+                x.Select();
+            else
+                x.Deselect();
+        });
         compatibleInteractionText.text = compatibleInteraction;
     }
 

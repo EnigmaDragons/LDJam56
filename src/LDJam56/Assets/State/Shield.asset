@@ -24,7 +24,9 @@ MonoBehaviour:
   Range: 0
   KnockbackForce: 0
   Compatibilities:
-  - Ability: 4
-    abilitiesBefore: 00000000
-    abilitiesAfter: 00000000
+  - ValidTypes: 04000000
+    AbilitiesBefore:
+    - Types: 00000000
+    AbilitiesAfter:
+    - Types: 00000000
     CombinationDescription: Grants you invincibility for 3 seconds

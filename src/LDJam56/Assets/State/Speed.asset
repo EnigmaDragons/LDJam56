@@ -24,7 +24,9 @@ MonoBehaviour:
   Range: 0
   KnockbackForce: 0
   Compatibilities:
-  - Ability: 3
-    abilitiesBefore: 00000000
-    abilitiesAfter: 00000000
+  - ValidTypes: 03000000
+    AbilitiesBefore:
+    - Types: 00000000
+    AbilitiesAfter:
+    - Types: 00000000
     CombinationDescription: Gives you +50% movement speed for 3 seconds

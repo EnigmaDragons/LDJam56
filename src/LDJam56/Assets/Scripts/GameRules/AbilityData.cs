@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -14,7 +16,6 @@ public class AbilityData : ScriptableObject
     public float Amount;
     public float Speed;
     public float Range;
-    
     public float KnockbackForce;
 
     public AbilityCompatibility[] Compatibilities;
@@ -31,41 +32,49 @@ public class AbilityData : ScriptableObject
     {
         return Compatibilities.FirstOrMaybe(compatibility =>
         {
-            if (compatibility.Ability != type)
+            if (!compatibility.ValidTypes.Contains(type))
                 return false;
-            for (var i = 0; i < compatibility.abilitiesBefore.Length; i++)
+            for (var i = 0; i < compatibility.AbilitiesBefore.Length; i++)
             {
-                var abilityBefore = compatibility.abilitiesBefore[i];
-                if (abilityBefore == AbilityComponentType.None)
+                var abilityBefore = compatibility.AbilitiesBefore[i];
+                var indexToGrab = indexToBeInserted - i - 1;
+                if (!abilityBefore.Types.AnyNonAlloc())
+                    continue; //no requirements is always valid go next
+                //if there is nothing here
+                if (indexToGrab < 0 || indexToGrab >= components.Count)
                 {
-                    if (indexToBeInserted != i)
+                    //if you dont have None as an option and you have a required option
+                    if (!abilityBefore.Types.Contains(AbilityComponentType.None) && abilityBefore.Types.AnyNonAlloc(x => x > 0))
                         return false;
+                    continue;
                 }
-                else
-                {
-                    var indexToGrab = indexToBeInserted - i - 1;
-                    if (indexToGrab < 0 || indexToGrab >= components.Count)
-                        return false;
-                    if (components[indexToGrab] != abilityBefore)
-                        return false;
-                }
+                //if there is a required type and this is not among them
+                if (abilityBefore.Types.AnyNonAlloc(x => x >= 0) && !abilityBefore.Types.Any(x => x >= 0 && x == components[indexToGrab]))
+                    return false;
+                //if there is a restricted type and it has it
+                if (abilityBefore.Types.AnyNonAlloc(x => x < 0 && (AbilityComponentType)Math.Abs((int)x) == components[indexToGrab]))
+                    return false;
             }
-            for (var i = 0; i < compatibility.abilitiesAfter.Length; i++)
+            for (var i = 0; i < compatibility.AbilitiesAfter.Length; i++)
             {
-                var abilityAfter = compatibility.abilitiesAfter[i];
-                if (abilityAfter == AbilityComponentType.None)
+                var abilityAfter = compatibility.AbilitiesAfter[i];
+                var indexToGrab = indexToBeInserted + i;
+                if (!abilityAfter.Types.AnyNonAlloc())
+                    continue; //no requirements is always valid go next
+                //if there is nothing here
+                if (indexToGrab < 0 || indexToGrab >= components.Count)
                 {
-                    if (indexToBeInserted != compatibility.abilitiesAfter.Length + i)
+                    //if you dont have None as an option and you have a required option
+                    if (!abilityAfter.Types.Contains(AbilityComponentType.None) && abilityAfter.Types.AnyNonAlloc(x => x > 0))
                         return false;
+                    continue;
                 }
-                else
-                {
-                    var indexToGrab = indexToBeInserted + i;
-                    if (indexToGrab < 0 || indexToGrab >= components.Count)
-                        return false;
-                    if (components[indexToGrab] != abilityAfter)
-                        return false;
-                }
+                //if there is a required type and this is not among them
+                if (abilityAfter.Types.AnyNonAlloc(x => x >= 0) && !abilityAfter.Types.Any(x => x >= 0 && x == components[indexToGrab]))
+                    return false;
+                //if there is a restricted type and it has it
+                if (abilityAfter.Types.AnyNonAlloc(x => x < 0 && (AbilityComponentType)Math.Abs((int)x) == components[indexToGrab]))
+                    return false;
             }
             return true;
         });

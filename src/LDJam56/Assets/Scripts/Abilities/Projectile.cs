@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -6,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private GameObject hitPrefab;
     [SerializeField] private Collider collider;
     [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private Explode explodePrefab;
 
     private Vector3 _target;
     private Action _onHit;
@@ -17,6 +19,15 @@ public class Projectile : MonoBehaviour
     {
         _target = startingPosition + direction * data.Range;
         _onHit = () => { };
+        if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Explode && (type == AbilityType.Attack || type == AbilityType.Special))
+            _onHit = () =>
+            {
+                var explode = Instantiate(explodePrefab,
+                    new Vector3(transform.position.x, explodePrefab.transform.position.y, transform.position.z),
+                    Quaternion.identity, transform.parent);
+                explode.Init(false, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());
+            };
+
         _speed = data.Speed;
         _onEnemyHit = e => {
             e.Damaged((int)data.Amount);

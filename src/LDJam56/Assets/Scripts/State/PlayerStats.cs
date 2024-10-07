@@ -13,4 +13,5 @@ public class PlayerStats
     public int CurrentLife = 5;
     public int Level = 1;
     public int XP = 0;
+    public int Projectile = 1;
 }

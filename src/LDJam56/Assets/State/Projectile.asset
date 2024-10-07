@@ -24,7 +24,21 @@ MonoBehaviour:
   Range: 9
   KnockbackForce: 30
   Compatibilities:
-  - Ability: 1
-    abilitiesBefore: 00000000
-    abilitiesAfter: 00000000
+  - ValidTypes: 01000000
+    AbilitiesBefore:
+    - Types: 00000000
+    AbilitiesAfter:
+    - Types: 00000000
     CombinationDescription: Shoots a projectile at your target
+  - ValidTypes: 0100000002000000
+    AbilitiesBefore:
+    - Types: ffffffff
+    AbilitiesAfter:
+    - Types: 02000000
+    CombinationDescription: Fires a projectile that will explode when it hits
+  - ValidTypes: 0100000002000000
+    AbilitiesBefore:
+    - Types: 00000000
+    AbilitiesAfter:
+    - Types: 01000000
+    CombinationDescription: Increases the burst of shots

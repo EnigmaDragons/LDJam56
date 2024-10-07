@@ -3,8 +3,8 @@
 [Serializable]
 public class AbilityCompatibility
 {
-    public AbilityType Ability;
-    public AbilityComponentType[] abilitiesBefore;
-    public AbilityComponentType[] abilitiesAfter;
+    public AbilityType[] ValidTypes;
+    public AbilitySegmentCompatibility[] AbilitiesBefore;
+    public AbilitySegmentCompatibility[] AbilitiesAfter;
     public string CombinationDescription;
 }

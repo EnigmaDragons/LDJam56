@@ -49,6 +49,8 @@ MonoBehaviour:
   hitPrefab: {fileID: 153006, guid: 04821ded1c24c054c8484440cf8d1e3d, type: 3}
   collider: {fileID: 7937802559226125424}
   particleSystem: {fileID: 5330094985445758583}
+  explodePrefab: {fileID: 5691785167026928846, guid: 1d9867b8e6047df46aa191f2c5214a85,
+    type: 3}
 --- !u!65 &7937802559226125424
 BoxCollider:
   m_ObjectHideFlags: 0
