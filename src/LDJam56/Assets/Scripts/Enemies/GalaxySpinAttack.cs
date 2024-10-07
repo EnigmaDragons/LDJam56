@@ -8,13 +8,13 @@ public class GalaxySpinAttack : StateMachineBehaviour
     Transform target;
     NavMeshAgent agent;
     GalaxyHandeler handeler;
-    float timer;
+    float timer=0f;
     float timer2;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         handeler = animator.GetComponent<GalaxyHandeler>();
-        target = handeler.Target;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = handeler.Speed *1.5f;
         agent.isStopped = false;
@@ -28,7 +28,7 @@ public class GalaxySpinAttack : StateMachineBehaviour
         if (timer >= handeler.spinDuration)
         {
             animator.SetBool("attack2", false);
-            timer2 = 0f;
+            timer = 0f;
         }
         
         agent.SetDestination(target.position);

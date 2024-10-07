@@ -14,7 +14,7 @@ public class GalaxyRun : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         handeler = animator.GetComponent<GalaxyHandeler>();
-        target = handeler.Target;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = handeler.Speed;
         agent.isStopped = false;
@@ -45,7 +45,7 @@ public class GalaxyRun : StateMachineBehaviour
             animator.SetTrigger("idle");
             animator.ResetTrigger("run");
         }
-        agent.SetDestination(-(target.position));
+        agent.SetDestination(new Vector3(-target.position.x,target.position.y,-target.position.z));
         agent.updateRotation = true;
         
     }

@@ -13,7 +13,7 @@ public class galaxyAttacl : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         handeler = animator.GetComponent<GalaxyHandeler>();
-        target = handeler.Target;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.ResetPath();
@@ -22,6 +22,7 @@ public class galaxyAttacl : StateMachineBehaviour
         handeler.shoot = true;
         point1 = handeler.point1;
         point2 = handeler.point2;
+        handeler.shoot = true;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

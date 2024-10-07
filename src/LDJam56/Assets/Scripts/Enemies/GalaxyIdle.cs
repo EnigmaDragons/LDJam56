@@ -9,10 +9,11 @@ public class GalaxyIdle : StateMachineBehaviour
     Transform player;
     NavMeshAgent agent;
     RaycastHit hit;
+    bool flag;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         handeler = animator.GetComponent<GalaxyHandeler>();
-        player = handeler.Target;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.ResetPath();
@@ -21,6 +22,7 @@ public class GalaxyIdle : StateMachineBehaviour
         animator.SetBool("attack2", false);
         animator.SetBool("attack1", false);
         animator.ResetTrigger("run");
+        flag = true;
     }
 
 
@@ -38,10 +40,14 @@ public class GalaxyIdle : StateMachineBehaviour
         Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, handeler.AttackRange, ~(1 << animator.gameObject.layer));
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (Random.Range(1, 4) == 1)
-                animator.SetBool("attack1", true);
-            else            
-                animator.SetTrigger("spell");
+            if (flag)
+            {
+                if (Random.Range(1, 4) == 1)
+                    animator.SetBool("attack1", true);
+                else
+                    animator.SetTrigger("spell");
+                flag = false;
+            }
         }
     }
 
