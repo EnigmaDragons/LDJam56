@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>BOT_MST</value>
 		</property>
+		<relationship name="masters">
+			<destination>{85c416cd-86c0-4a01-8a9f-da0f41473dc9}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{d2e10d25-b89b-4d8c-9704-62b7a6a7ba06}</destination>
 		</relationship>
@@ -17,8 +20,10 @@
 	<object class="MixerBusEffectChain" id="{d2e10d25-b89b-4d8c-9704-62b7a6a7ba06}">
 		<relationship name="effects">
 			<destination>{883258d0-26fb-4775-9378-1c425845615f}</destination>
+			<destination>{89ed5b0a-8a41-4d91-ad26-ada9f41dd877}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b4661618-fbb0-46b0-a4d0-163ad88bfab5}" />
 	<object class="MixerBusFader" id="{883258d0-26fb-4775-9378-1c425845615f}" />
+	<object class="Sidechain" id="{89ed5b0a-8a41-4d91-ad26-ada9f41dd877}" />
 </objects>

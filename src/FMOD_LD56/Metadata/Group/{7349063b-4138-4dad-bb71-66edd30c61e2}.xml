@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>Hero_MST</value>
 		</property>
+		<relationship name="masters">
+			<destination>{ad3db9ee-6784-4acc-8ac1-6ff6ae1a96b4}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{94cbb53a-2257-4ffe-a0e3-869d266a6c32}</destination>
 		</relationship>

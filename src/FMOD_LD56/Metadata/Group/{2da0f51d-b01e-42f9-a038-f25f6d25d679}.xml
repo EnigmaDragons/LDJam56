@@ -7,6 +7,9 @@
 		<property name="name">
 			<value>ENV_MST</value>
 		</property>
+		<relationship name="masters">
+			<destination>{85c416cd-86c0-4a01-8a9f-da0f41473dc9}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{08dcb7be-0999-490a-865e-7c30c5288fce}</destination>
 		</relationship>
