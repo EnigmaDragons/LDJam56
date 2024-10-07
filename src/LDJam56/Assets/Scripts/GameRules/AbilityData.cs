@@ -16,6 +16,10 @@ public class AbilityData : ScriptableObject
     public float Amount;
     public float Speed;
     public float Range;
+    public float AttackCooldown;
+    public float SpecialCooldown;
+    public float MobilityCooldown;
+    public float DefenseCooldown;
     public float KnockbackForce;
     public float AttackPotency = 1;
     public float SpecialPotency = 1;
@@ -35,6 +39,19 @@ public class AbilityData : ScriptableObject
         if (type == AbilityType.Defense)
             return DefensePotency;
         return 1;
+    }
+
+    public float GetCooldown(AbilityType type)
+    {
+        if (type == AbilityType.Attack)
+            return AttackCooldown;
+        if (type == AbilityType.Special)
+            return SpecialCooldown;
+        if (type == AbilityType.Mobility)
+            return MobilityCooldown;
+        if (type == AbilityType.Defense)
+            return DefenseCooldown;
+        return 0;
     }
     
     public bool IsValid(AbilityType type, List<AbilityComponentType> components)
