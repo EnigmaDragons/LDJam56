@@ -123,8 +123,22 @@ MonoBehaviour:
     Path: event:/HeroGirl/PlayerRewind
   playerShieldSound:
     Guid:
-      Data1: -1774091115
-      Data2: 1243337634
-      Data3: 1773000341
-      Data4: -588414453
-    Path: event:/HeroGirl/HeroShield
+      Data1: -2012806290
+      Data2: 1335216904
+      Data3: 1416794520
+      Data4: -1359977933
+    Path: event:/HeroGirl/PlayerRewind
+  playerBomb:
+    Guid:
+      Data1: 1601289650
+      Data2: 1122156542
+      Data3: -92039801
+      Data4: 1322041011
+    Path: event:/HeroGirl/PlayerBomb
+  playerSpeed:
+    Guid:
+      Data1: 845184786
+      Data2: 1142596775
+      Data3: -796165970
+      Data4: 1521006293
+    Path: event:/HeroGirl/HeroDash
