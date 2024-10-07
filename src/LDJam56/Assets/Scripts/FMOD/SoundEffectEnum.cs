@@ -10,4 +10,5 @@
     BotDamaged = 7,
     PlayerFallOff = 8,
     PlayerRewindTime = 9,
+    PlayerShield = 10,
 }
