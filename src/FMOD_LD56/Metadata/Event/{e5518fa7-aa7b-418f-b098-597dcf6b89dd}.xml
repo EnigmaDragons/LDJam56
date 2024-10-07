@@ -109,7 +109,6 @@
 	<object class="MixerBusEffectChain" id="{94e1bcfb-412e-4da2-a0dd-519e692714ad}">
 		<relationship name="effects">
 			<destination>{c916cb37-6590-45be-ab94-147c54e1f8fb}</destination>
-			<destination>{e8969618-469b-4e07-bbef-db0d4ce5db01}</destination>
 			<destination>{3ae7fbd5-09d1-4139-b7b4-4a4766aa14f6}</destination>
 			<destination>{933cd8ea-1ffd-48f6-8c11-659a9c907334}</destination>
 			<destination>{8d4f21ed-3f67-4536-9c9a-b1755108bddd}</destination>
@@ -122,7 +121,7 @@
 	<object class="MixerBusPanner" id="{3f1456d6-e923-44e5-b345-246fbe84c38c}" />
 	<object class="MultiSound" id="{d68117d8-895a-40a3-92ea-dc663c0c169d}">
 		<property name="pitch">
-			<value>3.4000001</value>
+			<value>9.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{d0ff2071-4929-4793-8b07-995f7054658c}</destination>
@@ -139,18 +138,7 @@
 			<value>7.20000029</value>
 		</property>
 		<property name="level">
-			<value>-5</value>
-		</property>
-	</object>
-	<object class="FlangerEffect" id="{e8969618-469b-4e07-bbef-db0d4ce5db01}">
-		<property name="rate">
-			<value>0.099999994</value>
-		</property>
-		<property name="delay">
-			<value>0.340000004</value>
-		</property>
-		<property name="mix">
-			<value>62</value>
+			<value>-1</value>
 		</property>
 	</object>
 	<object class="TremoloEffect" id="{3ae7fbd5-09d1-4139-b7b4-4a4766aa14f6}">
@@ -166,10 +154,10 @@
 	</object>
 	<object class="ChorusEffect" id="{933cd8ea-1ffd-48f6-8c11-659a9c907334}">
 		<property name="rate">
-			<value>0.099999994</value>
+			<value>0.239999995</value>
 		</property>
 		<property name="depth">
-			<value>84</value>
+			<value>85</value>
 		</property>
 		<property name="mix">
 			<value>88</value>
@@ -183,7 +171,7 @@
 			<value>30</value>
 		</property>
 		<property name="level">
-			<value>-15.5</value>
+			<value>-11.5</value>
 		</property>
 	</object>
 	<object class="ProxyEffect" id="{a9d2b870-02a0-4886-82c7-39112db731f2}">
@@ -196,7 +184,7 @@
 	</object>
 	<object class="MixerSend" id="{1d6efe44-60cc-45c4-b86a-42b8adf21cce}">
 		<property name="level">
-			<value>-28</value>
+			<value>-22.5</value>
 		</property>
 		<property name="inputFormat">
 			<value>0</value>
