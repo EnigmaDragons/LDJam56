@@ -14,9 +14,9 @@ public class MouseTargeting : MonoBehaviour
     private void Update()
     {
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity))
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, 1 << 11))
         {
-            var position = hitPoint.point;
+            var position = hit.point;
             position.y = 0;
             var direction = (position - new Vector3(player.transform.position.x, 0, player.transform.position.z)).normalized;
             Message.Publish(new TargetingUpdated(direction));
