@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4443911561034423729}
   - component: {fileID: 9149643475986250495}
+  - component: {fileID: 547007673156424486}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -45,6 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b5e374ab204021a2dd308c3c107a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explodePrefab: {fileID: 5691785167026928846, guid: 1d9867b8e6047df46aa191f2c5214a85,
+    type: 3}
+--- !u!135 &547007673156424486
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608529114717640596}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1001 &3847024538662531349
 PrefabInstance:
   m_ObjectHideFlags: 0

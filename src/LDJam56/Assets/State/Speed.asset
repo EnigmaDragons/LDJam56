@@ -22,13 +22,13 @@ MonoBehaviour:
   Amount: 0.5
   Speed: 0
   Range: 0
-  AttackCooldown: 0
-  SpecialCooldown: 0
+  AttackCooldown: 0.1
+  SpecialCooldown: 0.2
   MobilityCooldown: 3
   DefenseCooldown: 0
   KnockbackForce: 0
   AttackPotency: 1
-  SpecialPotency: 1
+  SpecialPotency: 2
   MobilityPotency: 1
   DefensePotency: 1
   Compatibilities:
@@ -38,3 +38,8 @@ MonoBehaviour:
     AbilitiesAfter:
     - Types: 00000000
     CombinationDescription: Gives you +50% movement speed for 3 seconds
+  - ValidTypes: 0100000002000000
+    AbilitiesBefore:
+    - Types: 00000000
+    AbilitiesAfter: []
+    CombinationDescription: Halfs the cooldown on cast

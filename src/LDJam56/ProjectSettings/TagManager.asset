@@ -10,6 +10,7 @@ TagManager:
   - AppManagers
   - Damaging
   - BossRoomTeleport
+  - PostProcessVolume
   layers:
   - Default
   - TransparentFX

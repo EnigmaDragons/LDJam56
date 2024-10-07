@@ -13,8 +13,10 @@ public class IdleScript : StateMachineBehaviour
     RaycastHit hit;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        stats = animator.GetComponent<EnemyHandeler>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        stats = animator.GetComponent<EnemyHandeler>();        
+        var pObj = GameObject.FindGameObjectWithTag("Player");
+        if (pObj != null)
+            player = pObj.transform;
         agent = animator.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.ResetPath();
@@ -23,26 +25,33 @@ public class IdleScript : StateMachineBehaviour
         animator.SetBool("attack2", false);
     }
 
-
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Vector3.Distance(animator.transform.position, player.position) < stats.Range)
+        if (player == null)
         {
-
-            Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
+            var pObj = GameObject.FindGameObjectWithTag("Player");
+            if (pObj != null)
+                player = pObj.transform;
+        }
+        if (player != null)
+        {
+            var pDist = Vector3.Distance(animator.transform.position, player.position);
+            if (pDist < stats.Range)
             {
-                animator.SetTrigger("run");
-                animator.ResetTrigger("idle");
+                Physics.SphereCast(animator.transform.position, 0.2f, player.position - animator.transform.position, out hit, stats.Range, ~(1 << animator.gameObject.layer));
+                if (hit.collider != null && hit.collider.CompareTag("Player"))
+                {
+                    animator.SetTrigger("run");
+                    animator.ResetTrigger("idle");
+                }
             }
 
-        }
-        if (Vector3.Distance(animator.transform.position, player.position) < stats.Attack2Range)
-        { 
-            animator.SetBool("attack2", true); 
+            if (pDist < stats.Attack2Range)         
+            { 
+                animator.SetBool("attack2", true); 
+            }
         }
     }
-
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

@@ -24,7 +24,7 @@ MonoBehaviour:
   Range: 0
   AttackCooldown: 0
   SpecialCooldown: 0
-  MobilityCooldown: 0
+  MobilityCooldown: 3
   DefenseCooldown: 3
   KnockbackForce: 0
   AttackPotency: 1
@@ -37,4 +37,10 @@ MonoBehaviour:
     - Types: 00000000
     AbilitiesAfter:
     - Types: 00000000
+    CombinationDescription: Grants you invincibility for 3 seconds
+  - ValidTypes: 03000000
+    AbilitiesBefore:
+    - Types: 03000000
+    AbilitiesAfter:
+    - Types: 
     CombinationDescription: Grants you invincibility for 3 seconds

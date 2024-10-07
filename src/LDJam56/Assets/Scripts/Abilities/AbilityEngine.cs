@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -24,11 +25,26 @@ public class AbilityEngine : OnMessage<ActivateAbility, TargetingUpdated>
             Debug.LogError("ability missing");
             return;
         }
+        while ((msg.Ability == AbilityType.Attack || msg.Ability == AbilityType.Special) && abilityData[0].Type == AbilityComponentType.Speed)
+        {
+            if (msg.Ability == AbilityType.Attack)
+                CurrentGameState.UpdateState(s => s.Attack.CooldownRemaining *= 0.5f);
+            if (msg.Ability == AbilityType.Special)
+                CurrentGameState.UpdateState(s => s.Special.CooldownRemaining *= 0.5f);
+            abilityData = abilityData.Skip(1).ToArray();
+        }
         var first = abilityData[0];
         if (first.Type == AbilityComponentType.Speed)
         {
+            var nextAbilities = abilityData.Skip(1).ToArray();
+            if (nextAbilities.Length > 0 && nextAbilities[0].Type == AbilityComponentType.Shield)
+            {
+                var shield = Instantiate(shieldPrefab, player.transform);
+                shield.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, nextAbilities);
+                nextAbilities = Array.Empty<AbilityData>();
+            }
             var speed = Instantiate(speedPrefab, player.transform);
-            speed.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, abilityData.Skip(1).ToArray());
+            speed.Init(CurrentGameState.ReadonlyGameState.PlayerStats.Potency, first, msg.Ability, nextAbilities);
         }
         if (first.Type == AbilityComponentType.Projectile)
         {

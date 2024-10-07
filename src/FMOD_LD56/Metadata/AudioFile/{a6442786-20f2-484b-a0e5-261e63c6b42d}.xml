@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{f65332ba-5ef7-4c86-b865-40db59befa2f}">
+	<object class="AudioFile" id="{a6442786-20f2-484b-a0e5-261e63c6b42d}">
 		<property name="assetPath">
-			<value>Music/main music A high combat.ogg</value>
+			<value>Music/main music B high combat.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
