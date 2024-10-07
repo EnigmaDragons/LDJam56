@@ -17,5 +17,5 @@ MonoBehaviour:
   specialCooldown: 2.5
   mobilityCooldown: 2.5
   defenseCooldown: 5
-  xpNeededToLevel: 6
+  xpNeededToLevel: 7
   maxAbilityComponents: 5
