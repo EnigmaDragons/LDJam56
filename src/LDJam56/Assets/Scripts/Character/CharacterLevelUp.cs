@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
+using System;
+using DG.Tweening;
+ using UnityEngine;
 
 public class CharacterLevelUp : OnMessage<EnemyKilled>
 {
@@ -15,8 +16,11 @@ public class CharacterLevelUp : OnMessage<EnemyKilled>
     protected override void Execute(EnemyKilled msg)
     {
         CurrentGameState.UpdateState(s => s.PlayerStats.XP += 1);
-        if (CurrentGameState.ReadonlyGameState.PlayerStats.XP >= rules.XpNeededToLevel)
+        if (CurrentGameState.ReadonlyGameState.PlayerStats.XP >= rules.XpNeededToLevel) {
             levelUpControl.SetActive(true);
+            levelUpControl.transform.localScale = new Vector3(0, 1, 1);
+            levelUpControl.transform.DOScaleX(1, 1.2f);
+        }
     }
 
     private void Update()
