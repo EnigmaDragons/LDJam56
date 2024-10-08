@@ -5,6 +5,7 @@ public sealed class InitCurrentGameState : MonoBehaviour
 {
     [SerializeField] private GameplayRules rules;
     [SerializeField] private AllAbilities abilities;
+    [SerializeField] private SelectedDifficulty difficulty;
     
     void Awake()
     {
@@ -16,7 +17,7 @@ public sealed class InitCurrentGameState : MonoBehaviour
         {
             CurrentGameState.Init(new GameState
             {
-                PlayerStats = new PlayerStats { MaxLife = rules.PlayerHealth, CurrentLife = rules.PlayerHealth },
+                PlayerStats = new PlayerStats { MaxLife = rules.Health(difficulty.Difficulty), CurrentLife = rules.Health(difficulty.Difficulty) },
                 Attack = new Ability 
                 { 
                     AbilityType = AbilityType.Attack, 

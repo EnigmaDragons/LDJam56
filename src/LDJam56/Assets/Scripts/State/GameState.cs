@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public sealed class GameState
 {
+    public Difficulty Difficulty = Difficulty.Medium;
     public PlayerStats PlayerStats = new PlayerStats();
     public Ability Passives = new Ability { AbilityType = AbilityType.Passive, Components = new List<AbilityComponentType>(), CooldownRemaining = 0 };
     public Ability Attack = new Ability { AbilityType = AbilityType.Attack, Components = new List<AbilityComponentType> { AbilityComponentType.Projectile }, CooldownRemaining = 0 };

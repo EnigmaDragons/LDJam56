@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rules: {fileID: 11400000, guid: af0e6249f30f00d4caa9cdc6866beb1c, type: 2}
   abilities: {fileID: 11400000, guid: 6711773a4feee3a4cbe63a5a42602b18, type: 2}
+  difficulty: {fileID: 11400000, guid: f32d1f3a5c5121745bd05dd1fcf200b9, type: 2}
 --- !u!1001 &1288099463802563954
 PrefabInstance:
   m_ObjectHideFlags: 0
