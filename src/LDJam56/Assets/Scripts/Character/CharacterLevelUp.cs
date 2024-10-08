@@ -15,7 +15,7 @@ public class CharacterLevelUp : OnMessage<EnemyKilled>
     
     protected override void Execute(EnemyKilled msg)
     {
-        CurrentGameState.UpdateState(s => s.PlayerStats.XP += 1);
+        CurrentGameState.UpdateState(s => s.PlayerStats.XP += 2);
         if (CurrentGameState.ReadonlyGameState.PlayerStats.XP >= rules.XpNeededToLevel) {
             levelUpControl.SetActive(true);
             levelUpControl.transform.localScale = new Vector3(0, 1, 1);
