@@ -27,6 +27,7 @@ Retro Notes:
 - Multiphonix - Seeing how much art was created and how great it looked!
 - Multiphonix - Being ahead on the music allowed more work on interactivity
 - Silas - Seeing the customizable abilities come to life felt AMAZING!
+- Silas - Interacting with the artists to connect their art into the game was super fun!
 
 5. What is your favorite thing in the game?
 - Gordy - The player ability system is SUPER cool!
