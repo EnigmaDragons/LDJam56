@@ -35,7 +35,7 @@ public class Explode : MonoBehaviour
             {
                 var direction = Quaternion.Euler(0, (360 / projectiles) * i, 0) * Vector3.forward;
                 var spawn = projectileSpawn + direction * projectileOffset;
-                var projectile = Instantiate(projectilePrefab, spawn, Quaternion.LookRotation(direction), transform.parent);
+                var projectile = Instantiate(projectilePrefab, spawn, Quaternion.LookRotation(direction), playerOriginator ? transform.parent.parent : transform.parent);
                 Message.Publish(new PlayOneShotSoundEffect(SoundEffectEnum.ShootOne, projectile.gameObject));
                 projectile.Init(potency * 0.5f, spawn, direction, nextAbilities[0], type, nextAbilities.Skip(1).ToArray());   
             }
@@ -43,15 +43,8 @@ public class Explode : MonoBehaviour
         transform.localScale *= Mathf.Sqrt(localPotency);
         if (playerOriginator)
         {
-            var id = Guid.NewGuid().ToString();
             _remainingCastTime = castTime;
-            CurrentGameState.UpdateState(s => s.PlayerStats.IsRooted.Add(id));
-            CurrentGameState.UpdateState(s => s.PlayerStats.IsSilenced.Add(id));
-            _onCastFinish = () => CurrentGameState.UpdateState(s =>
-            {
-                s.PlayerStats.IsRooted.Remove(id);
-                s.PlayerStats.IsSilenced.Remove(id);
-            });
+            _onCastFinish = () => { };
         }
         _onIndividualHit = e =>
         {

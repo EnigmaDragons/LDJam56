@@ -2,8 +2,15 @@
 
 public class TargetingCircle : OnMessage<TargetingUpdated>
 {
+    private Vector3 _direction;
+    
     protected override void Execute(TargetingUpdated msg)
     {
-        transform.rotation = Quaternion.LookRotation(msg.Direction);
+        _direction = msg.Direction;
+    }
+
+    private void LateUpdate()
+    {
+        transform.rotation = Quaternion.LookRotation(_direction);
     }
 }

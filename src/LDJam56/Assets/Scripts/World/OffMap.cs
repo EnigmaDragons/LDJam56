@@ -48,4 +48,13 @@ public class OffMap : MonoBehaviour
         _previousPlayerLocations.Enqueue(location);
         Message.Publish(new TeleportPlayer { NewPosition = location });
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        CurrentGameState.DamagePlayer(true);
+        var location = _previousPlayerLocations.Dequeue();
+        _previousPlayerLocations = new Queue<Vector3>();
+        _previousPlayerLocations.Enqueue(location);
+        Message.Publish(new TeleportPlayer { NewPosition = location });
+    }
 }

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2506518218936532202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0.0000009536743, z: -16.000002}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetOffset: {x: 0, y: 0, z: 1.5}
   Lookahead:
-    Enabled: 1
-    Time: 0.01
-    Smoothing: 30
+    Enabled: 0
+    Time: 0
+    Smoothing: 0
     IgnoreY: 1
   CameraDistance: 24
   DeadZoneDepth: 0

@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 842666017096827005}
+  playerTargeting: {fileID: 8655642724896417494}
   particlePrefab: {fileID: 0}
   cameraman: {fileID: 7795953669069677135}
 --- !u!114 &5910923799442560130
@@ -485,6 +486,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3739199251895258325}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8655642724896417494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5475049875047098883, guid: bbcbc3072e81a9d45bcab71de9990e23,
+    type: 3}
+  m_PrefabInstance: {fileID: 3739199251895258325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4092960519142323217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -501,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 716721036973974035, guid: 3af51aeb24c190d4fa54706fa0ad1c99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 716721036973974035, guid: 3af51aeb24c190d4fa54706fa0ad1c99,
         type: 3}

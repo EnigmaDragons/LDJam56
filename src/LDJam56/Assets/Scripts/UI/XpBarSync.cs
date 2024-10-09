@@ -20,10 +20,9 @@ public class XpBarSync : MonoBehaviour
 
         int currentXp = CurrentGameState.ReadonlyGameState.PlayerStats.XP;
         int xpNeededToLevel = gameplayRules.XpNeededToLevel;
-        int currentLevel = CurrentGameState.ReadonlyGameState.PlayerStats.Level;
 
         // Calculate XP progress towards next level
-        float xpProgress = (float)(currentXp - (currentLevel - 1) * xpNeededToLevel) / xpNeededToLevel;
+        float xpProgress = (float)currentXp / xpNeededToLevel;
 
         // Clamp the value between 0 and 1
         xpProgress = Mathf.Clamp01(xpProgress);

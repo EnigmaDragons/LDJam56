@@ -20,13 +20,20 @@ public class BossHandeler : EnemyHandeler
     }
     protected override void OnUpdate()
     {
-        if(HP <= 100f && flag)
+        if(HP <= 1000f && flag)
         {
             spawner.towerSpawn();
             flag = false;
         }
         base.OnUpdate();
     }
+
+    protected override void Death()
+    {
+        Message.Publish(new BossDied());
+        base.Death();
+    }
+
 
     // Boss-specific method to set the spawner
     public void SetSpawner(BossSpawner bossSpawner)

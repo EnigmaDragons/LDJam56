@@ -124,7 +124,7 @@ public class EnemyHandeler : MonoBehaviour
             _dying = true;
             if (_hasAnimator)
                 animator.SetTrigger("death");
-            Message.Publish(new EnemyKilled());
+            Death();
             OnDeath.Invoke();
             Debug.Log("I died!", this);
             // Disable instead of Destroy to prevent memory churn, and top avoid null hits.
@@ -137,6 +137,11 @@ public class EnemyHandeler : MonoBehaviour
             Quaternion smoothedRotation = Quaternion.Slerp(rb.rotation, targetRotation, 5 * Time.deltaTime);
             rb.MoveRotation(smoothedRotation);
         }
+    }
+
+    protected virtual void Death()
+    {
+        Message.Publish(new EnemyKilled());
     }
 
     public virtual void Damaged(int damage)

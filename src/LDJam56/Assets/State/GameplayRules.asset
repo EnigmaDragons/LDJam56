@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3079e662074170b2df5c60ce2807a7, type: 3}
   m_Name: GameplayRules
   m_EditorClassIdentifier: 
-  playerHealth: 5
+  hardHealth: 1
+  mediumHealth: 5
+  easyHealth: 15
   attackCooldown: 0.5
   specialCooldown: 2.5
   mobilityCooldown: 2.5
   defenseCooldown: 5
-  xpNeededToLevel: 7
+  xpNeededToLevel: 14
   maxAbilityComponents: 5
