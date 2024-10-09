@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1776426126851064663}
   - component: {fileID: 2950280237934737750}
   - component: {fileID: 6945612049634399996}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 854040113766712439}
   - component: {fileID: 5293683601955884517}
   - component: {fileID: 946629400376753091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FX_Explosion_Fire_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +5039,7 @@ GameObject:
   - component: {fileID: 4862802397280489460}
   - component: {fileID: 5691785167026928846}
   - component: {fileID: 5884432922782586282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Explode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5112,7 +5112,7 @@ GameObject:
   - component: {fileID: 7486636182192056866}
   - component: {fileID: 7281788576536169626}
   - component: {fileID: 8123585536774653902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TargetingCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,6 +13,7 @@ TagManager:
   - PostProcessVolume
   - ServerCoreTeleport
   - ServerCore
+  - PlayerTargeting
   layers:
   - Default
   - TransparentFX

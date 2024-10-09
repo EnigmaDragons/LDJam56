@@ -296,7 +296,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: fb2cb79771313eb4aaad1c36434842d4, type: 3}
   waypointSprite: {fileID: 21300000, guid: cd2213f2ef4af5a4c838d7651404e60c, type: 3}
   objectiveSprite: {fileID: 21300000, guid: 6ae3940739199d74298a7c1ed204666e, type: 3}
-  scaleFactor: 10
+  scaleFactor: 3
   waypointFadeStartDistance: 500
   waypointFadeEndDistance: 2800
   waypointMinAlpha: 0.18

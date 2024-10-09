@@ -28,6 +28,13 @@ public class BossHandeler : EnemyHandeler
         base.OnUpdate();
     }
 
+    protected override void Death()
+    {
+        Message.Publish(new BossDied());
+        base.Death();
+    }
+
+
     // Boss-specific method to set the spawner
     public void SetSpawner(BossSpawner bossSpawner)
     {

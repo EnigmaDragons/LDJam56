@@ -6,6 +6,7 @@ using Unity.Cinemachine;
 public class SpawnPlayerOnRespawn : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerTargeting;
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private CinemachineCamera cameraman;
 
@@ -13,7 +14,7 @@ public class SpawnPlayerOnRespawn : MonoBehaviour
     private void Awake()
     {
         player.SetActive(false);
-        cameraman.Follow = player.transform;
+        cameraman.Follow = playerTargeting.transform;
     }
 
     private void Start()
@@ -41,7 +42,7 @@ public class SpawnPlayerOnRespawn : MonoBehaviour
             }
 
             player.SetActive(true);
-            cameraman.Follow = player.transform;
+            cameraman.Follow = playerTargeting.transform;
 
             if (particlePrefab != null)
             {

@@ -21,7 +21,7 @@ MonoBehaviour:
   Duration: 0
   Amount: 1
   Speed: 20
-  Range: 9
+  Range: 12
   AttackCooldown: 0.2
   SpecialCooldown: 1
   MobilityCooldown: 0.5
